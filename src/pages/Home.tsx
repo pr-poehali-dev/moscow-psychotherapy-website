@@ -7,16 +7,7 @@ import EventsCalendar from '@/components/EventsCalendar';
 import Icon from '@/components/ui/icon';
 
 const Home = () => {
-  const president = {
-    name: 'Макаров Виктор Викторович',
-    description: 'Доктор медицинских наук, профессор, президент Российской психотерапевтической ассоциации',
-  };
 
-  const vicePresidents = [
-    { name: 'Катков Александр Лазаревич', description: 'Вице-президент РПА' },
-    { name: 'Незнанов Николай Григорьевич', description: 'Вице-президент РПА' },
-    { name: 'Холмогорова Алла Борисовна', description: 'Вице-президент РПА' },
-  ];
 
   const executiveBoard = [
     { name: 'Бурлакова Наталья Сергеевна', role: 'Исполнительный директор' },
@@ -60,7 +51,7 @@ const Home = () => {
                     Найти специалиста
                   </Button>
                 </Link>
-                <Link to="/about-rpa">
+                <Link to="/about">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto">
                     О РПА
                   </Button>
@@ -80,40 +71,6 @@ const Home = () => {
                     Руководство и органы управления
                   </p>
                 </div>
-
-                <Card className="border-2">
-                  <CardContent className="p-8">
-                    <div className="flex items-center space-x-3 mb-6">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                        <Icon name="Crown" size={24} className="text-white" />
-                      </div>
-                      <h2 className="text-3xl font-bold">Президент РПА</h2>
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="text-2xl font-semibold">{president.name}</h3>
-                      <p className="text-muted-foreground">{president.description}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-2">
-                  <CardContent className="p-8">
-                    <div className="flex items-center space-x-3 mb-6">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                        <Icon name="Users" size={24} className="text-white" />
-                      </div>
-                      <h2 className="text-3xl font-bold">Вице-президенты</h2>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {vicePresidents.map((member, index) => (
-                        <div key={index} className="p-4 rounded-lg border bg-muted/30">
-                          <h3 className="text-lg font-semibold mb-1">{member.name}</h3>
-                          <p className="text-sm text-muted-foreground">{member.description}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
 
                 <Card className="border-2">
                   <CardContent className="p-8">
@@ -178,7 +135,7 @@ const Home = () => {
                       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
                         <Icon name="MapPin" size={24} className="text-white" />
                       </div>
-                      <h2 className="text-3xl font-bold">Контакты</h2>
+                      <h2 className="text-3xl font-bold">Контакты Московского отделения</h2>
                     </div>
                     <div className="space-y-3">
                       <div className="flex items-center space-x-2">
@@ -192,6 +149,40 @@ const Home = () => {
                       <div className="flex items-start space-x-2">
                         <Icon name="MapPin" size={16} className="text-primary flex-shrink-0 mt-0.5" />
                         <span className="text-muted-foreground">г. Москва, ул. Профессиональная, д. 10</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-2 bg-gradient-to-br from-accent/5 to-primary/10">
+                  <CardContent className="p-8">
+                    <div className="flex items-center space-x-3 mb-6">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
+                        <Icon name="Users" size={24} className="text-white" />
+                      </div>
+                      <h2 className="text-3xl font-bold">О Московском отделении</h2>
+                    </div>
+                    <div className="space-y-4">
+                      <p className="text-muted-foreground leading-relaxed">
+                        Московское отделение РПА объединяет ведущих психотерапевтов столицы и является крупнейшим региональным представительством ассоциации.
+                      </p>
+                      <div className="space-y-2">
+                        <div className="flex items-start space-x-2">
+                          <Icon name="Check" size={18} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">Профессиональное развитие специалистов</span>
+                        </div>
+                        <div className="flex items-start space-x-2">
+                          <Icon name="Check" size={18} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">Организация обучающих мероприятий</span>
+                        </div>
+                        <div className="flex items-start space-x-2">
+                          <Icon name="Check" size={18} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">Супервизия и поддержка практики</span>
+                        </div>
+                        <div className="flex items-start space-x-2">
+                          <Icon name="Check" size={18} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-muted-foreground">Сертификация специалистов</span>
+                        </div>
                       </div>
                     </div>
                   </CardContent>

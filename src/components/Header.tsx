@@ -16,8 +16,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const aboutItems = [
-    { title: 'Структура Московского отделения', href: '/', description: 'Руководство МО РПА' },
-    { title: 'О РПА', href: '/about-rpa', description: 'Информация об ассоциации' },
+    { title: 'О РПА', href: '/about', description: 'Информация об ассоциации' },
     { title: 'Структура РПА', href: '/structure', description: 'Руководство РПА' },
     { title: 'Документы', href: '/documents', description: 'Устав, положения, кодекс' },
   ];
@@ -48,7 +47,7 @@ const Header = () => {
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="space-x-1">
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-9">Московское отделение</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="h-9">О РПА</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4">
                     {aboutItems.map((item) => (
@@ -179,7 +178,7 @@ const Header = () => {
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col space-y-4 mt-8">
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-sm text-muted-foreground px-3">Московское отделение</h3>
+                  <h3 className="font-semibold text-sm text-muted-foreground px-3">О РПА</h3>
                   {aboutItems.map((item) => (
                     <Link
                       key={item.href}
