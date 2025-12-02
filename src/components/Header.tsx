@@ -16,7 +16,9 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const aboutItems = [
-    { title: 'Структура Московского отделения', href: '/about', description: 'Руководство МО РПА' },
+    { title: 'Структура Московского отделения', href: '/', description: 'Руководство МО РПА' },
+    { title: 'О РПА', href: '/about-rpa', description: 'Информация об ассоциации' },
+    { title: 'Структура РПА', href: '/structure', description: 'Руководство РПА' },
     { title: 'Документы', href: '/documents', description: 'Устав, положения, кодекс' },
   ];
 
