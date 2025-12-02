@@ -4,26 +4,22 @@ import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EventsCalendar from '@/components/EventsCalendar';
+import MembershipForm from '@/components/MembershipForm';
 import Icon from '@/components/ui/icon';
 
 const Home = () => {
-
-
-  const executiveBoard = [
-    { name: 'Бурлакова Наталья Сергеевна', role: 'Исполнительный директор' },
-    { name: 'Смирнов Игорь Петрович', role: 'Научный секретарь' },
-    { name: 'Васильева Елена Дмитриевна', role: 'Руководитель образовательных программ' },
+  const leadership = [
+    { name: 'Бородин Владимир Иванович', role: 'Председатель' },
+    { name: 'Мальцева Екатерина Витальевна', role: 'Заместитель председателя' },
+    { name: 'Корнешов Алексей Александрович', role: 'Заместитель председателя' },
+    { name: 'Корнешова Мария Алексеевна', role: 'Руководитель молодежного подразделения' },
   ];
 
-  const ethicsCommittee = [
-    { name: 'Петрова Светлана Викторовна', role: 'Председатель' },
-    { name: 'Соколов Игорь Владимирович', role: 'Член комитета' },
-    { name: 'Белова Ольга Николаевна', role: 'Член комитета' },
-  ];
-
-  const auditCommission = [
-    { name: 'Федорова Марина Петровна', role: 'Председатель' },
-    { name: 'Григорьев Алексей Иванович', role: 'Член комиссии' },
+  const documents = [
+    { title: 'Положение о Московском отделении РПА', size: '245 КБ', link: '#' },
+    { title: 'Устав Московского отделения', size: '180 КБ', link: '#' },
+    { title: 'Этический кодекс', size: '120 КБ', link: '#' },
+    { title: 'Положение о молодежном подразделении', size: '95 КБ', link: '#' },
   ];
 
   return (
@@ -76,12 +72,12 @@ const Home = () => {
                   <CardContent className="p-8">
                     <div className="flex items-center space-x-3 mb-6">
                       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                        <Icon name="Briefcase" size={24} className="text-white" />
+                        <Icon name="Users" size={24} className="text-white" />
                       </div>
-                      <h2 className="text-3xl font-bold">Исполнительная дирекция</h2>
+                      <h2 className="text-3xl font-bold">Руководство</h2>
                     </div>
                     <div className="space-y-3">
-                      {executiveBoard.map((member, index) => (
+                      {leadership.map((member, index) => (
                         <div key={index} className="flex items-center justify-between p-4 rounded-lg border bg-muted/30">
                           <span className="font-semibold">{member.name}</span>
                           <span className="text-sm text-muted-foreground">{member.role}</span>
@@ -91,21 +87,50 @@ const Home = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="border-2">
+                <Card className="border-2 bg-gradient-to-br from-accent/5 to-primary/10">
                   <CardContent className="p-8">
                     <div className="flex items-center space-x-3 mb-6">
                       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                        <Icon name="Scale" size={24} className="text-white" />
+                        <Icon name="GraduationCap" size={24} className="text-white" />
                       </div>
-                      <h2 className="text-3xl font-bold">Этический комитет</h2>
+                      <h2 className="text-3xl font-bold">Молодежное подразделение</h2>
                     </div>
-                    <div className="space-y-3">
-                      {ethicsCommittee.map((member, index) => (
-                        <div key={index} className="flex items-center justify-between p-4 rounded-lg border bg-muted/30">
-                          <span className="font-semibold">{member.name}</span>
-                          <span className="text-sm text-muted-foreground">{member.role}</span>
-                        </div>
-                      ))}
+                    <div className="space-y-4">
+                      <p className="text-muted-foreground leading-relaxed">
+                        Молодежное подразделение Московского отделения РПА объединяет начинающих специалистов 
+                        и студентов, интересующихся психотерапией. Мы организуем специальные образовательные 
+                        программы, мастер-классы и супервизии для молодых психотерапевтов.
+                      </p>
+                      <div className="bg-primary/5 p-4 rounded-lg">
+                        <h3 className="font-semibold mb-2 flex items-center">
+                          <Icon name="Info" size={16} className="mr-2" />
+                          Направления работы:
+                        </h3>
+                        <ul className="space-y-2 text-sm text-muted-foreground">
+                          <li className="flex items-start">
+                            <span className="mr-2">•</span>
+                            <span>Образовательные мероприятия и тренинги</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="mr-2">•</span>
+                            <span>Супервизии и групповая поддержка</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="mr-2">•</span>
+                            <span>Профессиональное наставничество</span>
+                          </li>
+                          <li className="flex items-start">
+                            <span className="mr-2">•</span>
+                            <span>Научно-практические конференции</span>
+                          </li>
+                        </ul>
+                      </div>
+                      <Button variant="outline" className="w-full" asChild>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                          <Icon name="FileText" size={16} className="mr-2" />
+                          Скачать положение о молодежном подразделении
+                        </a>
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -114,16 +139,25 @@ const Home = () => {
                   <CardContent className="p-8">
                     <div className="flex items-center space-x-3 mb-6">
                       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                        <Icon name="FileCheck" size={24} className="text-white" />
+                        <Icon name="FileText" size={24} className="text-white" />
                       </div>
-                      <h2 className="text-3xl font-bold">Ревизионная комиссия</h2>
+                      <h2 className="text-3xl font-bold">Документы Московского отделения</h2>
                     </div>
                     <div className="space-y-3">
-                      {auditCommission.map((member, index) => (
-                        <div key={index} className="flex items-center justify-between p-4 rounded-lg border bg-muted/30">
-                          <span className="font-semibold">{member.name}</span>
-                          <span className="text-sm text-muted-foreground">{member.role}</span>
-                        </div>
+                      {documents.map((doc, index) => (
+                        <a
+                          key={index}
+                          href={doc.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center justify-between p-4 rounded-lg border bg-muted/30 hover:bg-muted/50 transition-colors group"
+                        >
+                          <div className="flex items-center space-x-3">
+                            <Icon name="FileDown" size={20} className="text-primary" />
+                            <span className="font-medium group-hover:text-primary transition-colors">{doc.title}</span>
+                          </div>
+                          <span className="text-sm text-muted-foreground">{doc.size}</span>
+                        </a>
                       ))}
                     </div>
                   </CardContent>
@@ -158,40 +192,46 @@ const Home = () => {
                   <CardContent className="p-8">
                     <div className="flex items-center space-x-3 mb-6">
                       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                        <Icon name="Users" size={24} className="text-white" />
+                        <Icon name="Info" size={24} className="text-white" />
                       </div>
                       <h2 className="text-3xl font-bold">О Московском отделении</h2>
                     </div>
                     <div className="space-y-4">
                       <p className="text-muted-foreground leading-relaxed">
-                        Московское отделение РПА объединяет ведущих психотерапевтов столицы и является крупнейшим региональным представительством ассоциации.
+                        Московское отделение РПА объединяет ведущих психотерапевтов столицы и является крупнейшим 
+                        региональным подразделением ассоциации. Мы организуем профессиональные мероприятия, 
+                        образовательные программы и способствуем развитию психотерапевтической практики в Москве.
                       </p>
-                      <div className="space-y-2">
-                        <div className="flex items-start space-x-2">
-                          <Icon name="Check" size={18} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground">Профессиональное развитие специалистов</span>
-                        </div>
-                        <div className="flex items-start space-x-2">
-                          <Icon name="Check" size={18} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground">Организация обучающих мероприятий</span>
-                        </div>
-                        <div className="flex items-start space-x-2">
-                          <Icon name="Check" size={18} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground">Супервизия и поддержка практики</span>
-                        </div>
-                        <div className="flex items-start space-x-2">
-                          <Icon name="Check" size={18} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span className="text-muted-foreground">Сертификация специалистов</span>
-                        </div>
-                      </div>
                     </div>
                   </CardContent>
                 </Card>
               </div>
 
-              <div className="lg:col-span-1">
-                <EventsCalendar />
+              <div className="space-y-8">
+                <Card className="border-2 sticky top-8">
+                  <CardContent className="p-6">
+                    <h3 className="text-2xl font-bold mb-4 flex items-center">
+                      <Icon name="Calendar" size={24} className="mr-2 text-primary" />
+                      Мероприятия
+                    </h3>
+                    <EventsCalendar />
+                  </CardContent>
+                </Card>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="membership" className="py-20 bg-gradient-to-br from-accent/10 to-primary/5">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Вступление в Московское отделение РПА</h2>
+                <p className="text-lg text-muted-foreground">
+                  Заполните анкету для вступления в наше профессиональное сообщество
+                </p>
+              </div>
+              <MembershipForm />
             </div>
           </div>
         </section>
