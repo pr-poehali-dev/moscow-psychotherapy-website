@@ -160,7 +160,15 @@ const Header = () => {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <div className="flex items-center gap-2">
+            <Link to="/login" className="hidden lg:block">
+              <Button variant="outline" size="sm">
+                <Icon name="User" className="mr-2 h-4 w-4" />
+                Войти
+              </Button>
+            </Link>
+
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
               <Button variant="ghost" size="icon">
                 <Icon name="Menu" size={24} />
@@ -241,9 +249,19 @@ const Header = () => {
                 >
                   Контакты
                 </Link>
+
+                <Link
+                  to="/login"
+                  onClick={() => setIsOpen(false)}
+                  className="block px-3 py-2 rounded-md hover:bg-accent transition-colors font-medium mt-4"
+                >
+                  <Icon name="User" className="inline-block mr-2 h-4 w-4" />
+                  Войти
+                </Link>
               </nav>
             </SheetContent>
           </Sheet>
+          </div>
         </div>
       </div>
     </header>
