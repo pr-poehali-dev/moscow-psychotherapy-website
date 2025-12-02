@@ -18,7 +18,6 @@ const Header = () => {
   const aboutItems = [
     { title: 'О РПА', href: '/about', description: 'Информация об ассоциации' },
     { title: 'Структура РПА', href: '/structure', description: 'Руководство РПА' },
-    { title: 'Документы', href: '/documents', description: 'Устав, положения, кодекс' },
   ];
 
   const knowledgeItems = [
