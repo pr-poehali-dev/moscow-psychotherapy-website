@@ -16,9 +16,8 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const aboutItems = [
-    { title: 'О московском отделении', href: '/about', description: 'Руководство МО РПА' },
+    { title: 'Структура Московского отделения', href: '/about', description: 'Руководство МО РПА' },
     { title: 'Документы', href: '/documents', description: 'Устав, положения, кодекс' },
-    { title: 'Секции МО РПА', href: '/sections', description: 'Профессиональные сообщества' },
   ];
 
   const knowledgeItems = [
@@ -47,7 +46,7 @@ const Header = () => {
           <NavigationMenu className="hidden lg:flex">
             <NavigationMenuList className="space-x-1">
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-9">Об ассоциации</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="h-9">Московское отделение</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4">
                     {aboutItems.map((item) => (
@@ -76,6 +75,17 @@ const Header = () => {
                     className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   >
                     Структура РПА
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
+                    to="/sections"
+                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  >
+                    Секции МО РПА
                   </Link>
                 </NavigationMenuLink>
               </NavigationMenuItem>
@@ -170,7 +180,7 @@ const Header = () => {
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <nav className="flex flex-col space-y-4 mt-8">
                 <div className="space-y-2">
-                  <h3 className="font-semibold text-sm text-muted-foreground px-3">Об ассоциации</h3>
+                  <h3 className="font-semibold text-sm text-muted-foreground px-3">Московское отделение</h3>
                   {aboutItems.map((item) => (
                     <Link
                       key={item.href}
@@ -189,6 +199,14 @@ const Header = () => {
                   className="block px-3 py-2 rounded-md hover:bg-accent transition-colors font-medium"
                 >
                   Структура РПА
+                </Link>
+
+                <Link
+                  to="/sections"
+                  onClick={() => setIsOpen(false)}
+                  className="block px-3 py-2 rounded-md hover:bg-accent transition-colors font-medium"
+                >
+                  Секции МО РПА
                 </Link>
 
                 <Link

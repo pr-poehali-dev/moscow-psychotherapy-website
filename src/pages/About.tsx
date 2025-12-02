@@ -39,9 +39,9 @@ const About = () => {
         <section className="py-12 bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center space-y-4">
-              <h1 className="text-4xl md:text-5xl font-bold">О московском отделении</h1>
+              <h1 className="text-4xl md:text-5xl font-bold">Структура Московского отделения</h1>
               <p className="text-lg text-muted-foreground">
-                Руководство и структура МО РПА
+                Руководство и органы управления МО РПА
               </p>
             </div>
           </div>
