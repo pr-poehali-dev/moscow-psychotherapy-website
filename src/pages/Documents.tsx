@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import EventsCalendar from '@/components/EventsCalendar';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
@@ -68,7 +69,8 @@ const Documents = () => {
 
         <section className="py-12">
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {documents.map((doc, index) => (
                   <Card key={index} className="border-2 hover:border-primary/30 hover:shadow-lg transition-all">
@@ -120,6 +122,11 @@ const Documents = () => {
                   </Button>
                 </CardContent>
               </Card>
+              </div>
+
+              <div className="lg:col-span-1">
+                <EventsCalendar />
+              </div>
             </div>
           </div>
         </section>

@@ -1,37 +1,30 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import EventsCalendar from '@/components/EventsCalendar';
 import { Card, CardContent } from '@/components/ui/card';
 import Icon from '@/components/ui/icon';
 
 const Structure = () => {
-  const leadership = [
-    {
-      position: 'Президент',
-      name: 'Александров Виктор Петрович',
-      description: 'Доктор психологических наук, профессор',
-    },
-  ];
+  const president = {
+    name: 'Макаров Виктор Викторович',
+    description: 'Доктор медицинских наук, профессор, президент Российской психотерапевтической ассоциации',
+  };
 
   const vicePresidents = [
-    {
-      name: 'Смирнова Анна Ивановна',
-      description: 'Кандидат психологических наук',
-    },
-    {
-      name: 'Петров Михаил Сергеевич',
-      description: 'Доктор медицинских наук',
-    },
+    { name: 'Катков Александр Лазаревич', description: 'Вице-президент РПА' },
+    { name: 'Незнанов Николай Григорьевич', description: 'Вице-президент РПА' },
+    { name: 'Холмогорова Алла Борисовна', description: 'Вице-президент РПА' },
   ];
 
-  const supervisors = [
-    { name: 'Иванова Елена Александровна', specialty: 'КПТ' },
-    { name: 'Козлов Андрей Николаевич', specialty: 'Семейная терапия' },
-    { name: 'Волков Сергей Петрович', specialty: 'Экзистенциальная терапия' },
+  const executiveBoard = [
+    { name: 'Бурлакова Наталья Сергеевна', role: 'Исполнительный директор' },
+    { name: 'Смирнов Игорь Петрович', role: 'Научный секретарь' },
+    { name: 'Васильева Елена Дмитриевна', role: 'Руководитель образовательных программ' },
   ];
 
   const ethicsCommittee = [
-    { name: 'Морозова Светлана Викторовна', role: 'Председатель' },
-    { name: 'Новиков Игорь Владимирович', role: 'Член комитета' },
+    { name: 'Петрова Светлана Викторовна', role: 'Председатель' },
+    { name: 'Соколов Игорь Владимирович', role: 'Член комитета' },
     { name: 'Белова Ольга Николаевна', role: 'Член комитета' },
   ];
 
@@ -48,9 +41,9 @@ const Structure = () => {
         <section className="py-12 bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center space-y-4">
-              <h1 className="text-4xl md:text-5xl font-bold">Структура ассоциации</h1>
+              <h1 className="text-4xl md:text-5xl font-bold">Структура РПА</h1>
               <p className="text-lg text-muted-foreground">
-                Руководство и органы управления МО РПА
+                Руководство и органы управления Российской психотерапевтической ассоциации
               </p>
             </div>
           </div>
@@ -58,21 +51,20 @@ const Structure = () => {
 
         <section className="py-12">
           <div className="container mx-auto px-4">
-            <div className="max-w-5xl mx-auto space-y-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2 space-y-8">
               <Card className="border-2">
                 <CardContent className="p-8">
                   <div className="flex items-center space-x-3 mb-6">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
                       <Icon name="Crown" size={24} className="text-white" />
                     </div>
-                    <h2 className="text-3xl font-bold">Президент</h2>
+                    <h2 className="text-3xl font-bold">Президент РПА</h2>
                   </div>
-                  {leadership.map((member, index) => (
-                    <div key={index} className="space-y-2">
-                      <h3 className="text-2xl font-semibold">{member.name}</h3>
-                      <p className="text-muted-foreground">{member.description}</p>
-                    </div>
-                  ))}
+                  <div className="space-y-2">
+                    <h3 className="text-2xl font-semibold">{president.name}</h3>
+                    <p className="text-muted-foreground">{president.description}</p>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -99,15 +91,15 @@ const Structure = () => {
                 <CardContent className="p-8">
                   <div className="flex items-center space-x-3 mb-6">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                      <Icon name="Eye" size={24} className="text-white" />
+                      <Icon name="Briefcase" size={24} className="text-white" />
                     </div>
-                    <h2 className="text-3xl font-bold">Совет супервизоров</h2>
+                    <h2 className="text-3xl font-bold">Исполнительная дирекция</h2>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    {supervisors.map((member, index) => (
-                      <div key={index} className="p-4 rounded-lg border bg-muted/30">
-                        <h3 className="font-semibold mb-1">{member.name}</h3>
-                        <p className="text-sm text-muted-foreground">{member.specialty}</p>
+                  <div className="space-y-3">
+                    {executiveBoard.map((member, index) => (
+                      <div key={index} className="flex items-center justify-between p-4 rounded-lg border bg-muted/30">
+                        <span className="font-semibold">{member.name}</span>
+                        <span className="text-sm text-muted-foreground">{member.role}</span>
                       </div>
                     ))}
                   </div>
@@ -152,23 +144,34 @@ const Structure = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 bg-gradient-to-br from-primary/5 to-accent/5">
+              <Card className="border-2 bg-gradient-to-br from-primary/5 to-accent/10">
                 <CardContent className="p-8">
                   <div className="flex items-center space-x-3 mb-6">
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                      <Icon name="Sparkles" size={24} className="text-white" />
+                      <Icon name="Globe" size={24} className="text-white" />
                     </div>
-                    <h2 className="text-3xl font-bold">Молодежное подразделение</h2>
+                    <h2 className="text-3xl font-bold">Региональные отделения</h2>
                   </div>
                   <p className="text-muted-foreground mb-4">
-                    Специальная программа для молодых специалистов до 35 лет. Поддержка, менторство и развитие карьеры.
+                    РПА объединяет специалистов по всей России. Региональные отделения работают в 45 субъектах РФ.
                   </p>
-                  <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                    <Icon name="Mail" size={16} />
-                    <span>youth@mo-rpa.ru</span>
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2 text-sm">
+                      <Icon name="MapPin" size={16} className="text-primary" />
+                      <span className="font-medium">Московское отделение</span>
+                    </div>
+                    <div className="flex items-center space-x-2 text-sm text-muted-foreground">
+                      <Icon name="Mail" size={14} className="text-primary" />
+                      <span>moscow@rpa-russia.ru</span>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
+              </div>
+
+              <div className="lg:col-span-1">
+                <EventsCalendar />
+              </div>
             </div>
           </div>
         </section>

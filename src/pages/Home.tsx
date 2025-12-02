@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import EventsCalendar from '@/components/EventsCalendar';
 import Icon from '@/components/ui/icon';
 
 const Home = () => {
@@ -84,33 +85,142 @@ const Home = () => {
 
         <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/10">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
-              <Card className="border-2 shadow-xl">
-                <CardContent className="p-8 md:p-12 text-center space-y-6">
-                  <div className="flex justify-center">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                      <Icon name="UserPlus" size={32} className="text-white" />
-                    </div>
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold">Присоединяйтесь к нам</h2>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+              <div className="lg:col-span-2 space-y-8">
+                <div className="text-center mb-8">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Структура ассоциации</h2>
                   <p className="text-lg text-muted-foreground">
-                    Станьте частью профессионального сообщества и получите доступ к эксклюзивным мероприятиям
+                    Руководство Российской психотерапевтической ассоциации
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
-                    <Link to="/structure">
-                      <Button size="lg" className="w-full sm:w-auto">
-                        Узнать условия
-                      </Button>
-                    </Link>
-                    <Link to="/contacts">
-                      <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                        <Icon name="Mail" size={20} className="mr-2" />
-                        Связаться
-                      </Button>
-                    </Link>
-                  </div>
-                </CardContent>
-              </Card>
+                </div>
+
+                <Card className="border-2">
+                  <CardContent className="p-8">
+                    <div className="flex items-center space-x-3 mb-4">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
+                        <Icon name="Crown" size={24} className="text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold">Президент РПА</h3>
+                    </div>
+                    <div className="space-y-2">
+                      <h4 className="text-xl font-semibold">Макаров Виктор Викторович</h4>
+                      <p className="text-muted-foreground">Доктор медицинских наук, профессор, президент Российской психотерапевтической ассоциации</p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <Card className="border-2 hover:shadow-lg transition-all">
+                    <CardContent className="p-6">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
+                          <Icon name="Users" size={20} className="text-white" />
+                        </div>
+                        <h3 className="text-lg font-bold">Вице-президенты</h3>
+                      </div>
+                      <ul className="space-y-2 text-sm">
+                        <li className="flex items-start space-x-2">
+                          <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Катков Александр Лазаревич</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Незнанов Николай Григорьевич</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Холмогорова Алла Борисовна</span>
+                        </li>
+                      </ul>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-2 hover:shadow-lg transition-all">
+                    <CardContent className="p-6">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
+                          <Icon name="Scale" size={20} className="text-white" />
+                        </div>
+                        <h3 className="text-lg font-bold">Этический комитет</h3>
+                      </div>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Контроль соблюдения профессиональной этики и разрешение спорных ситуаций
+                      </p>
+                      <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+                        <Icon name="Mail" size={14} className="text-primary" />
+                        <span>ethics@rpa-russia.ru</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-2 hover:shadow-lg transition-all">
+                    <CardContent className="p-6">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
+                          <Icon name="Eye" size={20} className="text-white" />
+                        </div>
+                        <h3 className="text-lg font-bold">Совет супервизоров</h3>
+                      </div>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Профессиональное развитие и контроль качества психотерапевтической практики
+                      </p>
+                      <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+                        <Icon name="Mail" size={14} className="text-primary" />
+                        <span>supervision@rpa-russia.ru</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-2 hover:shadow-lg transition-all">
+                    <CardContent className="p-6">
+                      <div className="flex items-center space-x-3 mb-4">
+                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
+                          <Icon name="FileCheck" size={20} className="text-white" />
+                        </div>
+                        <h3 className="text-lg font-bold">Ревизионная комиссия</h3>
+                      </div>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Контроль финансовой деятельности и прозрачность управления
+                      </p>
+                      <div className="flex items-center space-x-2 text-xs text-muted-foreground">
+                        <Icon name="Mail" size={14} className="text-primary" />
+                        <span>audit@rpa-russia.ru</span>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <Card className="border-2 shadow-xl bg-gradient-to-br from-primary/5 to-accent/10">
+                  <CardContent className="p-8 text-center space-y-6">
+                    <div className="flex justify-center">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
+                        <Icon name="UserPlus" size={32} className="text-white" />
+                      </div>
+                    </div>
+                    <h2 className="text-3xl font-bold">Присоединяйтесь к нам</h2>
+                    <p className="text-lg text-muted-foreground">
+                      Станьте частью профессионального сообщества и получите доступ к эксклюзивным мероприятиям
+                    </p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                      <Link to="/about">
+                        <Button size="lg" className="w-full sm:w-auto">
+                          О московском отделении
+                        </Button>
+                      </Link>
+                      <Link to="/contacts">
+                        <Button size="lg" variant="outline" className="w-full sm:w-auto">
+                          <Icon name="Mail" size={20} className="mr-2" />
+                          Связаться
+                        </Button>
+                      </Link>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+
+              <div className="lg:col-span-1">
+                <EventsCalendar />
+              </div>
             </div>
           </div>
         </section>

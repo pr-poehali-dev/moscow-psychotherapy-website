@@ -16,7 +16,7 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const aboutItems = [
-    { title: 'Структура', href: '/structure', description: 'Руководство и органы управления' },
+    { title: 'О московском отделении', href: '/about', description: 'Руководство МО РПА' },
     { title: 'Документы', href: '/documents', description: 'Устав, положения, кодекс' },
     { title: 'Секции МО РПА', href: '/sections', description: 'Профессиональные сообщества' },
   ];
@@ -72,6 +72,17 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link
+                    to="/structure"
+                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                  >
+                    Структура РПА
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild>
+                  <Link
                     to="/specialists"
                     className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   >
@@ -106,7 +117,7 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuTrigger className="h-9">Журнал</NavigationMenuTrigger>
                 <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4">
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px]">
                     {journalItems.map((item) => (
                       <li key={item.href}>
                         <NavigationMenuLink asChild>
@@ -172,6 +183,14 @@ const Header = () => {
                   ))}
                 </div>
                 
+                <Link
+                  to="/structure"
+                  onClick={() => setIsOpen(false)}
+                  className="block px-3 py-2 rounded-md hover:bg-accent transition-colors font-medium"
+                >
+                  Структура РПА
+                </Link>
+
                 <Link
                   to="/specialists"
                   onClick={() => setIsOpen(false)}
