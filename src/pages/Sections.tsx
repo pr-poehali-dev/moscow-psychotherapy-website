@@ -1,12 +1,16 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EventsCalendar from '@/components/EventsCalendar';
+import SectionMembershipForm from '@/components/SectionMembershipForm';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 
 const Sections = () => {
+  const [showMembershipForm, setShowMembershipForm] = useState(false);
+  
   const section = {
     name: 'Секция психоанализа и психоаналитически ориентированной психотерапии',
     coordinator: 'Корнешов Алексей Александрович',
@@ -49,6 +53,19 @@ const Sections = () => {
             <div className="max-w-7xl mx-auto">
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div className="lg:col-span-2 space-y-6">
+                  {showMembershipForm ? (
+                    <div className="space-y-4">
+                      <Button 
+                        variant="outline" 
+                        onClick={() => setShowMembershipForm(false)}
+                        className="mb-4"
+                      >
+                        <Icon name="ArrowLeft" size={16} className="mr-2" />
+                        Вернуться к описанию секции
+                      </Button>
+                      <SectionMembershipForm />
+                    </div>
+                  ) : (
                   <Card className="border-2">
                     <CardContent className="p-8">
                       <div className="space-y-6">
@@ -110,16 +127,19 @@ const Sections = () => {
                             </p>
                           </div>
 
-                          <Link to="/#membership">
-                            <Button size="lg" className="w-full">
-                              <Icon name="UserPlus" size={20} className="mr-2" />
-                              Вступить в секцию
-                            </Button>
-                          </Link>
+                          <Button 
+                            size="lg" 
+                            className="w-full"
+                            onClick={() => setShowMembershipForm(true)}
+                          >
+                            <Icon name="UserPlus" size={20} className="mr-2" />
+                            Вступить в секцию
+                          </Button>
                         </div>
                       </div>
                     </CardContent>
                   </Card>
+                  )}
                 </div>
 
                 <div className="lg:col-span-1">
