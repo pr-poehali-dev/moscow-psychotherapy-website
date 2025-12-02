@@ -12,7 +12,11 @@ import Documents from "./pages/Documents";
 import Contacts from "./pages/Contacts";
 import Events from "./pages/Events";
 import Webinars from "./pages/Webinars";
+import Materials from "./pages/Materials";
 import JournalAbout from "./pages/JournalAbout";
+import JournalProfessional from "./pages/JournalProfessional";
+import JournalLife from "./pages/JournalLife";
+import Sections from "./pages/Sections";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,9 +34,13 @@ const App = () => (
           <Route path="/structure" element={<Structure />} />
           <Route path="/documents" element={<Documents />} />
           <Route path="/contacts" element={<Contacts />} />
+          <Route path="/sections" element={<Sections />} />
           <Route path="/events" element={<Events />} />
           <Route path="/webinars" element={<Webinars />} />
+          <Route path="/materials" element={<Materials />} />
           <Route path="/journal/about" element={<JournalAbout />} />
+          <Route path="/journal/professional" element={<JournalProfessional />} />
+          <Route path="/journal/life" element={<JournalLife />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

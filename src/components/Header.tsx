@@ -18,6 +18,7 @@ const Header = () => {
   const aboutItems = [
     { title: 'Структура', href: '/structure', description: 'Руководство и органы управления' },
     { title: 'Документы', href: '/documents', description: 'Устав, положения, кодекс' },
+    { title: 'Секции МО РПА', href: '/sections', description: 'Профессиональные сообщества' },
   ];
 
   const knowledgeItems = [
