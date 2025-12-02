@@ -71,17 +71,6 @@ const Header = () => {
               <NavigationMenuItem>
                 <NavigationMenuLink asChild>
                   <Link
-                    to="/structure"
-                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
-                  >
-                    Структура РПА
-                  </Link>
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink asChild>
-                  <Link
                     to="/sections"
                     className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   >
@@ -193,14 +182,6 @@ const Header = () => {
                   ))}
                 </div>
                 
-                <Link
-                  to="/structure"
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 rounded-md hover:bg-accent transition-colors font-medium"
-                >
-                  Структура РПА
-                </Link>
-
                 <Link
                   to="/sections"
                   onClick={() => setIsOpen(false)}
