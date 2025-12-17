@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EventsCalendar from '@/components/EventsCalendar';
@@ -34,6 +35,10 @@ const Sections = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Секция психоанализа — МО РПА</title>
+        <meta name="description" content="Секция психоанализа и психоаналитически ориентированной психотерапии МО РПА. Семинары, супервизии, конференции. Вступление в секцию." />
+      </Helmet>
       <Header />
       
       <main className="flex-1">

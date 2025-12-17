@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
@@ -32,6 +33,10 @@ const About = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>О нас — Московское отделение РПА</title>
+        <meta name="description" content="История, миссия и цели Московского отделения Российской психотерапевтической ассоциации. Профессиональное сообщество психотерапевтов Москвы." />
+      </Helmet>
       <Header />
       
       <main className="flex-1">

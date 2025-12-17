@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -63,6 +64,10 @@ const FAQ = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Часто задаваемые вопросы — МО РПА</title>
+        <meta name="description" content="Ответы на частые вопросы о вступлении в МО РПА, членских взносах, сертификации, мероприятиях и направлениях психотерапии." />
+      </Helmet>
       <Header />
       
       <main className="flex-1">

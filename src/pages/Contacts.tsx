@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -6,6 +7,10 @@ import Icon from '@/components/ui/icon';
 const Contacts = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Контакты — МО РПА</title>
+        <meta name="description" content="Контактная информация Московского отделения РПА: адрес, телефон, email, график работы. Свяжитесь с нами удобным способом." />
+      </Helmet>
       <Header />
       
       <main className="flex-1">

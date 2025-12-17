@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -118,6 +119,10 @@ const Specialists = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Специалисты — МО РПА</title>
+        <meta name="description" content="Реестр психотерапевтов Московского отделения РПА. Найдите психотерапевта в Москве по подходу, специализации и возрастной группе." />
+      </Helmet>
       <Header />
       
       <main className="flex-1">

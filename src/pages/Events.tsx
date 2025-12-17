@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -77,6 +78,10 @@ const Events = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Helmet>
+        <title>Мероприятия — МО РПА</title>
+        <meta name="description" content="Конференции, семинары, мастер-классы и супервизии Московского отделения РПА. Регистрация на ближайшие мероприятия по психотерапии." />
+      </Helmet>
       <Header />
       
       <main className="flex-1">
