@@ -6,16 +6,14 @@ import Icon from '@/components/ui/icon';
 
 const Structure = () => {
   const president = {
-    name: 'Бабин Сергей Михайлович',
-    description: 'Доктор медицинских наук, профессор, врач-психотерапевт высшей категории',
+    name: 'Макаров Виктор Викторович',
+    description: 'Доктор медицинских наук, профессор, председатель Московского отделения РПА',
   };
 
   const vicePresidents = [
-    { name: 'Караваева Татьяна Артуровна', description: 'Вице-президент РПА' },
-    { name: 'Ковпак Дмитрий Викторович', description: 'Вице-президент РПА' },
-    { name: 'Подсадный Сергей Александрович', description: 'Вице-президент РПА' },
-    { name: 'Ташлыков Виктор Анатольевич', description: 'Вице-президент РПА' },
-    { name: 'Холмогорова Алла Борисовна', description: 'Вице-президент РПА' },
+    { name: 'Катков Александр Лазаревич', description: 'Заместитель председателя' },
+    { name: 'Незнанов Николай Григорьевич', description: 'Заместитель председателя' },
+    { name: 'Холмогорова Алла Борисовна', description: 'Заместитель председателя' },
   ];
 
   const executiveBoard = [
@@ -25,19 +23,18 @@ const Structure = () => {
   ];
 
   const supervisorsCommittee = [
-    { name: 'Бабин Сергей Михайлович', role: 'Член совета' },
-    { name: 'Кулаков Сергей Александрович', role: 'Член совета' },
-    { name: 'Ляшковская Светлана Владимировна', role: 'Член совета' },
-    { name: 'Демьяненко Алексей Михайлович', role: 'Член совета' },
-    { name: 'Еричев Александр Николаевич', role: 'Член совета' },
-    { name: 'Исурина Галина Львовна', role: 'Член совета' },
-    { name: 'Ковпак Дмитрий Викторович', role: 'Член совета' },
-    { name: 'Подсадный Сергей Александрович', role: 'Член совета' },
+    { name: 'Иванов Петр Сергеевич', role: 'Член совета' },
+    { name: 'Петрова Анна Викторовна', role: 'Член совета' },
+    { name: 'Сидоров Михаил Александрович', role: 'Член совета' },
+    { name: 'Козлова Ольга Дмитриевна', role: 'Член совета' },
+    { name: 'Смирнов Андрей Павлович', role: 'Член совета' },
+    { name: 'Новикова Елена Игоревна', role: 'Член совета' },
   ];
 
   const auditCommission = [
-    { name: 'Федорова Марина Петровна', role: 'Председатель' },
-    { name: 'Григорьев Алексей Иванович', role: 'Член комиссии' },
+    { name: 'Полторак Станислав Валериевич', role: 'Председатель' },
+    { name: 'Шарков Кирилл Сергеевич', role: 'Член комиссии' },
+    { name: 'Леонтьева Инна Борисовна', role: 'Член комиссии' },
   ];
 
   return (
@@ -50,7 +47,7 @@ const Structure = () => {
             <div className="max-w-3xl mx-auto text-center space-y-4">
               <h1 className="text-4xl md:text-5xl font-bold">Структура РПА</h1>
               <p className="text-lg text-muted-foreground">
-                Руководство и органы управления Российской психотерапевтической ассоциации
+                Руководство и органы управления Московского отделения РПА
               </p>
             </div>
           </div>
@@ -66,7 +63,7 @@ const Structure = () => {
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
                       <Icon name="Crown" size={24} className="text-white" />
                     </div>
-                    <h2 className="text-3xl font-bold">Президент РПА</h2>
+                    <h2 className="text-3xl font-bold">Председатель</h2>
                   </div>
                   <div className="space-y-2">
                     <h3 className="text-2xl font-semibold">{president.name}</h3>
@@ -81,7 +78,7 @@ const Structure = () => {
                     <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
                       <Icon name="Users" size={24} className="text-white" />
                     </div>
-                    <h2 className="text-3xl font-bold">Вице-президенты</h2>
+                    <h2 className="text-3xl font-bold">Заместители председателя</h2>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {vicePresidents.map((member, index) => (
