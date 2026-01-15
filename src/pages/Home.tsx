@@ -228,15 +228,19 @@ const Home = () => {
                     <div className="space-y-3">
                       <div className="flex items-center space-x-2">
                         <Icon name="Mail" size={16} className="text-primary" />
-                        <span className="text-muted-foreground">moscow@rpa-russia.ru</span>
+                        <a href="mailto:rpa.moscow@yandex.ru" className="text-muted-foreground hover:text-primary transition-colors">
+                          rpa.moscow@yandex.ru
+                        </a>
                       </div>
                       <div className="flex items-center space-x-2">
                         <Icon name="Phone" size={16} className="text-primary" />
-                        <span className="text-muted-foreground">+7 (495) 123-45-67</span>
+                        <a href="tel:+74951096740" className="text-muted-foreground hover:text-primary transition-colors">
+                          +7 (495) 109-67-40
+                        </a>
                       </div>
                       <div className="flex items-start space-x-2">
                         <Icon name="MapPin" size={16} className="text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-muted-foreground">г. Москва, ул. Профессиональная, д. 10</span>
+                        <span className="text-muted-foreground">г. Москва, ул. Большая Спасская, д. 12, офис 7</span>
                       </div>
                     </div>
                   </CardContent>
