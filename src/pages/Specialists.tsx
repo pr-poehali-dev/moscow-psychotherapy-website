@@ -17,7 +17,7 @@ const Specialists = () => {
     {
       id: 1,
       name: 'Романюта Юлия Александровна',
-      photo: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/files/46249b4d-3910-4b88-ae78-ae7839a1addb.jpg',
+      photo: 'https://cdn.poehali.dev/files/РОманюта.jpg',
       workplace: 'Москва',
       contacts: '+7 (911) 572-10-99',
       education: 'Психолог, сертифицированный гештальт-терапевт',
