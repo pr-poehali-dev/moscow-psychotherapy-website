@@ -42,15 +42,19 @@ const Footer = () => {
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li className="flex items-center space-x-2">
                 <Icon name="Mail" size={16} />
-                <span>info@mo-rpa.ru</span>
+                <a href="mailto:rpa.moscow@yandex.ru" className="hover:text-foreground transition-colors">
+                  rpa.moscow@yandex.ru
+                </a>
               </li>
               <li className="flex items-center space-x-2">
                 <Icon name="Phone" size={16} />
-                <span>+7 (495) 123-45-67</span>
+                <a href="tel:+74951096740" className="hover:text-foreground transition-colors">
+                  +7 (495) 109-67-40
+                </a>
               </li>
-              <li className="flex items-center space-x-2">
-                <Icon name="MapPin" size={16} />
-                <span>Москва, ул. Примерная, д. 1</span>
+              <li className="flex items-start space-x-2">
+                <Icon name="MapPin" size={16} className="flex-shrink-0 mt-0.5" />
+                <span>г. Москва, ул. Большая Спасская, д. 12, офис 7</span>
               </li>
             </ul>
           </div>
