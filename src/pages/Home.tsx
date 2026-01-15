@@ -10,9 +10,24 @@ import Icon from '@/components/ui/icon';
 
 const Home = () => {
   const leadership = [
-    { name: 'Бородин Владимир Иванович', role: 'Председатель' },
-    { name: 'Мальцева Екатерина Витальевна', role: 'Заместитель председателя' },
-    { name: 'Корнешов Алексей Александрович', role: 'Заместитель председателя' },
+    { name: 'Бородин Владимир Иванович', role: 'Председатель', description: 'Вице-президент Союза охраны психического здоровья, д.м.н. врач-психиатр высшей категории, профессор Учебно-методического отдела ФГБУ «НМИЦ психиатрии и наркологии им. В.П. Сербского» Минздрава России' },
+    { name: 'Мальцева Екатерина Витальевна', role: 'Исполнительный директор', description: 'Директор Союза охраны психического здоровья, директор АНО ДПО "НОЦ СМТ", клинический психолог, заместитель председателя' },
+    { name: 'Корнешов Алексей Александрович', role: 'Заместитель исполнительного директора по финансовым вопросам', description: 'Доктор экономических наук, кандидат психологических наук, психоаналитический психолог, клинический психолог, психолог консультант' },
+  ];
+
+  const coordinationCouncil = [
+    { name: 'Бегиджанова' },
+    { name: 'Карпуль' },
+    { name: 'Малышева Татьяна Борисовна', description: 'Магистр психологии, клинический психолог, сексолог РНСО. Аккредитованный терапевт и супервизор Московского Гештальт Института' },
+    { name: 'Москвин' },
+    { name: 'Самохин' },
+    { name: 'Степанова Екатерина Сергеевна', description: 'Психолог, супервизор РПА, преподаватель, мультимодальный и психоаналитический подходы' },
+    { name: 'Хвощевская' },
+    { name: 'Шатина' },
+    { name: 'Шевченко' },
+  ];
+
+  const youthLeadership = [
     { name: 'Корнешова Мария Алексеевна', role: 'Руководитель молодежного подразделения' },
   ];
 
@@ -81,11 +96,37 @@ const Home = () => {
                       </div>
                       <h2 className="text-3xl font-bold">Руководство</h2>
                     </div>
-                    <div className="space-y-3">
+                    <div className="space-y-4">
                       {leadership.map((member, index) => (
-                        <div key={index} className="flex items-center justify-between p-4 rounded-lg border bg-muted/30">
-                          <span className="font-semibold">{member.name}</span>
-                          <span className="text-sm text-muted-foreground">{member.role}</span>
+                        <div key={index} className="p-4 rounded-lg border bg-muted/30">
+                          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
+                            <span className="font-semibold">{member.name}</span>
+                            <span className="text-sm text-muted-foreground mt-1 sm:mt-0">{member.role}</span>
+                          </div>
+                          {member.description && (
+                            <p className="text-sm text-muted-foreground mt-2">{member.description}</p>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-2">
+                  <CardContent className="p-8">
+                    <div className="flex items-center space-x-3 mb-6">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
+                        <Icon name="Network" size={24} className="text-white" />
+                      </div>
+                      <h2 className="text-3xl font-bold">Координационный совет</h2>
+                    </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                      {coordinationCouncil.map((member, index) => (
+                        <div key={index} className="p-4 rounded-lg border bg-muted/30">
+                          <span className="font-semibold text-sm block">{member.name}</span>
+                          {member.description && (
+                            <p className="text-xs text-muted-foreground mt-1">{member.description}</p>
+                          )}
                         </div>
                       ))}
                     </div>
@@ -101,6 +142,14 @@ const Home = () => {
                       <h2 className="text-3xl font-bold">Молодежное подразделение</h2>
                     </div>
                     <div className="space-y-4">
+                      <div className="space-y-3 mb-4">
+                        {youthLeadership.map((member, index) => (
+                          <div key={index} className="flex items-center justify-between p-4 rounded-lg border bg-muted/30">
+                            <span className="font-semibold">{member.name}</span>
+                            <span className="text-sm text-muted-foreground">{member.role}</span>
+                          </div>
+                        ))}
+                      </div>
                       <p className="text-muted-foreground leading-relaxed">
                         Молодежное подразделение Московского отделения РПА объединяет начинающих специалистов 
                         и студентов, интересующихся психотерапией. Мы организуем специальные образовательные 
