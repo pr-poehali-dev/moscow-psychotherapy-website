@@ -107,8 +107,8 @@ const About = () => {
                       <h3 className="text-2xl font-bold">Президент РПА</h3>
                     </div>
                     <div className="space-y-2">
-                      <h4 className="text-xl font-semibold">Макаров Виктор Викторович</h4>
-                      <p className="text-muted-foreground">Доктор медицинских наук, профессор, президент Российской психотерапевтической ассоциации</p>
+                      <h4 className="text-xl font-semibold">Бабин Сергей Михайлович</h4>
+                      <p className="text-muted-foreground">Доктор медицинских наук, профессор, врач-психотерапевт высшей категории</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -125,11 +125,19 @@ const About = () => {
                       <ul className="space-y-2 text-sm">
                         <li className="flex items-start space-x-2">
                           <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Катков Александр Лазаревич</span>
+                          <span>Караваева Татьяна Артуровна</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Незнанов Николай Григорьевич</span>
+                          <span>Ковпак Дмитрий Викторович</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Подсадный Сергей Александрович</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Ташлыков Виктор Анатольевич</span>
                         </li>
                         <li className="flex items-start space-x-2">
                           <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
@@ -161,17 +169,44 @@ const About = () => {
                     <CardContent className="p-6">
                       <div className="flex items-center space-x-3 mb-4">
                         <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                          <Icon name="Eye" size={20} className="text-white" />
+                          <Icon name="GraduationCap" size={20} className="text-white" />
                         </div>
                         <h3 className="text-lg font-bold">Совет супервизоров</h3>
                       </div>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Профессиональное развитие и контроль качества психотерапевтической практики
-                      </p>
-                      <div className="flex items-center space-x-2 text-xs text-muted-foreground">
-                        <Icon name="Mail" size={14} className="text-primary" />
-                        <span>supervision@rpa-russia.ru</span>
-                      </div>
+                      <ul className="space-y-1.5 text-xs text-muted-foreground">
+                        <li className="flex items-start space-x-1.5">
+                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Бабин С.М.</span>
+                        </li>
+                        <li className="flex items-start space-x-1.5">
+                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Кулаков С.А.</span>
+                        </li>
+                        <li className="flex items-start space-x-1.5">
+                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Ляшковская С.В.</span>
+                        </li>
+                        <li className="flex items-start space-x-1.5">
+                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Демьяненко А.М.</span>
+                        </li>
+                        <li className="flex items-start space-x-1.5">
+                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Еричев А.Н.</span>
+                        </li>
+                        <li className="flex items-start space-x-1.5">
+                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Исурина Г.Л.</span>
+                        </li>
+                        <li className="flex items-start space-x-1.5">
+                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Ковпак Д.В.</span>
+                        </li>
+                        <li className="flex items-start space-x-1.5">
+                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Подсадный С.А.</span>
+                        </li>
+                      </ul>
                     </CardContent>
                   </Card>
 
@@ -183,9 +218,20 @@ const About = () => {
                         </div>
                         <h3 className="text-lg font-bold">Ревизионная комиссия</h3>
                       </div>
-                      <p className="text-sm text-muted-foreground">
-                        Проверка финансово-хозяйственной деятельности и контроль за целевым использованием средств
-                      </p>
+                      <ul className="space-y-1.5 text-sm">
+                        <li className="flex items-start space-x-2">
+                          <Icon name="Check" size={14} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Полторак Станислав Валериевич</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <Icon name="Check" size={14} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Шарков Кирилл Сергеевич</span>
+                        </li>
+                        <li className="flex items-start space-x-2">
+                          <Icon name="Check" size={14} className="text-primary flex-shrink-0 mt-0.5" />
+                          <span>Леонтьева Инна Борисовна</span>
+                        </li>
+                      </ul>
                     </CardContent>
                   </Card>
                 </div>
