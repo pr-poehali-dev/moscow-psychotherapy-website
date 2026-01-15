@@ -31,6 +31,29 @@ const About = () => {
     },
   ];
 
+  const tasks = {
+    development: [
+      'Разработка и реализация программ и направлений, нацеленных на развитие и совершенствование психотерапевтической науки и практики',
+      'Содействие развитию и внедрению современных методов диагностики, лечения и реабилитации в психотерапии',
+      'Подготовка и проведение научно-практических мероприятий (семинары, конференции, симпозиумы, дискуссии и др.)',
+    ],
+    education: [
+      'Организация обучения и повышения квалификации, создание системы требований к регулярному повышению профессионального уровня',
+      'Разработка и применение требований к квалификации членов Организации',
+      'Разработка единых норм образования и развития квалификации для членов Организации',
+    ],
+    information: [
+      'Подготовка и выпуск учебно-методических пособий, программ, информационных материалов (в т.ч. на электронных носителях)',
+      'Информационная и издательская деятельность (электронные/печатные СМИ), распространение информации о психотерапии',
+      'Пропаганда и популяризация достижений психотерапии',
+    ],
+    community: [
+      'Координация деятельности специалистов и профессиональных объединений; защита профессиональных интересов и прав',
+      'Содействие созданию условий для активной профессиональной и общественной деятельности членов Организации',
+      'Взаимодействие с лечебно-профилактическими учреждениями, научными организациями, органами власти и общественными организациями по вопросам развития психотерапии и охраны психического здоровья',
+    ],
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Helmet>
@@ -91,175 +114,117 @@ const About = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
               <div className="lg:col-span-2 space-y-8">
-                <div className="text-center mb-8">
-                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Структура ассоциации</h2>
-                  <p className="text-lg text-muted-foreground">
-                    Руководство Российской психотерапевтической ассоциации
-                  </p>
-                </div>
-
-                <Card className="border-2">
-                  <CardContent className="p-8">
-                    <div className="flex items-center space-x-3 mb-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                        <Icon name="Crown" size={24} className="text-white" />
-                      </div>
-                      <h3 className="text-2xl font-bold">Президент РПА</h3>
-                    </div>
-                    <div className="space-y-2">
-                      <h4 className="text-xl font-semibold">Бабин Сергей Михайлович</h4>
-                      <p className="text-muted-foreground">Доктор медицинских наук, профессор, врач-психотерапевт высшей категории</p>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Card className="border-2 hover:shadow-lg transition-all">
-                    <CardContent className="p-6">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                          <Icon name="Users" size={20} className="text-white" />
-                        </div>
-                        <h3 className="text-lg font-bold">Вице-президенты</h3>
-                      </div>
-                      <ul className="space-y-2 text-sm">
-                        <li className="flex items-start space-x-2">
-                          <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Караваева Татьяна Артуровна</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Ковпак Дмитрий Викторович</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Подсадный Сергей Александрович</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Ташлыков Виктор Анатольевич</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Холмогорова Алла Борисовна</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-2 hover:shadow-lg transition-all">
-                    <CardContent className="p-6">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                          <Icon name="Scale" size={20} className="text-white" />
-                        </div>
-                        <h3 className="text-lg font-bold">Этический комитет</h3>
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Контроль соблюдения профессиональной этики и разрешение спорных ситуаций
-                      </p>
-                      <div className="flex items-center space-x-2 text-xs text-muted-foreground">
-                        <Icon name="Mail" size={14} className="text-primary" />
-                        <span>ethics@rpa-russia.ru</span>
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-2 hover:shadow-lg transition-all">
-                    <CardContent className="p-6">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                          <Icon name="GraduationCap" size={20} className="text-white" />
-                        </div>
-                        <h3 className="text-lg font-bold">Совет супервизоров</h3>
-                      </div>
-                      <ul className="space-y-1.5 text-xs text-muted-foreground">
-                        <li className="flex items-start space-x-1.5">
-                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Бабин С.М.</span>
-                        </li>
-                        <li className="flex items-start space-x-1.5">
-                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Кулаков С.А.</span>
-                        </li>
-                        <li className="flex items-start space-x-1.5">
-                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Ляшковская С.В.</span>
-                        </li>
-                        <li className="flex items-start space-x-1.5">
-                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Демьяненко А.М.</span>
-                        </li>
-                        <li className="flex items-start space-x-1.5">
-                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Еричев А.Н.</span>
-                        </li>
-                        <li className="flex items-start space-x-1.5">
-                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Исурина Г.Л.</span>
-                        </li>
-                        <li className="flex items-start space-x-1.5">
-                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Ковпак Д.В.</span>
-                        </li>
-                        <li className="flex items-start space-x-1.5">
-                          <Icon name="Check" size={12} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Подсадный С.А.</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-
-                  <Card className="border-2 hover:shadow-lg transition-all">
-                    <CardContent className="p-6">
-                      <div className="flex items-center space-x-3 mb-4">
-                        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                          <Icon name="FileCheck" size={20} className="text-white" />
-                        </div>
-                        <h3 className="text-lg font-bold">Ревизионная комиссия</h3>
-                      </div>
-                      <ul className="space-y-1.5 text-sm">
-                        <li className="flex items-start space-x-2">
-                          <Icon name="Check" size={14} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Полторак Станислав Валериевич</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <Icon name="Check" size={14} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Шарков Кирилл Сергеевич</span>
-                        </li>
-                        <li className="flex items-start space-x-2">
-                          <Icon name="Check" size={14} className="text-primary flex-shrink-0 mt-0.5" />
-                          <span>Леонтьева Инна Борисовна</span>
-                        </li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </div>
-
                 <Card className="border-2 bg-gradient-to-br from-primary/5 to-accent/10">
                   <CardContent className="p-8">
                     <div className="flex items-center space-x-3 mb-6">
                       <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                        <Icon name="Globe" size={24} className="text-white" />
+                        <Icon name="Target" size={24} className="text-white" />
                       </div>
-                      <h2 className="text-2xl font-bold">Региональные отделения</h2>
+                      <h2 className="text-3xl font-bold">Миссия</h2>
                     </div>
-                    <p className="text-muted-foreground mb-4">
-                      РПА объединяет специалистов по всей России. Региональные отделения работают в 45 субъектах РФ.
+                    <p className="text-muted-foreground leading-relaxed text-lg">
+                      Содействовать развитию психотерапевтической практики и науки в России, объединяя специалистов и организации в сфере охраны психического здоровья, координируя профессиональные инициативы, образовательные и научные проекты, а также поддерживая доступность и качество психотерапевтической помощи.
                     </p>
-                    <div className="space-y-3 mt-6">
-                      <div className="p-4 bg-background rounded-lg border">
-                        <div className="flex items-center space-x-2 mb-2">
-                          <Icon name="MapPin" size={16} className="text-primary" />
-                          <span className="font-medium">Московское отделение</span>
-                        </div>
-                        <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                          <Icon name="Mail" size={14} className="text-primary" />
-                          <span>moscow@rpa-russia.ru</span>
-                        </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-2">
+                  <CardContent className="p-8">
+                    <div className="flex items-center space-x-3 mb-6">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
+                        <Icon name="Flag" size={24} className="text-white" />
                       </div>
-                      <div className="text-sm text-muted-foreground">
-                        <p>Другие региональные отделения: Санкт-Петербург, Новосибирск, Екатеринбург и другие города</p>
+                      <h2 className="text-3xl font-bold">Цели Организации</h2>
+                    </div>
+                    <div className="space-y-4">
+                      <p className="text-muted-foreground leading-relaxed">
+                        Объединение усилий врачей, психологов и других специалистов для развития отечественной психотерапевтической науки и практики.
+                      </p>
+                      <ul className="space-y-3">
+                        <li className="flex items-start space-x-3">
+                          <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                            <span className="text-primary font-semibold text-sm">1</span>
+                          </div>
+                          <span className="text-muted-foreground">Оказание всесторонней помощи, защита законных прав и интересов членов Организации</span>
+                        </li>
+                        <li className="flex items-start space-x-3">
+                          <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                            <span className="text-primary font-semibold text-sm">2</span>
+                          </div>
+                          <span className="text-muted-foreground">Развитие международного сотрудничества в области психотерапевтической науки и практики</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-2">
+                  <CardContent className="p-8">
+                    <div className="flex items-center space-x-3 mb-6">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
+                        <Icon name="ListChecks" size={24} className="text-white" />
+                      </div>
+                      <h2 className="text-3xl font-bold">Задачи</h2>
+                    </div>
+                    <div className="space-y-6">
+                      <div>
+                        <h3 className="font-semibold text-lg mb-3 flex items-center">
+                          <Icon name="Lightbulb" size={20} className="mr-2 text-primary" />
+                          Развитие психотерапии (наука, практика, методы)
+                        </h3>
+                        <ul className="space-y-2 ml-7">
+                          {tasks.development.map((task, index) => (
+                            <li key={index} className="flex items-start space-x-2">
+                              <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                              <span className="text-sm text-muted-foreground">{task}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-lg mb-3 flex items-center">
+                          <Icon name="GraduationCap" size={20} className="mr-2 text-primary" />
+                          Образование и профессиональные стандарты
+                        </h3>
+                        <ul className="space-y-2 ml-7">
+                          {tasks.education.map((task, index) => (
+                            <li key={index} className="flex items-start space-x-2">
+                              <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                              <span className="text-sm text-muted-foreground">{task}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-lg mb-3 flex items-center">
+                          <Icon name="BookOpen" size={20} className="mr-2 text-primary" />
+                          Информация, просвещение, издательская деятельность
+                        </h3>
+                        <ul className="space-y-2 ml-7">
+                          {tasks.information.map((task, index) => (
+                            <li key={index} className="flex items-start space-x-2">
+                              <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                              <span className="text-sm text-muted-foreground">{task}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h3 className="font-semibold text-lg mb-3 flex items-center">
+                          <Icon name="Users" size={20} className="mr-2 text-primary" />
+                          Профессиональное сообщество, права и взаимодействие
+                        </h3>
+                        <ul className="space-y-2 ml-7">
+                          {tasks.community.map((task, index) => (
+                            <li key={index} className="flex items-start space-x-2">
+                              <Icon name="Check" size={16} className="text-primary flex-shrink-0 mt-0.5" />
+                              <span className="text-sm text-muted-foreground">{task}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
                     </div>
                   </CardContent>
@@ -267,87 +232,13 @@ const About = () => {
               </div>
 
               <div className="lg:col-span-1">
-                <EventsCalendar />
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20 bg-gradient-to-br from-accent/5 via-primary/5 to-secondary/10">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">О Российской психотерапевтической ассоциации</h2>
-                <p className="text-lg text-muted-foreground">
-                  Миссия, цели и задачи нашей организации
-                </p>
-              </div>
-
-              <div className="space-y-8">
-                <Card className="border-2">
-                  <CardContent className="p-8">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0">
-                        <Icon name="Target" size={24} className="text-white" />
-                      </div>
-                      <div className="space-y-3">
-                        <h3 className="text-2xl font-bold">Миссия</h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          Развитие и популяризация психотерапии в России, объединение профессионального сообщества и повышение качества психотерапевтической помощи населению.
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-2">
-                  <CardContent className="p-8">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0">
-                        <Icon name="CheckCircle" size={24} className="text-white" />
-                      </div>
-                      <div className="space-y-3">
-                        <h3 className="text-2xl font-bold">Основные направления деятельности</h3>
-                        <ul className="space-y-2 text-muted-foreground">
-                          <li className="flex items-start space-x-2">
-                            <Icon name="Check" size={18} className="text-primary flex-shrink-0 mt-0.5" />
-                            <span>Профессиональное образование и повышение квалификации специалистов</span>
-                          </li>
-                          <li className="flex items-start space-x-2">
-                            <Icon name="Check" size={18} className="text-primary flex-shrink-0 mt-0.5" />
-                            <span>Сертификация психотерапевтов и супервизоров</span>
-                          </li>
-                          <li className="flex items-start space-x-2">
-                            <Icon name="Check" size={18} className="text-primary flex-shrink-0 mt-0.5" />
-                            <span>Организация конференций, семинаров и научных мероприятий</span>
-                          </li>
-                          <li className="flex items-start space-x-2">
-                            <Icon name="Check" size={18} className="text-primary flex-shrink-0 mt-0.5" />
-                            <span>Разработка профессиональных стандартов и этических норм</span>
-                          </li>
-                          <li className="flex items-start space-x-2">
-                            <Icon name="Check" size={18} className="text-primary flex-shrink-0 mt-0.5" />
-                            <span>Защита профессиональных интересов психотерапевтов</span>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-2">
-                  <CardContent className="p-8">
-                    <div className="flex items-start space-x-4">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent flex-shrink-0">
-                        <Icon name="TrendingUp" size={24} className="text-white" />
-                      </div>
-                      <div className="space-y-3">
-                        <h3 className="text-2xl font-bold">Достижения</h3>
-                        <p className="text-muted-foreground leading-relaxed">
-                          РПА является крупнейшей профессиональной организацией психотерапевтов в России с многолетней историей. Ассоциация объединяет более 3000 специалистов и имеет региональные представительства в 45 субъектах РФ.
-                        </p>
-                      </div>
-                    </div>
+                <Card className="border-2 sticky top-8">
+                  <CardContent className="p-6">
+                    <h3 className="text-2xl font-bold mb-4 flex items-center">
+                      <Icon name="Calendar" size={24} className="mr-2 text-primary" />
+                      Мероприятия
+                    </h3>
+                    <EventsCalendar />
                   </CardContent>
                 </Card>
               </div>
