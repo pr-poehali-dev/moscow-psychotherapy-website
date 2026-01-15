@@ -82,9 +82,9 @@ const About = () => {
                     Найти специалиста
                   </Button>
                 </Link>
-                <Link to="/structure">
+                <Link to="/contacts">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                    Структура РПА
+                    Контакты
                   </Button>
                 </Link>
               </div>

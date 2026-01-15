@@ -8,7 +8,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Specialists from "./pages/Specialists";
 import FAQ from "./pages/FAQ";
-import Structure from "./pages/Structure";
+
 import Documents from "./pages/Documents";
 import Contacts from "./pages/Contacts";
 import Events from "./pages/Events";
@@ -35,7 +35,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/specialists" element={<Specialists />} />
           <Route path="/faq" element={<FAQ />} />
-          <Route path="/structure" element={<Structure />} />
+
           <Route path="/documents" element={<Documents />} />
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/sections" element={<Sections />} />
