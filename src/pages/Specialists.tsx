@@ -17,7 +17,7 @@ const Specialists = () => {
     {
       id: 1,
       name: 'Романюта Юлия Александровна',
-      photo: '👩‍⚕️',
+      photo: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/files/46249b4d-3910-4b88-ae78-ae7839a1addb.jpg',
       workplace: 'Москва',
       contacts: '+7 (911) 572-10-99',
       education: 'Психолог, сертифицированный гештальт-терапевт',
@@ -190,7 +190,9 @@ const Specialists = () => {
                       <div className="flex flex-col space-y-4">
                         <div className="flex items-start justify-between">
                           <div className="flex items-center space-x-4">
-                            <div className="text-5xl">{specialist.photo}</div>
+                            <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                              <img src={specialist.photo} alt={specialist.name} className="w-full h-full object-cover" />
+                            </div>
                             <div>
                               <h3 className="text-xl font-semibold mb-1">{specialist.name}</h3>
                               <Badge className={specialist.status === 'Действительный член' 
