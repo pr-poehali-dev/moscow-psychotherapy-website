@@ -13,6 +13,13 @@ const Specialists = () => {
   const [selectedApproach, setSelectedApproach] = useState('all');
   const [selectedAgeGroup, setSelectedAgeGroup] = useState('all');
   const [selectedIssue, setSelectedIssue] = useState('all');
+  const [expandedCards, setExpandedCards] = useState<number[]>([]);
+
+  const toggleCard = (id: number) => {
+    setExpandedCards(prev => 
+      prev.includes(id) ? prev.filter(cardId => cardId !== id) : [...prev, id]
+    );
+  };
 
   const specialists = [
     {
@@ -807,26 +814,28 @@ const Specialists = () => {
     )
   ).sort();
 
-  const filteredSpecialists = specialists.filter((specialist) => {
-    const matchesSearch = 
-      specialist.name.toLowerCase().includes(searchQuery.toLowerCase());
-    
-    const matchesApproach = 
-      selectedApproach === 'all' || 
-      specialist.approach.toLowerCase().includes(selectedApproach.toLowerCase());
-    
-    const matchesAgeGroup = 
-      selectedAgeGroup === 'all' || 
-      specialist.ageGroups.toLowerCase().includes(selectedAgeGroup.toLowerCase());
+  const filteredSpecialists = specialists
+    .filter((specialist) => {
+      const matchesSearch = 
+        specialist.name.toLowerCase().includes(searchQuery.toLowerCase());
+      
+      const matchesApproach = 
+        selectedApproach === 'all' || 
+        specialist.approach.toLowerCase().includes(selectedApproach.toLowerCase());
+      
+      const matchesAgeGroup = 
+        selectedAgeGroup === 'all' || 
+        specialist.ageGroups.toLowerCase().includes(selectedAgeGroup.toLowerCase());
 
-    const matchesIssue = 
-      selectedIssue === 'all' || 
-      specialist.mainIssues.some(issue => 
-        issue.toLowerCase().includes(selectedIssue.toLowerCase())
-      );
+      const matchesIssue = 
+        selectedIssue === 'all' || 
+        specialist.mainIssues.some(issue => 
+          issue.toLowerCase().includes(selectedIssue.toLowerCase())
+        );
 
-    return matchesSearch && matchesApproach && matchesAgeGroup && matchesIssue;
-  });
+      return matchesSearch && matchesApproach && matchesAgeGroup && matchesIssue;
+    })
+    .sort((a, b) => a.name.localeCompare(b.name, 'ru'));
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -911,121 +920,139 @@ const Specialists = () => {
               </Card>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {filteredSpecialists.map((specialist) => (
-                  <Card key={specialist.id} className="hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
-                    <CardContent className="p-6">
-                      <div className="flex flex-col space-y-4">
-                        <div className="flex items-start justify-between">
-                          <div className="flex items-center space-x-4">
-                            <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
-                              <img src={specialist.photo} alt={specialist.name} className="w-full h-full object-cover" />
-                            </div>
-                            <div>
-                              <h3 className="text-xl font-semibold mb-1">{specialist.name}</h3>
-                              <Badge className={specialist.status === 'Действительный член' 
-                                ? 'bg-primary text-primary-foreground' 
-                                : 'bg-accent text-accent-foreground'}>
-                                {specialist.status}
-                              </Badge>
+                {filteredSpecialists.map((specialist) => {
+                  const isExpanded = expandedCards.includes(specialist.id);
+                  
+                  return (
+                    <Card key={specialist.id} className="hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
+                      <CardContent className="p-6">
+                        <div className="flex flex-col space-y-4">
+                          <div className="flex items-start justify-between">
+                            <div className="flex items-center space-x-4">
+                              <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                                <img src={specialist.photo} alt={specialist.name} className="w-full h-full object-cover" />
+                              </div>
+                              <div>
+                                <h3 className="text-xl font-semibold mb-1">{specialist.name}</h3>
+                                <Badge className={specialist.status === 'Действительный член' 
+                                  ? 'bg-primary text-primary-foreground' 
+                                  : 'bg-accent text-accent-foreground'}>
+                                  {specialist.status}
+                                </Badge>
+                              </div>
                             </div>
                           </div>
+
+                          <div className="space-y-3 text-sm">
+                            <div className="flex items-start space-x-2">
+                              <Icon name="MapPin" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                              <div>
+                                <p className="font-medium">Место проживания:</p>
+                                <p className="text-muted-foreground">{specialist.location}</p>
+                              </div>
+                            </div>
+
+                            <div className="flex items-start space-x-2">
+                              <Icon name="Target" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                              <div>
+                                <p className="font-medium">Направление психотерапии:</p>
+                                <p className="text-muted-foreground">{specialist.approach}</p>
+                              </div>
+                            </div>
+
+                            {isExpanded && (
+                              <>
+                                <div className="flex items-start space-x-2">
+                                  <Icon name="GraduationCap" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                                  <div>
+                                    <p className="font-medium">Образование:</p>
+                                    <p className="text-muted-foreground">{specialist.education}</p>
+                                  </div>
+                                </div>
+
+                                <div className="flex items-start space-x-2">
+                                  <Icon name="BookOpen" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                                  <div>
+                                    <p className="font-medium">Специальность:</p>
+                                    <p className="text-muted-foreground">{specialist.specialty}</p>
+                                  </div>
+                                </div>
+
+                                <div className="flex items-start space-x-2">
+                                  <Icon name="Briefcase" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                                  <div>
+                                    <p className="font-medium">Место работы:</p>
+                                    <p className="text-muted-foreground">{specialist.workplace}</p>
+                                  </div>
+                                </div>
+
+                                {specialist.phone && (
+                                  <div className="flex items-start space-x-2">
+                                    <Icon name="Phone" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                                    <div>
+                                      <p className="font-medium">Профессиональные контакты:</p>
+                                      <p className="text-muted-foreground">{specialist.phone}</p>
+                                    </div>
+                                  </div>
+                                )}
+
+                                {specialist.website && (
+                                  <div className="flex items-start space-x-2">
+                                    <Icon name="Globe" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                                    <div>
+                                      <p className="font-medium">Сайт:</p>
+                                      <a href={specialist.website} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{specialist.website}</a>
+                                    </div>
+                                  </div>
+                                )}
+
+                                {specialist.email && (
+                                  <div className="flex items-start space-x-2">
+                                    <Icon name="Mail" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                                    <div>
+                                      <p className="font-medium">Почта:</p>
+                                      <a href={`mailto:${specialist.email}`} className="text-primary hover:underline">{specialist.email}</a>
+                                    </div>
+                                  </div>
+                                )}
+
+                                {specialist.mainIssues.length > 0 && (
+                                  <div className="flex items-start space-x-2">
+                                    <Icon name="MessageCircle" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                                    <div>
+                                      <p className="font-medium">Основные запросы:</p>
+                                      <ul className="text-muted-foreground list-disc list-inside space-y-1">
+                                        {specialist.mainIssues.map((issue, idx) => (
+                                          <li key={idx}>{issue}</li>
+                                        ))}
+                                      </ul>
+                                    </div>
+                                  </div>
+                                )}
+
+                                <div className="flex items-start space-x-2">
+                                  <Icon name="Users" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                                  <div>
+                                    <p className="font-medium">Возраст клиентов:</p>
+                                    <p className="text-muted-foreground">{specialist.ageGroups}</p>
+                                  </div>
+                                </div>
+                              </>
+                            )}
+                          </div>
+
+                          <button
+                            onClick={() => toggleCard(specialist.id)}
+                            className="mt-4 flex items-center justify-center gap-2 w-full py-2 text-primary hover:bg-primary/5 rounded-md transition-colors"
+                          >
+                            <span className="font-medium">{isExpanded ? 'Свернуть' : 'Подробнее'}</span>
+                            <Icon name={isExpanded ? 'ChevronUp' : 'ChevronDown'} size={20} />
+                          </button>
                         </div>
-
-                        <div className="space-y-3 text-sm">
-                          <div className="flex items-start space-x-2">
-                            <Icon name="MapPin" size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                            <div>
-                              <p className="font-medium">Место проживания:</p>
-                              <p className="text-muted-foreground">{specialist.location}</p>
-                            </div>
-                          </div>
-
-                          <div className="flex items-start space-x-2">
-                            <Icon name="GraduationCap" size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                            <div>
-                              <p className="font-medium">Образование:</p>
-                              <p className="text-muted-foreground">{specialist.education}</p>
-                            </div>
-                          </div>
-
-                          <div className="flex items-start space-x-2">
-                            <Icon name="BookOpen" size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                            <div>
-                              <p className="font-medium">Специальность:</p>
-                              <p className="text-muted-foreground">{specialist.specialty}</p>
-                            </div>
-                          </div>
-
-                          <div className="flex items-start space-x-2">
-                            <Icon name="Target" size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                            <div>
-                              <p className="font-medium">Направление психотерапии:</p>
-                              <p className="text-muted-foreground">{specialist.approach}</p>
-                            </div>
-                          </div>
-
-                          <div className="flex items-start space-x-2">
-                            <Icon name="Briefcase" size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                            <div>
-                              <p className="font-medium">Место работы:</p>
-                              <p className="text-muted-foreground">{specialist.workplace}</p>
-                            </div>
-                          </div>
-
-                          {specialist.phone && (
-                            <div className="flex items-start space-x-2">
-                              <Icon name="Phone" size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                              <div>
-                                <p className="font-medium">Профессиональные контакты:</p>
-                                <p className="text-muted-foreground">{specialist.phone}</p>
-                              </div>
-                            </div>
-                          )}
-
-                          {specialist.website && (
-                            <div className="flex items-start space-x-2">
-                              <Icon name="Globe" size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                              <div>
-                                <p className="font-medium">Сайт:</p>
-                                <a href={specialist.website} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{specialist.website}</a>
-                              </div>
-                            </div>
-                          )}
-
-                          {specialist.email && (
-                            <div className="flex items-start space-x-2">
-                              <Icon name="Mail" size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                              <div>
-                                <p className="font-medium">Почта:</p>
-                                <a href={`mailto:${specialist.email}`} className="text-primary hover:underline">{specialist.email}</a>
-                              </div>
-                            </div>
-                          )}
-
-                          <div className="flex items-start space-x-2">
-                            <Icon name="MessageCircle" size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                            <div>
-                              <p className="font-medium">Основные запросы:</p>
-                              <ul className="text-muted-foreground list-disc list-inside space-y-1">
-                                {specialist.mainIssues.map((issue, idx) => (
-                                  <li key={idx}>{issue}</li>
-                                ))}
-                              </ul>
-                            </div>
-                          </div>
-
-                          <div className="flex items-start space-x-2">
-                            <Icon name="Users" size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                            <div>
-                              <p className="font-medium">Возраст клиентов:</p>
-                              <p className="text-muted-foreground">{specialist.ageGroups}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
+                      </CardContent>
+                    </Card>
+                  );
+                })}
               </div>
 
               {filteredSpecialists.length === 0 && (
