@@ -12,6 +12,7 @@ const Specialists = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedApproach, setSelectedApproach] = useState('all');
   const [selectedAgeGroup, setSelectedAgeGroup] = useState('all');
+  const [selectedIssue, setSelectedIssue] = useState('all');
 
   const specialists = [
     {
@@ -798,21 +799,33 @@ const Specialists = () => {
     },
   ];
 
+  const allIssues = Array.from(
+    new Set(
+      specialists
+        .flatMap(s => s.mainIssues)
+        .filter(issue => issue.length > 0)
+    )
+  ).sort();
+
   const filteredSpecialists = specialists.filter((specialist) => {
     const matchesSearch = 
       specialist.name.toLowerCase().includes(searchQuery.toLowerCase());
     
     const matchesApproach = 
       selectedApproach === 'all' || 
-      specialist.approaches.some(approach => 
-        approach.toLowerCase().includes(selectedApproach.toLowerCase())
-      );
+      specialist.approach.toLowerCase().includes(selectedApproach.toLowerCase());
     
     const matchesAgeGroup = 
       selectedAgeGroup === 'all' || 
       specialist.ageGroups.toLowerCase().includes(selectedAgeGroup.toLowerCase());
 
-    return matchesSearch && matchesApproach && matchesAgeGroup;
+    const matchesIssue = 
+      selectedIssue === 'all' || 
+      specialist.mainIssues.some(issue => 
+        issue.toLowerCase().includes(selectedIssue.toLowerCase())
+      );
+
+    return matchesSearch && matchesApproach && matchesAgeGroup && matchesIssue;
   });
 
   return (
@@ -840,7 +853,7 @@ const Specialists = () => {
             <div className="max-w-7xl mx-auto space-y-8">
               <Card className="border-2">
                 <CardContent className="p-6">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div className="relative">
                       <Icon name="Search" size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
                       <Input
@@ -863,6 +876,8 @@ const Specialists = () => {
                         <SelectItem value="семейная">Семейная</SelectItem>
                         <SelectItem value="арт">Арт-терапия</SelectItem>
                         <SelectItem value="экзистенциальная">Экзистенциальная</SelectItem>
+                        <SelectItem value="схема">Схема-терапия</SelectItem>
+                        <SelectItem value="логотерапия">Логотерапия</SelectItem>
                       </SelectContent>
                     </Select>
 
@@ -875,6 +890,20 @@ const Specialists = () => {
                         <SelectItem value="Дети">Дети</SelectItem>
                         <SelectItem value="Подростки">Подростки</SelectItem>
                         <SelectItem value="Взрослые">Взрослые</SelectItem>
+                      </SelectContent>
+                    </Select>
+
+                    <Select value={selectedIssue} onValueChange={setSelectedIssue}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Запрос" />
+                      </SelectTrigger>
+                      <SelectContent className="max-h-80">
+                        <SelectItem value="all">Все запросы</SelectItem>
+                        {allIssues.map((issue, idx) => (
+                          <SelectItem key={idx} value={issue.toLowerCase()}>
+                            {issue}
+                          </SelectItem>
+                        ))}
                       </SelectContent>
                     </Select>
                   </div>
