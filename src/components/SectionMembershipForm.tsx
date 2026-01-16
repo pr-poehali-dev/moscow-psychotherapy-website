@@ -36,7 +36,24 @@ const SectionMembershipForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    console.log('Заявка на вступление в секцию:', formData);
+    const emailBody = `
+Заявка на вступление в секцию психоанализа МО РПА
+
+ФИО: ${formData.fullName}
+Номер членского билета: ${formData.membershipNumber}
+Email: ${formData.email}
+Телефон: ${formData.phone}
+
+Опыт работы в психоанализе:
+${formData.experience}
+
+Мотивация для вступления:
+${formData.motivation}
+    `;
+    
+    const mailtoLink = `mailto:rpa.moscow@yandex.ru?subject=${encodeURIComponent('Заявка на вступление в секцию психоанализа')}&body=${encodeURIComponent(emailBody)}`;
+    
+    window.location.href = mailtoLink;
     
     setIsSubmitted(true);
     toast({
@@ -90,7 +107,7 @@ const SectionMembershipForm = () => {
                 Вернуться назад
               </Button>
               <Button asChild>
-                <a href="mailto:psychoanalysis@mo-rpa.ru">
+                <a href="mailto:rpa.moscow@yandex.ru">
                   <Icon name="Mail" size={16} className="mr-2" />
                   Связаться с руководителем
                 </a>

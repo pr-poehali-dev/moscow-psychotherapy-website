@@ -30,7 +30,7 @@ const Sections = () => {
       'Информационная поддержка и профессиональные материалы',
       'Возможность выступить на конференциях секции',
     ],
-    contact: 'psychoanalysis@mo-rpa.ru',
+    contact: 'rpa.moscow@yandex.ru',
   };
 
   return (
@@ -119,7 +119,9 @@ const Sections = () => {
                         <div className="pt-4 border-t space-y-4">
                           <div className="flex items-center space-x-2 text-sm">
                             <Icon name="Mail" size={16} className="text-primary" />
-                            <span className="text-muted-foreground">{section.contact}</span>
+                            <a href={`mailto:${section.contact}`} className="text-muted-foreground hover:text-primary transition-colors">
+                              {section.contact}
+                            </a>
                           </div>
                           
                           <div className="bg-accent/10 p-4 rounded-lg">
