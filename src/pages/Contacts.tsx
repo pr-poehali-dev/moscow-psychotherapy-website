@@ -41,7 +41,9 @@ const Contacts = () => {
                       </div>
                     </div>
                     <div className="pl-15">
-                      <p className="text-lg font-medium">+7 (495) 123-45-67</p>
+                      <a href="tel:+74951096740" className="text-lg font-medium hover:text-primary transition-colors">
+                        +7 (495) 109-67-40
+                      </a>
                       <p className="text-sm text-muted-foreground mt-1">Пн-Пт: 10:00 - 18:00</p>
                     </div>
                   </CardContent>
@@ -59,7 +61,9 @@ const Contacts = () => {
                       </div>
                     </div>
                     <div className="pl-15">
-                      <p className="text-lg font-medium">info@mo-rpa.ru</p>
+                      <a href="mailto:rpa.moscow@yandex.ru" className="text-lg font-medium hover:text-primary transition-colors">
+                        rpa.moscow@yandex.ru
+                      </a>
                       <p className="text-sm text-muted-foreground mt-1">Общие вопросы</p>
                     </div>
                   </CardContent>
@@ -77,8 +81,7 @@ const Contacts = () => {
                       </div>
                     </div>
                     <div className="pl-15">
-                      <p className="font-medium">г. Москва, ул. Примерная, д. 1</p>
-                      <p className="text-sm text-muted-foreground mt-1">м. Парк Культуры</p>
+                      <p className="font-medium">г. Москва, ул. Большая Спасская, д. 12, офис 7</p>
                     </div>
                   </CardContent>
                 </Card>
