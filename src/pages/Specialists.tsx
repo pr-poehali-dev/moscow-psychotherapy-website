@@ -18,86 +18,35 @@ const Specialists = () => {
       id: 1,
       name: 'Романюта Юлия Александровна',
       photo: 'https://cdn.poehali.dev/files/РОманюта.jpg',
-      workplace: 'Москва',
-      contacts: '+7 (911) 572-10-99',
+      location: 'Москва',
       education: 'Психолог, сертифицированный гештальт-терапевт',
-      specialization: 'Гештальт-терапия',
-      degree: '',
-      approaches: ['Гештальт-терапия'],
-      ageGroups: ['Взрослые'],
+      specialty: 'Гештальт-терапия',
+      approach: 'Гештальт-терапия',
+      workplace: 'Частная практика',
+      phone: '+7 (911) 572-10-99',
+      website: '',
+      email: '',
       mainIssues: ['Кризисы возрастные, экзистенциальные, профессиональные', 'Родительство детей ОВЗ', 'Финансовые запросы'],
+      ageGroups: 'Взрослые (от 18 лет)',
+      approaches: ['Гештальт-терапия'],
       status: 'Член РПА',
     },
     {
       id: 2,
       name: 'Азовских Светлана Валерьевна',
       photo: 'https://cdn.poehali.dev/files/Азовских.jpg',
-      workplace: 'Частная практика',
-      contacts: '+7 925 777-51-90, azovskikh@gmail.com',
+      location: 'Москва',
       education: 'Уральский федеральный университет им. Первого президента России Б. Н. Ельцина, бакалавр философии. Московский институт психоанализа, магистр психологии, прикладной психоанализ и психоаналитическое консультирование. Международная школа групп-анализа, групп-анализ и групповая психотерапия.',
-      specialization: 'Психоаналитический психотерапевт, групп-аналитик',
-      degree: '',
-      approaches: ['Психоаналитическая терапия'],
-      ageGroups: ['Взрослые'],
-      mainIssues: ['Страхи. Тревога.', 'Стыд. Проблемы в самоопределении. Скованность.', 'Сомнения в нормальности текущих или прошлых взаимоотношений с близкими, коллегами, друзьями. Сложности в любовных отношениях. Отсутствие отношений.', 'Ощущение собственной незаметности, ничтожности.', 'Скорбь. Обида. Ненависть.', 'Сексуальное насилие, неправомерные сексуализированные действия, домогательства в любой период жизни.', 'Свидетельство насилия, смерти, трагедий.'],
-      status: 'Член РПА',
-      website: 'http://azovskikh.ru',
-    },
-    {
-      id: 3,
-      name: 'Смирнова Ольга Владимировна',
-      photo: '👩‍⚕️',
+      specialty: 'Психоаналитический психотерапевт, групп-аналитик',
+      approach: 'Психоанализ',
       workplace: 'Частная практика',
-      contacts: '+7 (495) 345-67-89, smirnova@example.com',
-      education: 'СПбГУ, психология',
-      specialization: 'Гештальт-терапия',
-      degree: '',
-      approaches: ['Гештальт-терапия'],
-      ageGroups: ['Взрослые', 'Подростки'],
-      mainIssues: ['Эмоциональная регуляция'],
-      status: 'Кандидат',
-    },
-    {
-      id: 4,
-      name: 'Козлов Андрей Николаевич',
-      photo: '👨‍⚕️',
-      workplace: 'Семейный центр "Содружество"',
-      contacts: '+7 (495) 456-78-90, kozlov@example.com',
-      education: 'РГГУ, семейная психология',
-      specialization: 'Семейная психология',
-      degree: 'Кандидат психологических наук',
-      approaches: ['Семейная системная терапия'],
-      ageGroups: ['Взрослые', 'Дети', 'Подростки'],
-      mainIssues: ['Семейные конфликты', 'Развод'],
-      status: 'Действительный член',
-    },
-    {
-      id: 5,
-      name: 'Новикова Мария Игоревна',
-      photo: '👩‍⚕️',
-      workplace: 'Центр творческой терапии',
-      contacts: '+7 (495) 567-89-01, novikova@example.com',
-      education: 'МГУ им. М.В. Ломоносова',
-      specialization: 'Арт-терапия',
-      degree: '',
-      approaches: ['Арт-терапия'],
-      ageGroups: ['Дети', 'Подростки', 'Взрослые'],
-      mainIssues: ['Психотравма', 'Самовыражение'],
-      status: 'Кандидат',
-    },
-    {
-      id: 6,
-      name: 'Волков Сергей Петрович',
-      photo: '👨‍⚕️',
-      workplace: 'Институт экзистенциальной психологии',
-      contacts: '+7 (495) 678-90-12, volkov@example.com',
-      education: 'МГППУ',
-      specialization: 'Экзистенциальная терапия',
-      degree: 'Доктор психологических наук',
-      approaches: ['Экзистенциальная терапия'],
-      ageGroups: ['Взрослые'],
-      mainIssues: ['Поиск смысла', 'Выгорание'],
-      status: 'Действительный член',
+      phone: '+7 925 777-51-90',
+      website: 'http://azovskikh.ru',
+      email: 'azovskikh@gmail.com',
+      mainIssues: ['Страхи. Тревога.', 'Стыд. Проблемы в самоопределении. Скованность.', 'Сомнения в нормальности текущих или прошлых взаимоотношений с близкими, коллегами, друзьями. Сложности в любовных отношениях. Отсутствие отношений.', 'Ощущение собственной незаметности, ничтожности.', 'Скорбь. Обида. Ненависть.', 'Сексуальное насилие, неправомерные сексуализированные действия, домогательства в любой период жизни.', 'Свидетельство насилия, смерти, трагедий.'],
+      ageGroups: 'Взрослые (от 20 лет)',
+      approaches: ['Психоаналитическая терапия'],
+      status: 'Член РПА',
     },
   ];
 
@@ -113,7 +62,7 @@ const Specialists = () => {
     
     const matchesAgeGroup = 
       selectedAgeGroup === 'all' || 
-      specialist.ageGroups.includes(selectedAgeGroup);
+      specialist.ageGroups.toLowerCase().includes(selectedAgeGroup.toLowerCase());
 
     return matchesSearch && matchesApproach && matchesAgeGroup;
   });
@@ -207,18 +156,10 @@ const Specialists = () => {
 
                         <div className="space-y-3 text-sm">
                           <div className="flex items-start space-x-2">
-                            <Icon name="Briefcase" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                            <Icon name="MapPin" size={16} className="mt-0.5 text-primary flex-shrink-0" />
                             <div>
-                              <p className="font-medium">Место работы:</p>
-                              <p className="text-muted-foreground">{specialist.workplace}</p>
-                            </div>
-                          </div>
-
-                          <div className="flex items-start space-x-2">
-                            <Icon name="Contact" size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                            <div>
-                              <p className="font-medium">Контакты:</p>
-                              <p className="text-muted-foreground">{specialist.contacts}</p>
+                              <p className="font-medium">Место проживания:</p>
+                              <p className="text-muted-foreground">{specialist.location}</p>
                             </div>
                           </div>
 
@@ -233,34 +174,74 @@ const Specialists = () => {
                           <div className="flex items-start space-x-2">
                             <Icon name="BookOpen" size={16} className="mt-0.5 text-primary flex-shrink-0" />
                             <div>
-                              <p className="font-medium">Специализация:</p>
-                              <p className="text-muted-foreground">{specialist.specialization}</p>
-                            </div>
-                          </div>
-
-                          {specialist.degree && (
-                            <div className="flex items-start space-x-2">
-                              <Icon name="Award" size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                              <div>
-                                <p className="font-medium">Ученая степень:</p>
-                                <p className="text-muted-foreground">{specialist.degree}</p>
-                              </div>
-                            </div>
-                          )}
-
-                          <div className="flex items-start space-x-2">
-                            <Icon name="Users" size={16} className="mt-0.5 text-primary flex-shrink-0" />
-                            <div>
-                              <p className="font-medium">Категория клиентов:</p>
-                              <p className="text-muted-foreground">{specialist.ageGroups.join(', ')}</p>
+                              <p className="font-medium">Специальность:</p>
+                              <p className="text-muted-foreground">{specialist.specialty}</p>
                             </div>
                           </div>
 
                           <div className="flex items-start space-x-2">
                             <Icon name="Target" size={16} className="mt-0.5 text-primary flex-shrink-0" />
                             <div>
+                              <p className="font-medium">Направление психотерапии:</p>
+                              <p className="text-muted-foreground">{specialist.approach}</p>
+                            </div>
+                          </div>
+
+                          <div className="flex items-start space-x-2">
+                            <Icon name="Briefcase" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                            <div>
+                              <p className="font-medium">Место работы:</p>
+                              <p className="text-muted-foreground">{specialist.workplace}</p>
+                            </div>
+                          </div>
+
+                          {specialist.phone && (
+                            <div className="flex items-start space-x-2">
+                              <Icon name="Phone" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                              <div>
+                                <p className="font-medium">Профессиональные контакты:</p>
+                                <p className="text-muted-foreground">{specialist.phone}</p>
+                              </div>
+                            </div>
+                          )}
+
+                          {specialist.website && (
+                            <div className="flex items-start space-x-2">
+                              <Icon name="Globe" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                              <div>
+                                <p className="font-medium">Сайт:</p>
+                                <a href={specialist.website} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{specialist.website}</a>
+                              </div>
+                            </div>
+                          )}
+
+                          {specialist.email && (
+                            <div className="flex items-start space-x-2">
+                              <Icon name="Mail" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                              <div>
+                                <p className="font-medium">Почта:</p>
+                                <a href={`mailto:${specialist.email}`} className="text-primary hover:underline">{specialist.email}</a>
+                              </div>
+                            </div>
+                          )}
+
+                          <div className="flex items-start space-x-2">
+                            <Icon name="MessageCircle" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                            <div>
                               <p className="font-medium">Основные запросы:</p>
-                              <p className="text-muted-foreground">{specialist.mainIssues.join(', ')}</p>
+                              <ul className="text-muted-foreground list-disc list-inside space-y-1">
+                                {specialist.mainIssues.map((issue, idx) => (
+                                  <li key={idx}>{issue}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          </div>
+
+                          <div className="flex items-start space-x-2">
+                            <Icon name="Users" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                            <div>
+                              <p className="font-medium">Возраст клиентов:</p>
+                              <p className="text-muted-foreground">{specialist.ageGroups}</p>
                             </div>
                           </div>
                         </div>
