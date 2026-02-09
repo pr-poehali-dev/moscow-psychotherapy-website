@@ -16,11 +16,11 @@ const About = () => {
   ];
 
   const coordinationCouncil = [
-    { name: 'Бегиджанова Юлия Александровна', description: 'Практикующий психолог, семейная системная психотерапия, схема терапия (индивидуальная, парная) работа с парами, семьями' },
+    { name: 'Бегиджанова Юлия Александровна', description: 'Практикующий психолог, семейная системная психотерапия, схема терапия (индивидуальная, парная) работа с парами, семьями', specialistId: 36 },
     { name: 'Малышева Татьяна Борисовна', description: 'Магистр психологии, клинический психолог, сексолог РНСО. Аккредитованный терапевт и супервизор Московского Гештальт Института' },
-    { name: 'Москвин Вячеслав Вячеславович', description: 'Клинический психолог, когнитивно-поведенческий терапевт' },
-    { name: 'Степанова Екатерина Сергеевна', description: 'Психолог, супервизор РПА, преподаватель, мультимодальный и психоаналитический подходы' },
-    { name: 'Шатина Анастасия Михайловна', description: 'Аккредитованный терапевт и аккредитованный супервизор программы «МГИ» ОПП ГП, психолог, действительный член ОПП ГП, РПА, EAGT' },
+    { name: 'Москвин Вячеслав Вячеславович', description: 'Клинический психолог, когнитивно-поведенческий терапевт', specialistId: 35 },
+    { name: 'Степанова Екатерина Сергеевна', description: 'Психолог, супервизор РПА, преподаватель, мультимодальный и психоаналитический подходы', specialistId: 31 },
+    { name: 'Шатина Анастасия Михайловна', description: 'Аккредитованный терапевт и аккредитованный супервизор программы «МГИ» ОПП ГП, психолог, действительный член ОПП ГП, РПА, EAGT', specialistId: 56 },
   ];
 
   const youthLeadership = [
@@ -265,7 +265,13 @@ const About = () => {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                       {coordinationCouncil.map((member, index) => (
                         <div key={index} className="p-4 rounded-lg border bg-muted/30">
-                          <span className="font-semibold text-sm block">{member.name}</span>
+                          {member.specialistId ? (
+                            <Link to={`/specialists#specialist-${member.specialistId}`}>
+                              <span className="font-semibold text-sm block text-primary hover:underline cursor-pointer">{member.name}</span>
+                            </Link>
+                          ) : (
+                            <span className="font-semibold text-sm block">{member.name}</span>
+                          )}
                           {member.description && (
                             <p className="text-xs text-muted-foreground mt-1">{member.description}</p>
                           )}

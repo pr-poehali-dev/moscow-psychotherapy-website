@@ -1248,7 +1248,7 @@ const Specialists = () => {
                   const isExpanded = expandedCards.includes(specialist.id);
                   
                   return (
-                    <Card key={specialist.id} className="hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
+                    <Card key={specialist.id} id={`specialist-${specialist.id}`} className="hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20 scroll-mt-20">
                       <CardContent className="p-6">
                         <div className="flex flex-col space-y-4">
                           <div className="flex items-start justify-between">
