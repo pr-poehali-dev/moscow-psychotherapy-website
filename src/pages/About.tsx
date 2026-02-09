@@ -11,7 +11,7 @@ import Icon from '@/components/ui/icon';
 const About = () => {
   const leadership = [
     { name: 'Бородин Владимир Иванович', role: 'Председатель', description: 'Вице-президент Союза охраны психического здоровья, д.м.н. врач-психиатр высшей категории, профессор Учебно-методического отдела ФГБУ «НМИЦ психиатрии и наркологии им. В.П. Сербского» Минздрава России' },
-    { name: 'Мальцева Екатерина Витальевна', role: 'Исполнительный директор', description: 'Директор Союза охраны психического здоровья, директор АНО ДПО "НОЦ СМТ", клинический психолог, заместитель председателя' },
+    { name: 'Мальцева Екатерина Витальевна', role: 'Исполнительный директор', description: 'Директор Союза охраны психического здоровья, директор АНО ДПО "НОЦ СМТ", клинический психолог.' },
     { name: 'Корнешов Алексей Александрович', role: 'Заместитель исполнительного директора по финансовым вопросам', description: 'Доктор экономических наук, кандидат психологических наук, психоаналитический психолог, клинический психолог, психолог консультант' },
   ];
 
@@ -238,7 +238,15 @@ const About = () => {
                             <span className="text-sm text-muted-foreground mt-1 sm:mt-0">{member.role}</span>
                           </div>
                           {member.description && (
-                            <p className="text-sm text-muted-foreground mt-2">{member.description}</p>
+                            <p className="text-sm text-muted-foreground mt-2">
+                              {member.name === 'Мальцева Екатерина Витальевна' ? (
+                                <>
+                                  Директор <a href="https://mental-health-russia.ru/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Союза охраны психического здоровья</a>, директор <a href="https://rosmededucation.ru/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">АНО ДПО "НОЦ СМТ"</a>, клинический психолог.
+                                </>
+                              ) : (
+                                member.description
+                              )}
+                            </p>
                           )}
                         </div>
                       ))}
