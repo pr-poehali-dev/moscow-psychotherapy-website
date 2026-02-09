@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,11 +10,28 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import Icon from '@/components/ui/icon';
 
 const Specialists = () => {
+  const location = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedApproach, setSelectedApproach] = useState('all');
   const [selectedAgeGroup, setSelectedAgeGroup] = useState('all');
   const [selectedIssue, setSelectedIssue] = useState('all');
   const [expandedCards, setExpandedCards] = useState<number[]>([]);
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          const specialistId = parseInt(id.replace('specialist-', ''));
+          if (!isNaN(specialistId) && !expandedCards.includes(specialistId)) {
+            setExpandedCards(prev => [...prev, specialistId]);
+          }
+        }, 100);
+      }
+    }
+  }, [location]);
 
   const toggleCard = (id: number) => {
     setExpandedCards(prev => 
