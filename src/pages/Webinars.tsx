@@ -15,63 +15,20 @@ const Webinars = () => {
   const webinars = [
     {
       id: 1,
-      title: 'Основы КПТ: работа с автоматическими мыслями',
-      date: '15 декабря 2024',
-      duration: '2 часа 15 мин',
-      category: 'КПТ',
-      speaker: 'Иванова Елена Александровна',
-      views: 1250,
-      description: 'Практическое руководство по выявлению и работе с автоматическими мыслями в рамках когнитивно-поведенческой терапии.',
-    },
-    {
-      id: 2,
-      title: 'Психодинамический подход в современной терапии',
-      date: '8 декабря 2024',
-      duration: '3 часа',
-      category: 'Психоанализ',
-      speaker: 'Петров Дмитрий Сергеевич',
-      views: 890,
-      description: 'Обзор психодинамических техник и их применение в работе с клиентами.',
-    },
-    {
-      id: 3,
-      title: 'Гештальт-терапия: работа с незавершенными ситуациями',
-      date: '1 декабря 2024',
-      duration: '1 час 45 мин',
-      category: 'Гештальт',
-      speaker: 'Смирнова Ольга Владимировна',
-      views: 1450,
-      description: 'Техники завершения гештальтов и работа с незакрытыми ситуациями из прошлого.',
-    },
-    {
-      id: 4,
-      title: 'Семейная терапия: системный подход',
-      date: '25 ноября 2024',
-      duration: '2 часа 30 мин',
+      title: 'Терапия отношений родителей и подростков «А баба яга против»',
+      price: 1000,
+      speaker: 'Екатерина Степанова',
+      speakerTitle: 'Член Российской Психотерапевтической Ассоциации (РПА), преподаватель НОЦ Современных Медицинских Технологий',
       category: 'Семейная терапия',
-      speaker: 'Козлов Андрей Николаевич',
-      views: 760,
-      description: 'Системный взгляд на семью как единицу терапии. Работа с семейными паттернами.',
-    },
-    {
-      id: 5,
-      title: 'Арт-терапия при работе с травмой',
-      date: '18 ноября 2024',
-      duration: '2 часа',
-      category: 'Арт-терапия',
-      speaker: 'Новикова Мария Игоревна',
-      views: 1120,
-      description: 'Использование творческих методов в работе с травматическим опытом.',
-    },
-    {
-      id: 6,
-      title: 'Экзистенциальная терапия: поиск смысла',
-      date: '10 ноября 2024',
-      duration: '2 часа 20 мин',
-      category: 'Экзистенциальная',
-      speaker: 'Волков Сергей Петрович',
-      views: 980,
-      description: 'Работа с экзистенциальными вопросами клиентов: смысл, свобода, ответственность.',
+      description: 'Кто на самом деле становится клиентом психолога при работе с проблемами подростка, какие существуют ловушки в терапии и способы их обхода, как сделать из родителя не контрагента, а помощника — без вины виноватые.',
+      format: 'Видеоурок',
+      access: 'Доступ с момента оплаты на 30 дней',
+      bonuses: [
+        'Подробный конспект лекции для удобства работы с темой',
+        'Стартовый набор психолога: работа с подростками и родителями'
+      ],
+      buyUrl: 'https://rosmededucation.ru/samoobrazovanie',
+      isPaid: true,
     },
   ];
 
@@ -137,50 +94,81 @@ const Webinars = () => {
                 </CardContent>
               </Card>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                 {filteredWebinars.map((webinar) => (
                   <Card key={webinar.id} className="border-2 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
                     <CardContent className="p-6">
                       <div className="space-y-4">
-                        <div className="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center">
-                          <Icon name="Play" size={48} className="text-primary" />
-                        </div>
-
                         <div className="space-y-3">
                           <div className="flex items-start justify-between gap-2">
-                            <h3 className="text-xl font-semibold flex-1">{webinar.title}</h3>
-                            <Badge className="bg-primary/10 text-primary">
-                              {webinar.category}
-                            </Badge>
+                            <h3 className="text-xl font-bold flex-1">{webinar.title}</h3>
+                            {webinar.isPaid && (
+                              <Badge className="bg-accent/20 text-accent-foreground">
+                                Платный
+                              </Badge>
+                            )}
                           </div>
 
-                          <p className="text-sm text-muted-foreground line-clamp-2">
-                            {webinar.description}
-                          </p>
+                          <Badge className="bg-primary/10 text-primary">
+                            {webinar.category}
+                          </Badge>
 
-                          <div className="flex items-center space-x-2 text-sm text-muted-foreground">
-                            <Icon name="User" size={14} className="text-primary" />
-                            <span>{webinar.speaker}</span>
-                          </div>
+                          {webinar.price && (
+                            <div className="flex items-baseline gap-2">
+                              <span className="text-3xl font-bold text-primary">{webinar.price} ₽</span>
+                            </div>
+                          )}
 
-                          <div className="grid grid-cols-2 gap-2 text-xs text-muted-foreground">
-                            <div className="flex items-center space-x-1">
-                              <Icon name="Calendar" size={12} className="text-primary" />
-                              <span>{webinar.date}</span>
-                            </div>
-                            <div className="flex items-center space-x-1">
-                              <Icon name="Clock" size={12} className="text-primary" />
-                              <span>{webinar.duration}</span>
-                            </div>
-                            <div className="flex items-center space-x-1">
-                              <Icon name="Eye" size={12} className="text-primary" />
-                              <span>{webinar.views} просмотров</span>
+                          <div className="space-y-2">
+                            <div className="flex items-start gap-2">
+                              <Icon name="User" size={16} className="text-primary mt-1 flex-shrink-0" />
+                              <div className="text-sm">
+                                <p className="font-semibold">{webinar.speaker}</p>
+                                {webinar.speakerTitle && (
+                                  <p className="text-muted-foreground">{webinar.speakerTitle}</p>
+                                )}
+                              </div>
                             </div>
                           </div>
 
-                          <Button className="w-full">
-                            <Icon name="Play" size={16} className="mr-2" />
-                            Смотреть запись
+                          <div className="space-y-2">
+                            <p className="font-semibold text-sm">О чем вебинар:</p>
+                            <p className="text-sm text-muted-foreground">
+                              {webinar.description}
+                            </p>
+                          </div>
+
+                          {webinar.format && (
+                            <div className="space-y-1">
+                              <p className="font-semibold text-sm">Формат:</p>
+                              <p className="text-sm text-muted-foreground">{webinar.format}</p>
+                              {webinar.access && (
+                                <p className="text-sm text-muted-foreground">{webinar.access}</p>
+                              )}
+                            </div>
+                          )}
+
+                          {webinar.bonuses && webinar.bonuses.length > 0 && (
+                            <div className="space-y-2">
+                              <p className="font-semibold text-sm">Бонусы:</p>
+                              <ul className="space-y-1">
+                                {webinar.bonuses.map((bonus, index) => (
+                                  <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                    <Icon name="Gift" size={14} className="text-accent mt-0.5 flex-shrink-0" />
+                                    <span>{bonus}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          )}
+
+                          <Button 
+                            className="w-full" 
+                            size="lg"
+                            onClick={() => window.open(webinar.buyUrl, '_blank')}
+                          >
+                            <Icon name="ShoppingCart" size={18} className="mr-2" />
+                            Купить вебинар
                           </Button>
                         </div>
                       </div>
