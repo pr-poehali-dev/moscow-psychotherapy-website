@@ -4,7 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
+
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Icon from '@/components/ui/icon';
@@ -100,36 +100,32 @@ const Podcasts = () => {
                 {filteredPodcasts.map((podcast) => (
                   <Card key={podcast.id} className="border-2 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
                     <CardContent className="p-0">
-                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <div className="relative overflow-hidden rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none bg-gradient-to-br from-primary/5 to-accent/10">
-                          <iframe
-                            src={`https://rutube.ru/play/embed/${podcast.rutubeUrl.split('/video/')[1]?.replace('/', '')}`}
-                            frameBorder="0"
-                            allow="clipboard-write; autoplay"
-                            allowFullScreen
-                            className="w-full aspect-video"
-                          />
-                          <div className="absolute top-4 left-4 z-10">
-                            <Badge className="bg-accent text-accent-foreground">
-                              Эпизод {podcast.episodeNumber}
-                            </Badge>
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                        <div className="space-y-4 lg:border-r">
+                          <div className="relative overflow-hidden rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none bg-gradient-to-br from-primary/5 to-accent/10">
+                            <iframe
+                              src={`https://rutube.ru/play/embed/${podcast.rutubeUrl.split('/video/')[1]?.replace('/', '')}`}
+                              frameBorder="0"
+                              allow="clipboard-write; autoplay"
+                              allowFullScreen
+                              className="w-full aspect-video"
+                            />
                           </div>
-                          {!podcast.isPaid && (
-                            <div className="absolute top-4 right-4 z-10">
-                              <Badge className="bg-green-500 text-white">
-                                Бесплатно
+
+                          <div className="px-6 space-y-3">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <Badge className="bg-accent text-accent-foreground">
+                                Эпизод {podcast.episodeNumber}
+                              </Badge>
+                              {!podcast.isPaid && (
+                                <Badge className="bg-green-500 text-white">
+                                  Бесплатно
+                                </Badge>
+                              )}
+                              <Badge className="bg-primary/10 text-primary">
+                                {podcast.category}
                               </Badge>
                             </div>
-                          )}
-                        </div>
-
-                        <div className="p-6 space-y-4">
-                          <div className="space-y-3">
-                            <h3 className="text-2xl font-bold">{podcast.title}</h3>
-
-                            <Badge className="bg-primary/10 text-primary">
-                              {podcast.category}
-                            </Badge>
 
                             <div className="flex items-center gap-2 text-sm text-muted-foreground">
                               <Icon name="Clock" size={16} className="text-primary" />
@@ -176,6 +172,12 @@ const Podcasts = () => {
                                 </div>
                               ))}
                             </div>
+                          </div>
+                        </div>
+
+                        <div className="p-6 space-y-4">
+                          <div className="space-y-3">
+                            <h3 className="text-2xl font-bold">{podcast.title}</h3>
 
                             <div className="space-y-2">
                               <p className="font-semibold text-sm">О чем эпизод:</p>
@@ -198,15 +200,7 @@ const Podcasts = () => {
                               </div>
                             )}
 
-                            <Button 
-                              className="w-full" 
-                              size="lg"
-                              variant="outline"
-                              onClick={() => window.open(podcast.rutubeUrl, '_blank')}
-                            >
-                              <Icon name="ExternalLink" size={18} className="mr-2" />
-                              Открыть на Rutube
-                            </Button>
+
                           </div>
                         </div>
                       </div>
