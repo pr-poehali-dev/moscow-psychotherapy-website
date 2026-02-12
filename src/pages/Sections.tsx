@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EventsCalendar from '@/components/EventsCalendar';
@@ -9,6 +10,9 @@ const Sections = () => {
   const section = {
     name: 'Секция психоанализа и психоаналитически ориентированной психотерапии',
     coordinator: 'Корнешов Алексей Александрович',
+    coordinatorId: 52,
+    coordinatorTitle: 'Заместитель исполнительного директора по финансовым вопросам',
+    coordinatorCredentials: 'Доктор экономических наук, кандидат психологических наук, психоаналитический психолог, клинический психолог, психолог консультант',
     description: 'Профессиональное сообщество психоаналитически ориентированных терапевтов Московского отделения РПА. Секция объединяет специалистов, работающих в психоаналитической парадигме, для обмена опытом, профессионального развития и популяризации психоанализа.',
     activities: [
       'Регулярные теоретические семинары по классическому и современному психоанализу',
@@ -57,9 +61,23 @@ const Sections = () => {
                       <div className="space-y-6">
                         <div>
                           <h2 className="text-3xl font-bold mb-3">{section.name}</h2>
-                          <div className="flex items-center space-x-2 text-muted-foreground">
-                            <Icon name="User" size={16} className="text-primary" />
-                            <span className="font-medium">Руководитель: {section.coordinator}</span>
+                          <div className="space-y-2">
+                            <div className="flex items-start space-x-2">
+                              <Icon name="User" size={16} className="text-primary mt-1 flex-shrink-0" />
+                              <div>
+                                <p className="font-medium">
+                                  Руководитель:{' '}
+                                  <Link 
+                                    to={`/specialists#specialist-${section.coordinatorId}`}
+                                    className="text-primary hover:underline"
+                                  >
+                                    {section.coordinator}
+                                  </Link>
+                                </p>
+                                <p className="text-sm text-muted-foreground mt-1">{section.coordinatorTitle}</p>
+                                <p className="text-sm text-muted-foreground mt-1">{section.coordinatorCredentials}</p>
+                              </div>
+                            </div>
                           </div>
                         </div>
 
