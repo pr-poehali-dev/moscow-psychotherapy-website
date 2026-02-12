@@ -14,43 +14,12 @@ const Materials = () => {
   const articles = [
     {
       id: 1,
-      title: 'Протоколы работы с паническими атаками',
-      type: 'Методические материалы',
-      category: 'КПТ',
-      description: 'Пошаговое руководство по работе с паническими атаками в рамках когнитивно-поведенческой терапии.',
-      date: '10 декабря 2024',
-      size: '2.5 МБ',
-      format: 'PDF',
-    },
-    {
-      id: 2,
-      title: 'Техники заземления при работе с травмой',
-      type: 'Методические материалы',
-      category: 'Травма',
-      description: 'Коллекция техник заземления для стабилизации клиентов в травматерапии.',
-      date: '5 декабря 2024',
-      size: '1.8 МБ',
-      format: 'PDF',
-    },
-    {
-      id: 3,
-      title: 'Супервизорский чек-лист',
-      type: 'Инструменты',
-      category: 'Супервизия',
-      description: 'Чек-лист для проведения супервизорских сессий и анализа случаев.',
-      date: '28 ноября 2024',
-      size: '450 КБ',
-      format: 'DOCX',
-    },
-    {
-      id: 4,
-      title: 'Генограмма: инструкция по построению',
-      type: 'Методические материалы',
-      category: 'Семейная терапия',
-      description: 'Подробное руководство по построению и анализу генограмм в семейной терапии.',
-      date: '20 ноября 2024',
-      size: '3.2 МБ',
-      format: 'PDF',
+      title: 'Исследования эффективности психотерапии психических расстройств: история и современное состояние проблемы',
+      type: 'Монография',
+      category: 'Научные исследования',
+      description: 'Монография адресована широкому кругу специалистов, интересующихся современными научными данными об эффективности психотерапии и о факторах, от которых она зависит: психологам, психиатрам, врачам других специальностей, социальным работникам.',
+      authors: 'А.Б. Холмогорова, Н.Г. Гаранян, О.Д. Пуговкина',
+      url: 'http://pk.mgppu.ru/научная-работа/публикации-преподавателей/а-б-холмогорова-н-г-гаранян-о-д-пуговки/',
     },
   ];
 
@@ -181,34 +150,37 @@ const Materials = () => {
                         <div className="flex items-start justify-between gap-4">
                           <div className="flex items-start space-x-4 flex-1">
                             <div className="flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent">
-                              <Icon name="FileText" size={28} className="text-white" />
+                              <Icon name="BookOpen" size={28} className="text-white" />
                             </div>
                             <div className="flex-1 space-y-2">
                               <div className="flex items-start gap-2">
                                 <h3 className="text-xl font-semibold flex-1">{article.title}</h3>
                                 <Badge className="bg-primary/10 text-primary">{article.category}</Badge>
                               </div>
+                              {article.authors && (
+                                <p className="text-sm text-primary font-medium">
+                                  Авторы: {article.authors}
+                                </p>
+                              )}
                               <p className="text-sm text-muted-foreground">{article.description}</p>
-                              <div className="flex flex-wrap gap-4 text-xs text-muted-foreground">
-                                <span className="flex items-center space-x-1">
-                                  <Icon name="Calendar" size={12} />
-                                  <span>{article.date}</span>
-                                </span>
-                                <span className="flex items-center space-x-1">
-                                  <Icon name="HardDrive" size={12} />
-                                  <span>{article.size}</span>
-                                </span>
-                                <span className="flex items-center space-x-1">
-                                  <Icon name="File" size={12} />
-                                  <span>{article.format}</span>
-                                </span>
-                              </div>
+                              {article.type && (
+                                <Badge variant="outline" className="text-xs">{article.type}</Badge>
+                              )}
                             </div>
                           </div>
-                          <Button>
-                            <Icon name="Download" size={16} className="mr-2" />
-                            Скачать
-                          </Button>
+                          {article.url ? (
+                            <Button asChild>
+                              <a href={article.url} target="_blank" rel="noopener noreferrer">
+                                <Icon name="ExternalLink" size={16} className="mr-2" />
+                                Читать
+                              </a>
+                            </Button>
+                          ) : (
+                            <Button>
+                              <Icon name="Download" size={16} className="mr-2" />
+                              Скачать
+                            </Button>
+                          )}
                         </div>
                       </CardContent>
                     </Card>
