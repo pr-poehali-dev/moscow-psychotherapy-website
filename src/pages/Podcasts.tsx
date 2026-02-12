@@ -126,27 +126,22 @@ const Podcasts = () => {
                                       >
                                         {host.name}
                                       </Link>
+                                    ) : host.organizationUrl ? (
+                                      <a 
+                                        href={host.organizationUrl} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="font-semibold hover:text-primary transition-colors underline"
+                                      >
+                                        {host.name}
+                                      </a>
                                     ) : (
                                       <p className="font-semibold">{host.name}</p>
                                     )}
                                     <p className="text-muted-foreground">
                                       {host.role}
                                       {host.organization && (
-                                        <>
-                                          {' '}
-                                          {host.organizationUrl ? (
-                                            <a 
-                                              href={host.organizationUrl} 
-                                              target="_blank" 
-                                              rel="noopener noreferrer"
-                                              className="text-primary hover:underline"
-                                            >
-                                              {host.organization}
-                                            </a>
-                                          ) : (
-                                            host.organization
-                                          )}
-                                        </>
+                                        <> {host.organization}</>
                                       )}
                                     </p>
                                   </div>
