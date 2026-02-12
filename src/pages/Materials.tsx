@@ -60,7 +60,7 @@ const Materials = () => {
       title: 'Экспериментальные методики патопсихологии',
       author: 'Сусанна Рубинштейн',
       description: 'Фундаментальное пособие по патопсихологическим исследованиям и экспериментальным методикам.',
-      cover: '📘',
+      coverImage: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/files/f7c6e722-b63c-422e-b4f1-6506bdfbf7b7.jpg',
       publisher: 'Издательство Городец',
       url: 'https://gorodets.ru/page/s-sopz',
     },
@@ -69,27 +69,27 @@ const Materials = () => {
       title: 'Ненависть',
       author: 'Жаннет Фишер',
       description: 'Исследование эмоции ненависти с точки зрения психологии и психотерапии.',
-      cover: '📗',
+      coverImage: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/files/82eaddcd-e6ec-413c-a9e9-418b0084f097.jpg',
       publisher: 'Издательство Городец',
       series: 'СОПЗ. Психология и психиатрия',
-      url: 'https://gorodets.ru/page/s-sopz',
+      url: 'https://gorodets.ru/product/nenavist#s_flip_book/',
     },
     {
       id: 3,
       title: 'Всё желанное со мной: Нарцисс и нарциссизм',
       author: 'Жаннет Фишер',
       description: 'Глубокий анализ нарциссизма и нарциссических расстройств личности.',
-      cover: '📕',
+      coverImage: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/files/b6c60bc9-8dce-490c-8cd5-390d201f09b1.jpg',
       publisher: 'Издательство Городец',
       series: 'СОПЗ. Психология и психиатрия',
-      url: 'https://gorodets.ru/page/s-sopz',
+      url: 'https://gorodets.ru/product/vse-zhelannoe-so-mnoy-nartsiss-i-nartsissizm#s_flip_book/',
     },
     {
       id: 4,
       title: 'Черты лица',
       author: 'Елена Долгопят',
       description: 'Исследование психологии и восприятия личности.',
-      cover: '📙',
+      coverImage: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/files/4ce22762-c403-434c-ba70-7f2a0c366737.jpg',
       publisher: 'Издательство Городец',
       url: 'https://gorodets.ru/page/s-sopz',
     },
@@ -241,7 +241,15 @@ const Materials = () => {
                       <Card key={book.id} className="border-2 hover:shadow-lg transition-all">
                         <CardContent className="p-6">
                           <div className="flex items-start space-x-4">
-                            <div className="text-6xl">{book.cover}</div>
+                            {book.coverImage ? (
+                              <img 
+                                src={book.coverImage} 
+                                alt={book.title}
+                                className="w-24 h-32 object-cover rounded-lg shadow-md flex-shrink-0"
+                              />
+                            ) : (
+                              <div className="text-6xl">{book.cover}</div>
+                            )}
                             <div className="flex-1 space-y-2">
                               <h3 className="text-xl font-semibold">{book.title}</h3>
                               <p className="text-sm text-primary font-medium">{book.author}</p>
