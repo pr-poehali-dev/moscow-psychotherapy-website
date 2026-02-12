@@ -10,14 +10,14 @@ import Icon from '@/components/ui/icon';
 
 const About = () => {
   const leadership = [
-    { name: 'Бородин Владимир Иванович', role: 'Председатель', description: 'Вице-президент Союза охраны психического здоровья, д.м.н. врач-психиатр высшей категории, профессор Учебно-методического отдела ФГБУ «НМИЦ психиатрии и наркологии им. В.П. Сербского» Минздрава России' },
+    { name: 'Бородин Владимир Иванович', role: 'Председатель', description: 'Вице-президент Союза охраны психического здоровья, д.м.н. врач-психиатр высшей категории, профессор Учебно-методического отдела ФГБУ «НМИЦ психиатрии и наркологии им. В.П. Сербского» Минздрава России', specialistId: 58 },
     { name: 'Мальцева Екатерина Витальевна', role: 'Исполнительный директор', description: 'Директор Союза охраны психического здоровья, директор АНО ДПО "НОЦ СМТ", клинический психолог.' },
-    { name: 'Корнешов Алексей Александрович', role: 'Заместитель исполнительного директора по финансовым вопросам', description: 'Доктор экономических наук, кандидат психологических наук, психоаналитический психолог, клинический психолог, психолог консультант' },
+    { name: 'Корнешов Алексей Александрович', role: 'Заместитель исполнительного директора по финансовым вопросам', description: 'Доктор экономических наук, кандидат психологических наук, психоаналитический психолог, клинический психолог, психолог консультант', specialistId: 52 },
   ];
 
   const coordinationCouncil = [
     { name: 'Бегиджанова Юлия Александровна', description: 'Практикующий психолог, семейная системная психотерапия, схема терапия (индивидуальная, парная) работа с парами, семьями', specialistId: 36 },
-    { name: 'Малышева Татьяна Борисовна', description: 'Магистр психологии, клинический психолог, сексолог РНСО. Аккредитованный терапевт и супервизор Московского Гештальт Института' },
+    { name: 'Малышева Татьяна Борисовна', description: 'Магистр психологии, клинический психолог, сексолог РНСО. Аккредитованный терапевт и супервизор Московского Гештальт Института', specialistId: 37 },
     { name: 'Москвин Вячеслав Вячеславович', description: 'Клинический психолог, когнитивно-поведенческий терапевт', specialistId: 35 },
     { name: 'Степанова Екатерина Сергеевна', description: 'Психолог, супервизор РПА, преподаватель, мультимодальный и психоаналитический подходы', specialistId: 31 },
     { name: 'Шатина Анастасия Михайловна', description: 'Аккредитованный терапевт и аккредитованный супервизор программы «МГИ» ОПП ГП, психолог, действительный член ОПП ГП, РПА, EAGT', specialistId: 56 },
@@ -234,7 +234,18 @@ const About = () => {
                       {leadership.map((member, index) => (
                         <div key={index} className="p-4 rounded-lg border bg-muted/30">
                           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-2">
-                            <span className="font-semibold">{member.name}</span>
+                            <span className="font-semibold">
+                              {member.specialistId ? (
+                                <Link 
+                                  to={`/specialists#specialist-${member.specialistId}`}
+                                  className="text-foreground hover:text-primary hover:underline transition-colors"
+                                >
+                                  {member.name}
+                                </Link>
+                              ) : (
+                                member.name
+                              )}
+                            </span>
                             <span className="text-sm text-muted-foreground mt-1 sm:mt-0">{member.role}</span>
                           </div>
                           {member.description && (
@@ -293,7 +304,18 @@ const About = () => {
                       <div className="space-y-3 mb-4">
                         {youthLeadership.map((member, index) => (
                           <div key={index} className="flex items-center justify-between p-4 rounded-lg border bg-muted/30">
-                            <span className="font-semibold">{member.name}</span>
+                            <span className="font-semibold">
+                              {member.specialistId ? (
+                                <Link 
+                                  to={`/specialists#specialist-${member.specialistId}`}
+                                  className="text-foreground hover:text-primary hover:underline transition-colors"
+                                >
+                                  {member.name}
+                                </Link>
+                              ) : (
+                                member.name
+                              )}
+                            </span>
                             <span className="text-sm text-muted-foreground">{member.role}</span>
                           </div>
                         ))}
