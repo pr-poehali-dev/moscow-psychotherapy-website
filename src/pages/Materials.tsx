@@ -91,7 +91,7 @@ const Materials = () => {
       description: 'Исследование психологии и восприятия личности.',
       coverImage: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/files/4ce22762-c403-434c-ba70-7f2a0c366737.jpg',
       publisher: 'Издательство Городец',
-      url: 'https://gorodets.ru/page/s-sopz',
+      url: 'https://gorodets.ru/product/cherty-litsa#s_flip_book/',
     },
   ];
 
