@@ -202,14 +202,14 @@ const Podcasts = () => {
 
                             <div className="space-y-2">
                               <p className="font-semibold text-sm">Поделиться с друзьями:</p>
-                              <div className="flex gap-2">
+                              <div className="grid grid-cols-2 gap-2">
                                 <button
                                   onClick={() => {
                                     const url = encodeURIComponent(window.location.href);
                                     const title = encodeURIComponent(podcast.title);
                                     window.open(`https://vk.com/share.php?url=${url}&title=${title}`, '_blank', 'width=600,height=400');
                                   }}
-                                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#0077FF] hover:bg-[#0066DD] text-white rounded-md transition-colors"
+                                  className="flex items-center justify-center gap-2 px-4 py-2 bg-[#0077FF] hover:bg-[#0066DD] text-white rounded-md transition-colors"
                                 >
                                   <Icon name="Share2" size={16} />
                                   <span className="text-sm font-medium">ВКонтакте</span>
@@ -220,7 +220,7 @@ const Podcasts = () => {
                                     const text = encodeURIComponent(podcast.title);
                                     window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
                                   }}
-                                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#0088CC] hover:bg-[#0077BB] text-white rounded-md transition-colors"
+                                  className="flex items-center justify-center gap-2 px-4 py-2 bg-[#0088CC] hover:bg-[#0077BB] text-white rounded-md transition-colors"
                                 >
                                   <Icon name="Send" size={16} />
                                   <span className="text-sm font-medium">Telegram</span>
@@ -231,10 +231,21 @@ const Podcasts = () => {
                                     const text = `${podcast.title} - ${url}`;
                                     window.open(`https://connect.ok.ru/offer?url=${encodeURIComponent(url)}&title=${encodeURIComponent(podcast.title)}`, '_blank', 'width=600,height=400');
                                   }}
-                                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#EE8208] hover:bg-[#DD7707] text-white rounded-md transition-colors"
+                                  className="flex items-center justify-center gap-2 px-4 py-2 bg-[#EE8208] hover:bg-[#DD7707] text-white rounded-md transition-colors"
                                 >
                                   <Icon name="Share2" size={16} />
                                   <span className="text-sm font-medium">ОК</span>
+                                </button>
+                                <button
+                                  onClick={() => {
+                                    const url = encodeURIComponent(window.location.href);
+                                    const text = encodeURIComponent(podcast.title);
+                                    window.open(`https://api.maks.me/share?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+                                  }}
+                                  className="flex items-center justify-center gap-2 px-4 py-2 bg-[#FF0033] hover:bg-[#EE0022] text-white rounded-md transition-colors"
+                                >
+                                  <Icon name="MessageCircle" size={16} />
+                                  <span className="text-sm font-medium">МАКС</span>
                                 </button>
                               </div>
                             </div>
