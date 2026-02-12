@@ -4,7 +4,6 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Icon from '@/components/ui/icon';
@@ -17,80 +16,97 @@ const Webinars = () => {
     {
       id: 1,
       title: 'Терапия отношений родителей и подростков «А баба яга против»',
-      price: 1000,
-      speaker: 'Степанова Екатерина Сергеевна',
-      speakerTitle: 'Член Российской Психотерапевтической Ассоциации (РПА), преподаватель НОЦ Современных Медицинских Технологий',
-      speakerId: 31,
+      episodeNumber: 1,
+      speaker: { 
+        name: 'Степанова Екатерина Сергеевна', 
+        role: 'Член Российской Психотерапевтической Ассоциации (РПА), преподаватель НОЦ Современных Медицинских Технологий',
+        specialistId: 31
+      },
       category: 'Семейная терапия',
       description: 'Кто на самом деле становится клиентом психолога при работе с проблемами подростка, какие существуют ловушки в терапии и способы их обхода, как сделать из родителя не контрагента, а помощника — без вины виноватые.',
-      format: 'Видеоурок',
-      access: 'Доступ с момента оплаты на 30 дней',
-      bonuses: [
-        'Подробный конспект лекции для удобства работы с темой',
-        'Стартовый набор психолога: работа с подростками и родителями'
+      topics: [
+        'Кто на самом деле клиент при работе с подростком',
+        'Ловушки терапии и способы их обхода',
+        'Превращение родителя в помощника'
       ],
-      buyUrl: 'https://rosmededucation.ru/samoobrazovanie',
+      duration: '90 мин',
+      rutubeUrl: 'https://rutube.ru/video/placeholder1/',
+      coverImage: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/840d7e71-5bff-4dd8-827c-689bf1dbf525.png',
       isPaid: true,
+      price: 1000,
     },
     {
       id: 2,
       title: 'Психолог и границы компетенции «Как работать, если чувствуешь, что клиенту нужна не только терапия»',
-      price: 1000,
-      speaker: 'Бородин Владимир Иванович',
-      speakerTitle: 'ДМН, профессор, врач-психиатр, психотерапевт, Руководитель отделения проблем реабилитации отдела пограничной психиатрии ГНЦССП им. В.П. Сербского',
-      speakerId: 58,
+      episodeNumber: 2,
+      speaker: { 
+        name: 'Бородин Владимир Иванович', 
+        role: 'ДМН, профессор, врач-психиатр, психотерапевт, Руководитель отделения проблем реабилитации отдела пограничной психиатрии ГНЦССП им. В.П. Сербского',
+        specialistId: 58
+      },
       category: 'Профессиональная этика',
       description: 'Лекция посвящена критической роли профессиональных границ в психологическом консультировании и психотерапии. В ней подробно разбирается, как границы, выполняя структурирующую, а не просто ограничивающую функцию, определяют эффективность этих видов помощи, и рассматриваются их конкретные виды, этические и технические аспекты.',
-      format: 'Видеоурок',
-      access: 'Доступ с момента оплаты на 30 дней',
-      bonuses: [
-        'Чек-лист «Красные флаги»: какие симптомы требуют срочного вмешательства',
-        'Подробный конспект лекции для удобства работы с темой'
+      topics: [
+        'Роль профессиональных границ',
+        'Структурирующая функция границ',
+        'Этические и технические аспекты'
       ],
-      buyUrl: 'https://rosmededucation.ru/samoobrazovanie',
+      duration: '90 мин',
+      rutubeUrl: 'https://rutube.ru/video/placeholder2/',
+      coverImage: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/840d7e71-5bff-4dd8-827c-689bf1dbf525.png',
       isPaid: true,
+      price: 1000,
     },
     {
       id: 3,
       title: 'Системный взгляд психолога: «Как отличить личностные особенности от психопатологии»',
-      price: 1000,
-      speaker: 'Карпуль Анна Михайловна',
-      speakerTitle: 'Клинический, психоаналитический, кризисный и перинатальный психолог. Член Российской психотерапевтической ассоциации, Ассоциации Специалистов Психоаналитической Психосоматики (АСПП), Международной ассоциации психологов',
-      speakerId: 8,
+      episodeNumber: 3,
+      speaker: { 
+        name: 'Карпуль Анна Михайловна', 
+        role: 'Клинический, психоаналитический, кризисный и перинатальный психолог. Член Российской психотерапевтической ассоциации, Ассоциации Специалистов Психоаналитической Психосоматики (АСПП), Международной ассоциации психологов',
+        specialistId: 8
+      },
       category: 'Диагностика',
       description: 'Четкая система вместо неопределенности: 4 критерия, чтобы точно отличить норму от патологии, и их применение на практике, как применять системный подход в диагностике и разбор реальных кейсов из практики.',
-      format: 'Видеоурок',
-      access: 'Доступ с момента оплаты на 90 дней',
-      bonuses: [
-        'Дифференциальный навигатор психолога',
-        'Подробный конспект лекции для удобства работы с темой'
+      topics: [
+        '4 критерия отличия нормы от патологии',
+        'Применение на практике',
+        'Разбор реальных кейсов'
       ],
-      buyUrl: 'https://rosmededucation.ru/samoobrazovanie',
+      duration: '90 мин',
+      rutubeUrl: 'https://rutube.ru/video/placeholder3/',
+      coverImage: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/840d7e71-5bff-4dd8-827c-689bf1dbf525.png',
       isPaid: true,
+      price: 1000,
     },
     {
       id: 4,
       title: '«Мне больше не хочется жить». Что делать психологу?',
-      price: 1000,
-      speaker: 'Шмакова Евгения Владимировна',
-      speakerTitle: 'Клинический психолог, криминальный психолог, заместитель директора Союза охраны психического здоровья. Преподаватель Научно-образовательного центра современных медицинских технологий (НОЦ СМТ), член Российской психотерапевтической ассоциации (РПА)',
+      episodeNumber: 4,
+      speaker: { 
+        name: 'Шмакова Евгения Владимировна', 
+        role: 'Клинический психолог, криминальный психолог, заместитель директора Союза охраны психического здоровья. Преподаватель АНО ДПО "НОЦ СМТ", действительный член МО РПА',
+        specialistId: 43
+      },
       category: 'Кризисная психология',
       description: 'Почему суицидальный риск обостряется именно в праздники, как распознавать и работать с прямыми и косвенными криками о помощи, какие конкретные фразы использовать для оценки угрозы и как составить рабочий «План безопасности» — между страхом и профессиональной ответственностью.',
-      format: 'Видеоурок',
-      access: 'Доступ с момента оплаты на 90 дней',
-      bonuses: [
-        'Работа с суицидальным риском: Якорь для специалиста',
-        'Подробный конспект лекции для удобства работы с темой'
+      topics: [
+        'Суицидальный риск в праздники',
+        'Распознавание криков о помощи',
+        'План безопасности'
       ],
-      buyUrl: 'https://rosmededucation.ru/samoobrazovanie',
+      duration: '90 мин',
+      rutubeUrl: 'https://rutube.ru/video/placeholder4/',
+      coverImage: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/840d7e71-5bff-4dd8-827c-689bf1dbf525.png',
       isPaid: true,
+      price: 1000,
     },
   ];
 
   const filteredWebinars = webinars.filter((webinar) => {
     const matchesSearch = 
       webinar.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      webinar.speaker.toLowerCase().includes(searchQuery.toLowerCase());
+      webinar.speaker.name.toLowerCase().includes(searchQuery.toLowerCase());
     
     const matchesCategory = 
       selectedCategory === 'all' || 
@@ -137,103 +153,152 @@ const Webinars = () => {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="all">Все категории</SelectItem>
-                        <SelectItem value="КПТ">КПТ</SelectItem>
-                        <SelectItem value="Психоанализ">Психоанализ</SelectItem>
-                        <SelectItem value="Гештальт">Гештальт</SelectItem>
                         <SelectItem value="Семейная терапия">Семейная терапия</SelectItem>
-                        <SelectItem value="Арт-терапия">Арт-терапия</SelectItem>
-                        <SelectItem value="Экзистенциальная">Экзистенциальная</SelectItem>
+                        <SelectItem value="Профессиональная этика">Профессиональная этика</SelectItem>
+                        <SelectItem value="Диагностика">Диагностика</SelectItem>
+                        <SelectItem value="Кризисная психология">Кризисная психология</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
                 </CardContent>
               </Card>
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 gap-6">
                 {filteredWebinars.map((webinar) => (
                   <Card key={webinar.id} className="border-2 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
-                    <CardContent className="p-6">
-                      <div className="space-y-4">
-                        <div className="space-y-3">
-                          <div className="flex items-start justify-between gap-2">
-                            <h3 className="text-xl font-bold flex-1">{webinar.title}</h3>
-                            {webinar.isPaid && (
-                              <Badge className="bg-accent/20 text-accent-foreground">
-                                Платный
-                              </Badge>
-                            )}
+                    <CardContent className="p-0">
+                      <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                        <div className="lg:border-r">
+                          <div className="relative overflow-hidden rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none bg-gradient-to-br from-primary/5 to-accent/10">
+                            <iframe
+                              src={`https://rutube.ru/play/embed/${webinar.rutubeUrl.split('/video/')[1]?.replace('/', '')}`}
+                              frameBorder="0"
+                              allow="clipboard-write; autoplay"
+                              allowFullScreen
+                              className="w-full aspect-video"
+                            />
                           </div>
 
-                          <Badge className="bg-primary/10 text-primary">
-                            {webinar.category}
-                          </Badge>
-
-                          {webinar.price && (
-                            <div className="flex items-baseline gap-2">
-                              <span className="text-3xl font-bold text-primary">{webinar.price} ₽</span>
-                            </div>
-                          )}
-
-                          <div className="space-y-2">
-                            <div className="flex items-start gap-2">
-                              <Icon name="User" size={16} className="text-primary mt-1 flex-shrink-0" />
-                              <div className="text-sm">
-                                {webinar.speakerId ? (
-                                  <Link 
-                                    to={`/specialists#specialist-${webinar.speakerId}`}
-                                    className="font-semibold hover:text-primary transition-colors underline"
-                                  >
-                                    {webinar.speaker}
-                                  </Link>
-                                ) : (
-                                  <p className="font-semibold">{webinar.speaker}</p>
-                                )}
-                                {webinar.speakerTitle && (
-                                  <p className="text-muted-foreground">{webinar.speakerTitle}</p>
-                                )}
+                          <div className="p-6 space-y-4">
+                            <div className="space-y-2">
+                              <p className="font-semibold text-sm">Ведущий:</p>
+                              <div className="flex items-start gap-2">
+                                <Icon name="User" size={16} className="text-primary mt-1 flex-shrink-0" />
+                                <div className="text-sm">
+                                  {webinar.speaker.specialistId ? (
+                                    <Link 
+                                      to={`/specialists#specialist-${webinar.speaker.specialistId}`}
+                                      className="font-semibold hover:text-primary transition-colors underline"
+                                    >
+                                      {webinar.speaker.name}
+                                    </Link>
+                                  ) : (
+                                    <p className="font-semibold">{webinar.speaker.name}</p>
+                                  )}
+                                  <p className="text-muted-foreground">{webinar.speaker.role}</p>
+                                </div>
                               </div>
                             </div>
                           </div>
+                        </div>
 
-                          <div className="space-y-2">
-                            <p className="font-semibold text-sm">О чем вебинар:</p>
-                            <p className="text-sm text-muted-foreground">
-                              {webinar.description}
-                            </p>
-                          </div>
+                        <div className="p-6 space-y-4">
+                          <div className="space-y-4">
+                            <h3 className="text-2xl font-bold">{webinar.title}</h3>
 
-                          {webinar.format && (
-                            <div className="space-y-1">
-                              <p className="font-semibold text-sm">Формат:</p>
-                              <p className="text-sm text-muted-foreground">{webinar.format}</p>
-                              {webinar.access && (
-                                <p className="text-sm text-muted-foreground">{webinar.access}</p>
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <Badge className="bg-accent text-accent-foreground">
+                                Вебинар {webinar.episodeNumber}
+                              </Badge>
+                              {webinar.isPaid ? (
+                                <Badge className="bg-primary text-white">
+                                  {webinar.price} ₽
+                                </Badge>
+                              ) : (
+                                <Badge className="bg-green-500 text-white">
+                                  Бесплатно
+                                </Badge>
                               )}
+                              <Badge className="bg-primary/10 text-primary">
+                                {webinar.category}
+                              </Badge>
                             </div>
-                          )}
 
-                          {webinar.bonuses && webinar.bonuses.length > 0 && (
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <Icon name="Clock" size={16} className="text-primary" />
+                              <span>{webinar.duration}</span>
+                            </div>
+
                             <div className="space-y-2">
-                              <p className="font-semibold text-sm">Бонусы:</p>
-                              <ul className="space-y-1">
-                                {webinar.bonuses.map((bonus, index) => (
-                                  <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
-                                    <Icon name="Gift" size={14} className="text-accent mt-0.5 flex-shrink-0" />
-                                    <span>{bonus}</span>
-                                  </li>
-                                ))}
-                              </ul>
+                              <p className="font-semibold text-sm">О чем вебинар:</p>
+                              <p className="text-sm text-muted-foreground">
+                                {webinar.description}
+                              </p>
                             </div>
-                          )}
 
-                          <Button 
-                            className="w-full" 
-                            size="lg"
-                            onClick={() => window.open(webinar.buyUrl, '_blank')}
-                          >
-                            <Icon name="ShoppingCart" size={18} className="mr-2" />
-                            Купить вебинар
-                          </Button>
+                            {webinar.topics && webinar.topics.length > 0 && (
+                              <div className="space-y-2">
+                                <p className="font-semibold text-sm">Что обсуждаем:</p>
+                                <ul className="space-y-1">
+                                  {webinar.topics.map((topic, index) => (
+                                    <li key={index} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                      <Icon name="MessageCircle" size={14} className="text-accent mt-0.5 flex-shrink-0" />
+                                      <span>{topic}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            )}
+
+                            <div className="space-y-2">
+                              <p className="font-semibold text-sm">Поделиться с друзьями:</p>
+                              <div className="grid grid-cols-2 gap-2">
+                                <button
+                                  onClick={() => {
+                                    const url = encodeURIComponent(window.location.href);
+                                    const title = encodeURIComponent(webinar.title);
+                                    window.open(`https://vk.com/share.php?url=${url}&title=${title}`, '_blank', 'width=600,height=400');
+                                  }}
+                                  className="flex items-center justify-center gap-2 px-4 py-2 bg-[#0077FF] hover:bg-[#0066DD] text-white rounded-md transition-colors"
+                                >
+                                  <Icon name="Share2" size={16} />
+                                  <span className="text-sm font-medium">ВКонтакте</span>
+                                </button>
+                                <button
+                                  onClick={() => {
+                                    const url = encodeURIComponent(window.location.href);
+                                    const text = encodeURIComponent(webinar.title);
+                                    window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+                                  }}
+                                  className="flex items-center justify-center gap-2 px-4 py-2 bg-[#0088CC] hover:bg-[#0077BB] text-white rounded-md transition-colors"
+                                >
+                                  <Icon name="Send" size={16} />
+                                  <span className="text-sm font-medium">Telegram</span>
+                                </button>
+                                <button
+                                  onClick={() => {
+                                    const url = window.location.href;
+                                    window.open(`https://connect.ok.ru/offer?url=${encodeURIComponent(url)}&title=${encodeURIComponent(webinar.title)}`, '_blank', 'width=600,height=400');
+                                  }}
+                                  className="flex items-center justify-center gap-2 px-4 py-2 bg-[#EE8208] hover:bg-[#DD7707] text-white rounded-md transition-colors"
+                                >
+                                  <Icon name="Share2" size={16} />
+                                  <span className="text-sm font-medium">ОК</span>
+                                </button>
+                                <button
+                                  onClick={() => {
+                                    const url = encodeURIComponent(window.location.href);
+                                    const text = encodeURIComponent(webinar.title);
+                                    window.open(`https://api.maks.me/share?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+                                  }}
+                                  className="flex items-center justify-center gap-2 px-4 py-2 bg-[#FF0033] hover:bg-[#EE0022] text-white rounded-md transition-colors"
+                                >
+                                  <Icon name="MessageCircle" size={16} />
+                                  <span className="text-sm font-medium">МАКС</span>
+                                </button>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </CardContent>
