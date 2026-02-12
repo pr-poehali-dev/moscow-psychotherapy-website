@@ -101,19 +101,21 @@ const Podcasts = () => {
                   <Card key={podcast.id} className="border-2 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <div className="relative h-64 lg:h-auto overflow-hidden rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none">
-                          <img 
-                            src={podcast.coverImage} 
-                            alt={podcast.title}
-                            className="w-full h-full object-contain bg-gradient-to-br from-primary/5 to-accent/10"
+                        <div className="relative overflow-hidden rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none bg-gradient-to-br from-primary/5 to-accent/10">
+                          <iframe
+                            src={`https://rutube.ru/play/embed/${podcast.rutubeUrl.split('/video/')[1]?.replace('/', '')}`}
+                            frameBorder="0"
+                            allow="clipboard-write; autoplay"
+                            allowFullScreen
+                            className="w-full aspect-video"
                           />
-                          <div className="absolute top-4 left-4">
+                          <div className="absolute top-4 left-4 z-10">
                             <Badge className="bg-accent text-accent-foreground">
                               Эпизод {podcast.episodeNumber}
                             </Badge>
                           </div>
                           {!podcast.isPaid && (
-                            <div className="absolute top-4 right-4">
+                            <div className="absolute top-4 right-4 z-10">
                               <Badge className="bg-green-500 text-white">
                                 Бесплатно
                               </Badge>
@@ -199,10 +201,11 @@ const Podcasts = () => {
                             <Button 
                               className="w-full" 
                               size="lg"
+                              variant="outline"
                               onClick={() => window.open(podcast.rutubeUrl, '_blank')}
                             >
-                              <Icon name="Play" size={18} className="mr-2" />
-                              Смотреть на Rutube
+                              <Icon name="ExternalLink" size={18} className="mr-2" />
+                              Открыть на Rutube
                             </Button>
                           </div>
                         </div>
