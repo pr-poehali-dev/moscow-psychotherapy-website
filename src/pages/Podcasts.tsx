@@ -101,7 +101,7 @@ const Podcasts = () => {
                   <Card key={podcast.id} className="border-2 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
                     <CardContent className="p-0">
                       <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
-                        <div className="space-y-4 lg:border-r">
+                        <div className="lg:border-r">
                           <div className="relative overflow-hidden rounded-t-lg lg:rounded-l-lg lg:rounded-tr-none bg-gradient-to-br from-primary/5 to-accent/10">
                             <iframe
                               src={`https://rutube.ru/play/embed/${podcast.rutubeUrl.split('/video/')[1]?.replace('/', '')}`}
@@ -112,26 +112,7 @@ const Podcasts = () => {
                             />
                           </div>
 
-                          <div className="px-6 space-y-3">
-                            <div className="flex items-center gap-2 flex-wrap">
-                              <Badge className="bg-accent text-accent-foreground">
-                                Эпизод {podcast.episodeNumber}
-                              </Badge>
-                              {!podcast.isPaid && (
-                                <Badge className="bg-green-500 text-white">
-                                  Бесплатно
-                                </Badge>
-                              )}
-                              <Badge className="bg-primary/10 text-primary">
-                                {podcast.category}
-                              </Badge>
-                            </div>
-
-                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                              <Icon name="Clock" size={16} className="text-primary" />
-                              <span>{podcast.duration}</span>
-                            </div>
-
+                          <div className="p-6 space-y-4">
                             <div className="space-y-2">
                               <p className="font-semibold text-sm">Ведущие:</p>
                               {podcast.hosts.map((host, index) => (
@@ -176,8 +157,27 @@ const Podcasts = () => {
                         </div>
 
                         <div className="p-6 space-y-4">
-                          <div className="space-y-3">
+                          <div className="space-y-4">
                             <h3 className="text-2xl font-bold">{podcast.title}</h3>
+
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <Badge className="bg-accent text-accent-foreground">
+                                Эпизод {podcast.episodeNumber}
+                              </Badge>
+                              {!podcast.isPaid && (
+                                <Badge className="bg-green-500 text-white">
+                                  Бесплатно
+                                </Badge>
+                              )}
+                              <Badge className="bg-primary/10 text-primary">
+                                {podcast.category}
+                              </Badge>
+                            </div>
+
+                            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                              <Icon name="Clock" size={16} className="text-primary" />
+                              <span>{podcast.duration}</span>
+                            </div>
 
                             <div className="space-y-2">
                               <p className="font-semibold text-sm">О чем эпизод:</p>
@@ -200,7 +200,44 @@ const Podcasts = () => {
                               </div>
                             )}
 
-
+                            <div className="space-y-2">
+                              <p className="font-semibold text-sm">Поделиться с друзьями:</p>
+                              <div className="flex gap-2">
+                                <button
+                                  onClick={() => {
+                                    const url = encodeURIComponent(window.location.href);
+                                    const title = encodeURIComponent(podcast.title);
+                                    window.open(`https://vk.com/share.php?url=${url}&title=${title}`, '_blank', 'width=600,height=400');
+                                  }}
+                                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#0077FF] hover:bg-[#0066DD] text-white rounded-md transition-colors"
+                                >
+                                  <Icon name="Share2" size={16} />
+                                  <span className="text-sm font-medium">ВКонтакте</span>
+                                </button>
+                                <button
+                                  onClick={() => {
+                                    const url = encodeURIComponent(window.location.href);
+                                    const text = encodeURIComponent(podcast.title);
+                                    window.open(`https://t.me/share/url?url=${url}&text=${text}`, '_blank', 'width=600,height=400');
+                                  }}
+                                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#0088CC] hover:bg-[#0077BB] text-white rounded-md transition-colors"
+                                >
+                                  <Icon name="Send" size={16} />
+                                  <span className="text-sm font-medium">Telegram</span>
+                                </button>
+                                <button
+                                  onClick={() => {
+                                    const url = window.location.href;
+                                    const text = `${podcast.title} - ${url}`;
+                                    window.open(`https://connect.ok.ru/offer?url=${encodeURIComponent(url)}&title=${encodeURIComponent(podcast.title)}`, '_blank', 'width=600,height=400');
+                                  }}
+                                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#EE8208] hover:bg-[#DD7707] text-white rounded-md transition-colors"
+                                >
+                                  <Icon name="Share2" size={16} />
+                                  <span className="text-sm font-medium">ОК</span>
+                                </button>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
