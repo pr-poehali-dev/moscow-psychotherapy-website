@@ -98,6 +98,27 @@ const Podcasts = () => {
       coverImage: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/840d7e71-5bff-4dd8-827c-689bf1dbf525.png',
       isPaid: false,
     },
+    {
+      id: 5,
+      title: 'Осознанность: лекарство или новая ловушка?',
+      episodeNumber: 5,
+      hosts: [
+        { name: 'Мальцева Екатерина Витальевна', role: 'Исполнительный директор МО РПА, директор Союза охраны психического здоровья, директор АНО ДПО "НОЦ СМТ", клинический психолог' },
+        { name: 'Шмакова Евгения Владимировна', role: 'Клинический психолог, криминальный психолог, заместитель директора Союза охраны психического здоровья. Преподаватель АНО ДПО "НОЦ СМТ", действительный член МО РПА', specialistId: 43 },
+        { name: 'Журихин Сергей Анатольевич', role: 'Проректор по повышению квалификации', organization: 'Университета Правительства Москвы', organizationUrl: 'https://t.me/openeduspace' },
+      ],
+      category: 'Популярная психология',
+      description: 'В пятом эпизоде обсуждаем феномен осознанности: полезная практика или очередной популярный тренд?',
+      topics: [
+        'Что такое настоящая осознанность',
+        'Популяризация практик mindfulness',
+        'Когда осознанность становится проблемой'
+      ],
+      duration: '45 мин',
+      rutubeUrl: 'https://rutube.ru/video/f494198f19299f9298e051e1e4d47a6b/',
+      coverImage: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/840d7e71-5bff-4dd8-827c-689bf1dbf525.png',
+      isPaid: false,
+    },
   ];
 
   const filteredPodcasts = podcasts.filter((podcast) => {
