@@ -1,4 +1,5 @@
 import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -69,6 +70,38 @@ const Events = () => {
   }));
 
   const upcomingEvents = [
+    {
+      id: 'karvasarsky-conf',
+      title: 'Всероссийская научно-практическая конференция с международным участием «Клиническая психотерапия: в поисках идеальной практики», посвященная памяти Б.Д. Карвасарского',
+      date: '19-20 февраля 2026',
+      time: '10:00 - 18:00',
+      location: 'Санкт-Петербург, ул. Бехтерева 3, ФГБУ «НМИЦ ПН им. В.М. Бехтерева» Минздрава России',
+      type: 'Конференция',
+      format: 'Аудиторный с трансляцией',
+      description: 'Всероссийская научно-практическая конференция с международным участием, посвященная памяти выдающегося психотерапевта Б.Д. Карвасарского.',
+      price: 'Бесплатно',
+      registrationUrl: 'https://78conf.ru/feb26',
+      programUrl: 'https://78conf.ru/static/files/feb26/Программа_Психотерапия_19_20_02_2026_утв.pdf?1',
+      roundTableInfo: {
+        date: '20 февраля 2026',
+        title: 'Многомерное видение клиента и мультимодальность: Интеграция подходов на примере одного случая',
+        organizer: 'Московское отделение РПА',
+        moderators: [
+          { name: 'Бородин Владимир Иванович', id: 58 },
+          { name: 'Щанкина Наталия Александровна', id: 44 }
+        ],
+        experts: [
+          { name: 'Степанова Екатерина Сергеевна', id: 31 },
+          { name: 'Пекарская Светлана Игоревна', id: 12 },
+          { name: 'Бегиджанова Юлия Александровна', id: 29 },
+          { name: 'Малышева Татьяна Борисовна', id: 37 },
+          { name: 'Хвощевская Софья Игоревна', id: 41 }
+        ],
+        targetAudience: 'Практикующие психотерапевты и психологи, а также студенты старших курсов профильных направлений подготовки',
+        goal: 'Продемонстрировать возможности мультимодального клинического рассмотрения случая и расширить профессиональный инструментарий участников за счёт разбора реального кейса с позиций различных психотерапевтических школ',
+        annotation: 'В рамках круглого стола эксперты, представляющие ключевые направления современной психотерапии, проведут разбор одного клиентского случая в формате мультимодального клинического обсуждения. Участники увидят, как разные теоретические модели и техники формируют диагностические гипотезы, определяют фокус вмешательства и выстраивают стратегию терапии.'
+      }
+    },
     {
       id: 1,
       title: 'Конференция "Современные подходы в психотерапии"',
@@ -252,6 +285,76 @@ const Events = () => {
                           </div>
                         )}
 
+                        {event.format && (
+                          <div className="flex items-start gap-2 text-sm bg-purple-50 p-3 rounded-lg">
+                            <Icon name="Video" size={16} className="text-purple-600 mt-0.5 flex-shrink-0" />
+                            <span className="text-purple-900">Формат: {event.format}</span>
+                          </div>
+                        )}
+
+                        {event.programUrl && (
+                          <div className="space-y-2">
+                            <Button size="sm" variant="outline" asChild className="w-full sm:w-auto">
+                              <a href={event.programUrl} target="_blank" rel="noopener noreferrer">
+                                <Icon name="FileText" size={16} className="mr-2" />
+                                Программа конференции
+                              </a>
+                            </Button>
+                          </div>
+                        )}
+
+                        {event.roundTableInfo && (
+                          <div className="bg-primary/5 p-4 rounded-lg border-2 border-primary/20 space-y-3">
+                            <div className="flex items-start gap-2">
+                              <Badge className="bg-primary text-primary-foreground">
+                                {event.roundTableInfo.date}
+                              </Badge>
+                              <Badge variant="outline" className="bg-orange-50 text-orange-700 border-orange-200">
+                                {event.roundTableInfo.organizer}
+                              </Badge>
+                            </div>
+                            
+                            <h4 className="font-bold text-lg">{event.roundTableInfo.title}</h4>
+                            
+                            <p className="text-sm text-muted-foreground">{event.roundTableInfo.annotation}</p>
+                            
+                            <div>
+                              <p className="text-sm font-semibold mb-2">Целевая аудитория:</p>
+                              <p className="text-sm text-muted-foreground">{event.roundTableInfo.targetAudience}</p>
+                            </div>
+
+                            <div>
+                              <p className="text-sm font-semibold mb-2">Модераторы:</p>
+                              <div className="flex flex-wrap gap-2">
+                                {event.roundTableInfo.moderators.map((moderator, idx) => (
+                                  <Link
+                                    key={idx}
+                                    to={`/specialists#specialist-${moderator.id}`}
+                                    className="text-sm text-primary hover:underline"
+                                  >
+                                    {moderator.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+
+                            <div>
+                              <p className="text-sm font-semibold mb-2">Эксперты:</p>
+                              <div className="flex flex-wrap gap-2">
+                                {event.roundTableInfo.experts.map((expert, idx) => (
+                                  <Link
+                                    key={idx}
+                                    to={`/specialists#specialist-${expert.id}`}
+                                    className="text-sm text-primary hover:underline"
+                                  >
+                                    {expert.name}
+                                  </Link>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+
                         {event.speakers && (
                           <div>
                             <p className="text-sm font-medium mb-2">Спикеры:</p>
@@ -268,10 +371,19 @@ const Events = () => {
 
                       {!event.isRecurring && (
                         <div className="flex flex-col gap-2 md:w-40">
-                          <Button className="w-full">
-                            <Icon name="UserPlus" size={16} className="mr-2" />
-                            Записаться
-                          </Button>
+                          {event.registrationUrl ? (
+                            <Button className="w-full" asChild>
+                              <a href={event.registrationUrl} target="_blank" rel="noopener noreferrer">
+                                <Icon name="UserPlus" size={16} className="mr-2" />
+                                Регистрация
+                              </a>
+                            </Button>
+                          ) : (
+                            <Button className="w-full">
+                              <Icon name="UserPlus" size={16} className="mr-2" />
+                              Записаться
+                            </Button>
+                          )}
                           <Button variant="outline" className="w-full">
                             <Icon name="Share2" size={16} className="mr-2" />
                             Поделиться
