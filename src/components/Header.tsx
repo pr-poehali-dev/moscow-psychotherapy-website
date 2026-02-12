@@ -20,6 +20,7 @@ const Header = () => {
   const knowledgeItems = [
     { title: 'Анонсы мероприятий', href: '/events', description: 'Предстоящие события' },
     { title: 'Записи вебинаров', href: '/webinars', description: 'Архив видеозаписей' },
+    { title: 'Подкасты', href: '/podcasts', description: 'Аудио и видео подкасты' },
     { title: 'Доп. материалы', href: '/materials', description: 'Статьи и ресурсы' },
   ];
 

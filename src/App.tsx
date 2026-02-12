@@ -13,6 +13,7 @@ import Documents from "./pages/Documents";
 import Contacts from "./pages/Contacts";
 import Events from "./pages/Events";
 import Webinars from "./pages/Webinars";
+import Podcasts from "./pages/Podcasts";
 import Materials from "./pages/Materials";
 import JournalAbout from "./pages/JournalAbout";
 import JournalProfessional from "./pages/JournalProfessional";
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/sections" element={<Sections />} />
           <Route path="/events" element={<Events />} />
           <Route path="/webinars" element={<Webinars />} />
+          <Route path="/podcasts" element={<Podcasts />} />
           <Route path="/materials" element={<Materials />} />
           <Route path="/journal/about" element={<JournalAbout />} />
           <Route path="/journal/professional" element={<JournalProfessional />} />
