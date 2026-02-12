@@ -19,9 +19,9 @@ const Podcasts = () => {
       title: 'Психология – новая религия? Эпизод 1: "Почему вы это слушаете?"',
       episodeNumber: 1,
       hosts: [
-        { name: 'Мальцева Екатерина Витальевна', role: 'Прокурор — клинический психолог, директор Союза охраны психического здоровья' },
-        { name: 'Шмакова Евгения Владимировна', role: 'Адвокат — клинический психолог Союза охраны психического здоровья', specialistId: 43 },
-        { name: 'Журихин Сергей', role: 'Главный судья — проректор по повышению квалификации Университета Правительства Москвы' },
+        { name: 'Мальцева Екатерина Витальевна', role: 'Клинический психолог, директор Союза охраны психического здоровья' },
+        { name: 'Шмакова Евгения Владимировна', role: 'Клинический психолог Союза охраны психического здоровья', specialistId: 43 },
+        { name: 'Журихин Сергей Анатольевич', role: 'Проректор по повышению квалификации', organization: 'Университета Правительства Москвы', organizationUrl: 'https://t.me/openeduspace' },
       ],
       category: 'Популярная психология',
       description: 'В первом эпизоде нашего подкаста мы разбираем популярную психологию сквозь призму классических научных подходов, а вы – присяжный заседатель, которому предстоит вынести вердикт!',
@@ -105,7 +105,7 @@ const Podcasts = () => {
                           <img 
                             src={podcast.coverImage} 
                             alt={podcast.title}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-contain bg-gradient-to-br from-primary/5 to-accent/10"
                           />
                           <div className="absolute top-4 left-4">
                             <Badge className="bg-accent text-accent-foreground">
@@ -150,7 +150,26 @@ const Podcasts = () => {
                                     ) : (
                                       <p className="font-semibold">{host.name}</p>
                                     )}
-                                    <p className="text-muted-foreground">{host.role}</p>
+                                    <p className="text-muted-foreground">
+                                      {host.role}
+                                      {host.organization && (
+                                        <>
+                                          {' '}
+                                          {host.organizationUrl ? (
+                                            <a 
+                                              href={host.organizationUrl} 
+                                              target="_blank" 
+                                              rel="noopener noreferrer"
+                                              className="text-primary hover:underline"
+                                            >
+                                              {host.organization}
+                                            </a>
+                                          ) : (
+                                            host.organization
+                                          )}
+                                        </>
+                                      )}
+                                    </p>
                                   </div>
                                 </div>
                               ))}
