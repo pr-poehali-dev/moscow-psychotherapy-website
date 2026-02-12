@@ -12,6 +12,7 @@ import Icon from '@/components/ui/icon';
 const Webinars = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedPriceFilter, setSelectedPriceFilter] = useState('all');
 
   const webinars = [
     {
@@ -109,7 +110,12 @@ const Webinars = () => {
       selectedCategory === 'all' || 
       webinar.category === selectedCategory;
 
-    return matchesSearch && matchesCategory;
+    const matchesPrice = 
+      selectedPriceFilter === 'all' ||
+      (selectedPriceFilter === 'free' && !webinar.isPaid) ||
+      (selectedPriceFilter === 'paid' && webinar.isPaid);
+
+    return matchesSearch && matchesCategory && matchesPrice;
   });
 
   return (
@@ -133,7 +139,7 @@ const Webinars = () => {
             <div className="max-w-6xl mx-auto space-y-8">
               <Card className="border-2">
                 <CardContent className="p-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div className="relative">
                       <Icon name="Search" size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
                       <Input
@@ -150,12 +156,22 @@ const Webinars = () => {
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="all">Все категории</SelectItem>
-                        <SelectItem value="КПТ">КПТ</SelectItem>
                         <SelectItem value="Психоанализ">Психоанализ</SelectItem>
-                        <SelectItem value="Гештальт">Гештальт</SelectItem>
                         <SelectItem value="Семейная терапия">Семейная терапия</SelectItem>
-                        <SelectItem value="Арт-терапия">Арт-терапия</SelectItem>
-                        <SelectItem value="Экзистенциальная">Экзистенциальная</SelectItem>
+                        <SelectItem value="Профессиональная этика">Профессиональная этика</SelectItem>
+                        <SelectItem value="Диагностика">Диагностика</SelectItem>
+                        <SelectItem value="Кризисная психология">Кризисная психология</SelectItem>
+                      </SelectContent>
+                    </Select>
+
+                    <Select value={selectedPriceFilter} onValueChange={setSelectedPriceFilter}>
+                      <SelectTrigger>
+                        <SelectValue placeholder="Доступ" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">Все</SelectItem>
+                        <SelectItem value="free">Бесплатно</SelectItem>
+                        <SelectItem value="paid">Платно</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
