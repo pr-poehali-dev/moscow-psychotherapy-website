@@ -57,31 +57,41 @@ const Materials = () => {
   const books = [
     {
       id: 1,
-      title: 'Основы когнитивно-поведенческой терапии',
-      author: 'Дж. Бек',
-      description: 'Фундаментальное руководство по КПТ от создателя метода.',
+      title: 'Экспериментальные методики патопсихологии',
+      author: 'Сусанна Рубинштейн',
+      description: 'Фундаментальное пособие по патопсихологическим исследованиям и экспериментальным методикам.',
       cover: '📘',
+      publisher: 'Издательство Городец',
+      url: 'https://gorodets.ru/page/s-sopz',
     },
     {
       id: 2,
-      title: 'Психотерапия тревожных расстройств',
-      author: 'А. Холмогорова',
-      description: 'Современные подходы к работе с тревогой.',
+      title: 'Ненависть',
+      author: 'Жаннет Фишер',
+      description: 'Исследование эмоции ненависти с точки зрения психологии и психотерапии.',
       cover: '📗',
+      publisher: 'Издательство Городец',
+      series: 'СОПЗ. Психология и психиатрия',
+      url: 'https://gorodets.ru/page/s-sopz',
     },
     {
       id: 3,
-      title: 'Гештальт-терапия: теория и практика',
-      author: 'Ф. Перлз',
-      description: 'Классический труд основателя гештальт-терапии.',
+      title: 'Всё желанное со мной: Нарцисс и нарциссизм',
+      author: 'Жаннет Фишер',
+      description: 'Глубокий анализ нарциссизма и нарциссических расстройств личности.',
       cover: '📕',
+      publisher: 'Издательство Городец',
+      series: 'СОПЗ. Психология и психиатрия',
+      url: 'https://gorodets.ru/page/s-sopz',
     },
     {
       id: 4,
-      title: 'Семейная психотерапия',
-      author: 'С. Минухин',
-      description: 'Системный подход в работе с семьями.',
+      title: 'Черты лица',
+      author: 'Елена Долгопят',
+      description: 'Исследование психологии и восприятия личности.',
       cover: '📙',
+      publisher: 'Издательство Городец',
+      url: 'https://gorodets.ru/page/s-sopz',
     },
   ];
 
@@ -102,8 +112,8 @@ const Materials = () => {
     },
     {
       id: 3,
-      title: 'Онлайн-курсы по психотерапии',
-      url: 'https://example.com',
+      title: 'Онлайн курсы повышения квалификации',
+      url: 'https://rosmededucation.ru/',
       description: 'Обучающие программы от ведущих экспертов',
       category: 'Образование',
     },
@@ -213,6 +223,19 @@ const Materials = () => {
                 </TabsContent>
 
                 <TabsContent value="books" className="space-y-4">
+                  <div className="mb-6 p-4 bg-primary/5 rounded-lg border border-primary/20">
+                    <p className="text-sm text-muted-foreground">
+                      Рекомендуемая литература серии "СОПЗ. Психология и психиатрия" от{' '}
+                      <a 
+                        href="https://gorodets.ru/page/s-sopz" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-primary hover:underline font-medium"
+                      >
+                        издательства Городец
+                      </a>
+                    </p>
+                  </div>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     {filteredBooks.map((book) => (
                       <Card key={book.id} className="border-2 hover:shadow-lg transition-all">
@@ -222,11 +245,23 @@ const Materials = () => {
                             <div className="flex-1 space-y-2">
                               <h3 className="text-xl font-semibold">{book.title}</h3>
                               <p className="text-sm text-primary font-medium">{book.author}</p>
+                              {book.series && (
+                                <Badge variant="outline" className="text-xs">{book.series}</Badge>
+                              )}
                               <p className="text-sm text-muted-foreground">{book.description}</p>
-                              <Button variant="outline" size="sm" className="mt-2">
-                                <Icon name="ExternalLink" size={14} className="mr-2" />
-                                Подробнее
-                              </Button>
+                              {book.url ? (
+                                <Button variant="outline" size="sm" className="mt-2" asChild>
+                                  <a href={book.url} target="_blank" rel="noopener noreferrer">
+                                    <Icon name="ExternalLink" size={14} className="mr-2" />
+                                    Подробнее
+                                  </a>
+                                </Button>
+                              ) : (
+                                <Button variant="outline" size="sm" className="mt-2">
+                                  <Icon name="ExternalLink" size={14} className="mr-2" />
+                                  Подробнее
+                                </Button>
+                              )}
                             </div>
                           </div>
                         </CardContent>
