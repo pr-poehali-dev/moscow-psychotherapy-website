@@ -112,31 +112,10 @@ const Materials = () => {
     },
     {
       id: 3,
-      title: 'Международная ассоциация психотерапевтов',
-      url: 'https://example.com',
-      description: 'Глобальная сеть профессионалов',
-      category: 'Профессиональные организации',
-    },
-    {
-      id: 4,
-      title: 'База данных исследований по психотерапии',
-      url: 'https://example.com',
-      description: 'Архив научных публикаций',
-      category: 'Исследования',
-    },
-    {
-      id: 5,
       title: 'Онлайн курсы повышения квалификации',
       url: 'https://rosmededucation.ru/',
       description: 'Обучающие программы от ведущих экспертов',
       category: 'Образование',
-    },
-    {
-      id: 6,
-      title: 'Журнал "Психотерапия"',
-      url: 'https://example.com',
-      description: 'Ежеквартальный научный журнал',
-      category: 'Публикации',
     },
   ];
 
