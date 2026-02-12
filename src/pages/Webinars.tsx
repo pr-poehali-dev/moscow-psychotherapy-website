@@ -166,10 +166,10 @@ const Webinars = () => {
 
                     <Select value={selectedPriceFilter} onValueChange={setSelectedPriceFilter}>
                       <SelectTrigger>
-                        <SelectValue placeholder="Доступ" />
+                        <SelectValue placeholder="Платно / Бесплатно" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="all">Все</SelectItem>
+                        <SelectItem value="all">Все вебинары</SelectItem>
                         <SelectItem value="free">Бесплатно</SelectItem>
                         <SelectItem value="paid">Платно</SelectItem>
                       </SelectContent>
