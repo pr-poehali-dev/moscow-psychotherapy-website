@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
@@ -19,6 +20,7 @@ const Webinars = () => {
       price: 1000,
       speaker: 'Екатерина Степанова',
       speakerTitle: 'Член Российской Психотерапевтической Ассоциации (РПА), преподаватель НОЦ Современных Медицинских Технологий',
+      speakerId: 31,
       category: 'Семейная терапия',
       description: 'Кто на самом деле становится клиентом психолога при работе с проблемами подростка, какие существуют ловушки в терапии и способы их обхода, как сделать из родителя не контрагента, а помощника — без вины виноватые.',
       format: 'Видеоурок',
@@ -123,7 +125,16 @@ const Webinars = () => {
                             <div className="flex items-start gap-2">
                               <Icon name="User" size={16} className="text-primary mt-1 flex-shrink-0" />
                               <div className="text-sm">
-                                <p className="font-semibold">{webinar.speaker}</p>
+                                {webinar.speakerId ? (
+                                  <Link 
+                                    to={`/specialists#specialist-${webinar.speakerId}`}
+                                    className="font-semibold hover:text-primary transition-colors underline"
+                                  >
+                                    {webinar.speaker}
+                                  </Link>
+                                ) : (
+                                  <p className="font-semibold">{webinar.speaker}</p>
+                                )}
                                 {webinar.speakerTitle && (
                                   <p className="text-muted-foreground">{webinar.speakerTitle}</p>
                                 )}
