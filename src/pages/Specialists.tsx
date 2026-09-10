@@ -877,7 +877,7 @@ const Specialists = () => {
     {
       id: 58,
       name: 'Бородин Владимир Иванович',
-      photo: '👨‍⚕️',
+      photo: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/010e3983-eb68-4975-8ca1-f14a3b5a4fdf.jpg',
       location: 'Москва',
       education: 'Высшее, доктор медицинских наук, профессор',
       specialty: 'Врач-психиатр высшей категории, психотерапевт',
@@ -890,6 +890,7 @@ const Specialists = () => {
       ageGroups: 'Взрослые',
       approaches: ['Экзистенциальная терапия', 'Психоанализ'],
       status: 'Действительный член РПА',
+      isChairman: true,
     },
     {
       id: 61,
@@ -1636,7 +1637,11 @@ const Specialists = () => {
 
       return matchesSearch && matchesApproach && matchesAgeGroup && matchesIssue;
     })
-    .sort((a, b) => a.name.localeCompare(b.name, 'ru'));
+    .sort((a, b) => {
+      if (a.isChairman && !b.isChairman) return -1;
+      if (!a.isChairman && b.isChairman) return 1;
+      return a.name.localeCompare(b.name, 'ru');
+    });
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -1733,21 +1738,33 @@ const Specialists = () => {
                   const isExpanded = expandedCards.includes(specialist.id);
                   
                   return (
-                    <Card key={specialist.id} id={`specialist-${specialist.id}`} className="hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20 scroll-mt-20">
+                    <Card key={specialist.id} id={`specialist-${specialist.id}`} className={`hover:shadow-xl transition-all duration-300 scroll-mt-20 ${
+                      specialist.isChairman 
+                        ? 'border-2 border-primary shadow-lg bg-primary/5 lg:col-span-2' 
+                        : 'border-2 hover:border-primary/20'
+                    }`}>
                       <CardContent className="p-6">
                         <div className="flex flex-col space-y-4">
                           <div className="flex items-start justify-between">
                             <div className="flex items-center space-x-4">
-                              <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0">
+                              <div className={`rounded-full overflow-hidden flex-shrink-0 ${specialist.isChairman ? 'w-20 h-20 ring-2 ring-primary' : 'w-16 h-16'}`}>
                                 <img src={specialist.photo} alt={specialist.name} className="w-full h-full object-cover" />
                               </div>
                               <div>
                                 <h3 className="text-xl font-semibold mb-1">{specialist.name}</h3>
-                                <Badge className={specialist.status === 'Действительный член' 
-                                  ? 'bg-primary text-primary-foreground' 
-                                  : 'bg-accent text-accent-foreground'}>
-                                  {specialist.status}
-                                </Badge>
+                                <div className="flex flex-wrap gap-2">
+                                  {specialist.isChairman && (
+                                    <Badge className="bg-primary text-primary-foreground">
+                                      <Icon name="Star" size={12} className="mr-1" />
+                                      Председатель отделения
+                                    </Badge>
+                                  )}
+                                  <Badge className={specialist.status === 'Действительный член' 
+                                    ? 'bg-primary text-primary-foreground' 
+                                    : 'bg-accent text-accent-foreground'}>
+                                    {specialist.status}
+                                  </Badge>
+                                </div>
                               </div>
                             </div>
                           </div>
