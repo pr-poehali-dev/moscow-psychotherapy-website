@@ -282,7 +282,7 @@ const Specialists = () => {
     {
       id: 18,
       name: 'Лемéшко Константин Александрович',
-      photo: '👨‍⚕️',
+      photo: '/specialists/lemeshko_konstantin_aleksandrovich.jpg',
       location: 'Москва',
       education: 'МГМУ им. И.М. Сеченова. Институт психического здоровья Психоаналитической ассоциации Буэнос-Айреса (IUSAM de APdeBA)',
       specialty: 'Врач-психиатр, врач-психотерапевт',
@@ -962,7 +962,7 @@ const Specialists = () => {
     {
       id: 66,
       name: 'Дыхне Елена Александровна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/dykhne_elena_aleksandrovna.jpg',
       location: 'Москва',
       education: 'Высшее',
       specialty: 'Психология',
@@ -1132,7 +1132,7 @@ const Specialists = () => {
     {
       id: 76,
       name: 'Дрёмина (Соловьева) Юлия Викторовна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/dremina_yuliya_viktorovna.jpg',
       location: 'Москва',
       education: 'Высшее психологическое, специалитет',
       specialty: 'Психолог, немедицинский психотерапевт, клинический психолог, преподаватель психологии',
@@ -1251,7 +1251,7 @@ const Specialists = () => {
     {
       id: 83,
       name: 'Киблицкая Татьяна Владимировна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/kiblitskaya_tatyana_vladimirovna.jpg',
       location: 'Москва',
       education: '',
       specialty: '',
@@ -1370,7 +1370,7 @@ const Specialists = () => {
     {
       id: 90,
       name: 'Микоян Анна Сергеевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/mikoyan_anna_sergeevna.jpg',
       location: 'Москва',
       education: 'Высшее, специалитет — МГППУ, клиническая психология. Квалификация психотерапевта — HEPI (Литва), экзистенциальная терапия',
       specialty: 'Клинический психолог, психолог-консультант, психотерапевт',
