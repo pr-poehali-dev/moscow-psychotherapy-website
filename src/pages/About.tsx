@@ -15,23 +15,10 @@ const About = () => {
     { name: 'Корнешов Алексей Александрович', role: 'Заместитель исполнительного директора по финансовым вопросам', description: 'Доктор экономических наук, кандидат психологических наук, психоаналитический психолог, клинический психолог, психолог консультант', specialistId: 52 },
   ];
 
-  const coordinationCouncil = [
-    { name: 'Бегиджанова Юлия Александровна', description: 'Практикующий психолог, семейная системная психотерапия, схема терапия (индивидуальная, парная) работа с парами, семьями', specialistId: 36 },
-    { name: 'Малышева Татьяна Борисовна', description: 'Магистр психологии, клинический психолог, сексолог РНСО. Аккредитованный терапевт и супервизор Московского Гештальт Института', specialistId: 37 },
-    { name: 'Москвин Вячеслав Вячеславович', description: 'Клинический психолог, когнитивно-поведенческий терапевт', specialistId: 35 },
-    { name: 'Степанова Екатерина Сергеевна', description: 'Психолог, супервизор РПА, преподаватель, мультимодальный и психоаналитический подходы', specialistId: 31 },
-    { name: 'Шатина Анастасия Михайловна', description: 'Аккредитованный терапевт и аккредитованный супервизор программы «МГИ» ОПП ГП, психолог, действительный член ОПП ГП, РПА, EAGT', specialistId: 56 },
-  ];
-
-  const youthLeadership = [
-    { name: 'Корнешова Мария Алексеевна', role: 'Руководитель молодежного подразделения' },
-  ];
-
   const documents = [
     { title: 'Положение о Московском отделении РПА', size: '245 КБ', link: '#' },
     { title: 'Устав Московского отделения', size: '180 КБ', link: '#' },
     { title: 'Этический кодекс', size: '120 КБ', link: '#' },
-    { title: 'Положение о молодежном подразделении', size: '95 КБ', link: '#' },
   ];
 
   const tasks = {
@@ -261,100 +248,6 @@ const About = () => {
                           )}
                         </div>
                       ))}
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-2">
-                  <CardContent className="p-8">
-                    <div className="flex items-center space-x-3 mb-6">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                        <Icon name="Network" size={24} className="text-white" />
-                      </div>
-                      <h2 className="text-3xl font-bold">Координационный совет</h2>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                      {coordinationCouncil.map((member, index) => (
-                        <div key={index} className="p-4 rounded-lg border bg-muted/30">
-                          {member.specialistId ? (
-                            <Link to={`/specialists#specialist-${member.specialistId}`}>
-                              <span className="font-semibold text-sm block text-primary hover:underline cursor-pointer">{member.name}</span>
-                            </Link>
-                          ) : (
-                            <span className="font-semibold text-sm block">{member.name}</span>
-                          )}
-                          {member.description && (
-                            <p className="text-xs text-muted-foreground mt-1">{member.description}</p>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-2 bg-gradient-to-br from-accent/5 to-primary/10">
-                  <CardContent className="p-8">
-                    <div className="flex items-center space-x-3 mb-6">
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                        <Icon name="GraduationCap" size={24} className="text-white" />
-                      </div>
-                      <h2 className="text-3xl font-bold">Молодежное подразделение</h2>
-                    </div>
-                    <div className="space-y-4">
-                      <div className="space-y-3 mb-4">
-                        {youthLeadership.map((member, index) => (
-                          <div key={index} className="flex items-center justify-between p-4 rounded-lg border bg-muted/30">
-                            <span className="font-semibold">
-                              {member.specialistId ? (
-                                <Link 
-                                  to={`/specialists#specialist-${member.specialistId}`}
-                                  className="text-foreground hover:text-primary hover:underline transition-colors"
-                                >
-                                  {member.name}
-                                </Link>
-                              ) : (
-                                member.name
-                              )}
-                            </span>
-                            <span className="text-sm text-muted-foreground">{member.role}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <p className="text-muted-foreground leading-relaxed">
-                        Молодежное подразделение Московского отделения РПА объединяет начинающих специалистов 
-                        и студентов, интересующихся психотерапией. Мы организуем специальные образовательные 
-                        программы, мастер-классы и супервизии для молодых психотерапевтов.
-                      </p>
-                      <div className="bg-primary/5 p-4 rounded-lg">
-                        <h3 className="font-semibold mb-2 flex items-center">
-                          <Icon name="Info" size={16} className="mr-2" />
-                          Направления работы:
-                        </h3>
-                        <ul className="space-y-2 text-sm text-muted-foreground">
-                          <li className="flex items-start">
-                            <span className="mr-2">•</span>
-                            <span>Образовательные мероприятия и тренинги</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="mr-2">•</span>
-                            <span>Супервизии и групповая поддержка</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="mr-2">•</span>
-                            <span>Профессиональное наставничество</span>
-                          </li>
-                          <li className="flex items-start">
-                            <span className="mr-2">•</span>
-                            <span>Научно-практические конференции</span>
-                          </li>
-                        </ul>
-                      </div>
-                      <Button variant="outline" className="w-full" asChild>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
-                          <Icon name="FileText" size={16} className="mr-2" />
-                          Скачать положение о молодежном подразделении
-                        </a>
-                      </Button>
                     </div>
                   </CardContent>
                 </Card>
