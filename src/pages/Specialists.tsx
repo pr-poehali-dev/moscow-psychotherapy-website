@@ -1421,7 +1421,7 @@ const Specialists = () => {
     {
       id: 93,
       name: 'Павлова Елена Алексеевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/pavlova_elena_alekseevna.jpg',
       location: 'Москва',
       education: 'Высшее психолого-педагогическое, переподготовка по клинической психологии и психоанализу',
       specialty: 'Клинический психолог, аналитический психолог',
@@ -1455,7 +1455,7 @@ const Specialists = () => {
     {
       id: 95,
       name: 'Полякова Ирина Сергеевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/polyakova_irina_sergeevna.jpg',
       location: 'Москва / Тбилиси',
       education: 'МГППУ; Московский Гештальт Институт. Магистр',
       specialty: 'Психология',
@@ -1557,7 +1557,7 @@ const Specialists = () => {
     {
       id: 101,
       name: 'Холмогорова Алла Борисовна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/holmogorova_alla_borisovna.jpg',
       location: 'Москва',
       education: '',
       specialty: '',
