@@ -1743,8 +1743,8 @@ const Specialists = () => {
                         ? 'border-2 border-primary shadow-lg bg-primary/5 lg:col-span-2' 
                         : 'border-2 hover:border-primary/20'
                     }`}>
-                      <CardContent className="p-6">
-                        <div className="flex flex-col space-y-4">
+                      <CardContent className={`p-6 ${specialist.isChairman ? 'grid grid-cols-1 md:grid-cols-3 gap-6' : ''}`}>
+                        <div className={`flex flex-col space-y-4 ${specialist.isChairman ? 'md:col-span-2' : ''}`}>
                           <div className="flex items-start justify-between">
                             <div className="flex items-center space-x-4">
                               <div className={`rounded-full overflow-hidden flex-shrink-0 ${specialist.isChairman ? 'w-20 h-20 ring-2 ring-primary' : 'w-16 h-16'}`}>
@@ -1875,6 +1875,44 @@ const Specialists = () => {
                             <Icon name={isExpanded ? 'ChevronUp' : 'ChevronDown'} size={20} />
                           </button>
                         </div>
+
+                        {specialist.isChairman && (
+                          <div className="bg-white/60 rounded-lg p-4 border border-primary/20 space-y-3 h-fit">
+                            <div className="flex items-center gap-2">
+                              <Icon name="GraduationCap" size={18} className="text-primary" />
+                              <p className="font-semibold">Курсы НОЦ</p>
+                            </div>
+                            <div className="space-y-2 text-sm">
+                              <a
+                                href="https://rosmededucation.ru/detskaya-podrostkovaya-psy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start gap-2 text-primary hover:underline"
+                              >
+                                <Icon name="ExternalLink" size={14} className="mt-1 flex-shrink-0" />
+                                <span>Детская и подростковая психотерапия</span>
+                              </a>
+                              <a
+                                href="https://rosmededucation.ru/psihoanalyze"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start gap-2 text-primary hover:underline"
+                              >
+                                <Icon name="ExternalLink" size={14} className="mt-1 flex-shrink-0" />
+                                <span>Основы психоанализа</span>
+                              </a>
+                              <a
+                                href="https://volunteers.mental-health-russia.ru/volunteer-school"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-start gap-2 text-primary hover:underline"
+                              >
+                                <Icon name="ExternalLink" size={14} className="mt-1 flex-shrink-0" />
+                                <span>Школа волонтёров в психиатрии</span>
+                              </a>
+                            </div>
+                          </div>
+                        )}
                       </CardContent>
                     </Card>
                   );
