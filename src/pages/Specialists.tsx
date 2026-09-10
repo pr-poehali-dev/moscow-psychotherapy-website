@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Icon from '@/components/ui/icon';
@@ -1195,6 +1196,14 @@ const Specialists = () => {
               <p className="text-lg text-muted-foreground">
                 Квалифицированные психотерапевты различных направлений
               </p>
+              <div className="flex justify-center pt-2">
+                <a href="/specialists.xlsx" download>
+                  <Button variant="outline">
+                    <Icon name="FileSpreadsheet" size={18} className="mr-2" />
+                    Скачать базу в Excel
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </section>
