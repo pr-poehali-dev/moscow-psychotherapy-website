@@ -5,7 +5,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import EventsCalendar from '@/components/EventsCalendar';
-import MembershipForm from '@/components/MembershipForm';
 import Icon from '@/components/ui/icon';
 
 const About = () => {
@@ -327,14 +326,17 @@ const About = () => {
 
         <section id="membership" className="py-20 bg-gradient-to-br from-accent/10 to-primary/5">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Вступление в Московское отделение РПА</h2>
-                <p className="text-lg text-muted-foreground">
-                  Заполните анкету для вступления в наше профессиональное сообщество
-                </p>
-              </div>
-              <MembershipForm />
+            <div className="max-w-4xl mx-auto text-center space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">Вступление в Московское отделение РПА</h2>
+              <p className="text-lg text-muted-foreground">
+                Чтобы вступить в наше профессиональное сообщество, перейдите на страницу регистрации
+              </p>
+              <a href="https://course.rosmededucation.ru/rpa" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="shadow-lg hover:shadow-xl transition-all">
+                  <Icon name="UserPlus" size={20} className="mr-2" />
+                  Вступить в МО РПА
+                </Button>
+              </a>
             </div>
           </div>
         </section>
