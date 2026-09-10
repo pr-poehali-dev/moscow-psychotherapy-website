@@ -1880,7 +1880,7 @@ const Specialists = () => {
                           <div className="bg-white/60 rounded-lg p-4 border border-primary/20 space-y-3 h-fit">
                             <div className="flex items-center gap-2">
                               <Icon name="GraduationCap" size={18} className="text-primary" />
-                              <p className="font-semibold">Курсы НОЦ</p>
+                              <p className="font-semibold">Авторские курсы в НОЦ «МедОбраз»</p>
                             </div>
                             <div className="space-y-2 text-sm">
                               <a
@@ -1908,7 +1908,10 @@ const Specialists = () => {
                                 className="flex items-start gap-2 text-primary hover:underline"
                               >
                                 <Icon name="ExternalLink" size={14} className="mt-1 flex-shrink-0" />
-                                <span>Школа волонтёров в психиатрии</span>
+                                <span className="flex items-center gap-2 flex-wrap">
+                                  Школа волонтёров в психиатрии
+                                  <Badge className="bg-green-600 text-white hover:bg-green-600">Бесплатно</Badge>
+                                </span>
                               </a>
                             </div>
                           </div>
