@@ -1336,7 +1336,7 @@ const Specialists = () => {
     {
       id: 88,
       name: 'Малышева Татьяна Борисовна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/malysheva_tatyana_borisovna.jpg',
       location: 'Москва',
       education: 'Магистратура «Клиническая психология»; Академия практической психологии МГУ; Московский Гештальт Институт',
       specialty: 'Психотерапевт',
@@ -1438,7 +1438,7 @@ const Specialists = () => {
     {
       id: 94,
       name: 'Пекарская Светлана Игоревна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/pekarskaya_svetlana_igorevna.jpg',
       location: 'Москва',
       education: 'Высшее. Кандидат психологических наук',
       specialty: 'Психолог',
