@@ -928,7 +928,7 @@ const Specialists = () => {
     {
       id: 64,
       name: 'Гуляева Татьяна Петровна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/gulyaeva_tatyana_petrovna.jpg',
       location: 'Москва',
       education: 'Высшее психологическое, магистр',
       specialty: 'Психотерапевтическая работа с пациентами в частной практике',
@@ -1489,7 +1489,7 @@ const Specialists = () => {
     {
       id: 97,
       name: 'Соловьева Надежда Валентиновна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/soloveva_nadezhda_valentinovna.jpg',
       location: 'Москва',
       education: '',
       specialty: '',
