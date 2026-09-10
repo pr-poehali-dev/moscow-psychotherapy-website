@@ -44,7 +44,7 @@ const Specialists = () => {
     {
       id: 2,
       name: 'Азовских Светлана Валерьевна',
-      photo: 'https://cdn.poehali.dev/files/Азовских.jpg',
+      photo: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/49881b6a-9f69-4a15-a419-009003223af8.jpg',
       location: 'Москва',
       education: 'Уральский федеральный университет им. Первого президента России Б. Н. Ельцина, бакалавр философии. Московский институт психоанализа, магистр психологии, прикладной психоанализ и психоаналитическое консультирование. Международная школа групп-анализа, групп-анализ и групповая психотерапия.',
       specialty: 'Психоаналитический психотерапевт, групп-аналитик',
@@ -248,7 +248,7 @@ const Specialists = () => {
     {
       id: 16,
       name: 'Архангельская Наталия Владимировна',
-      photo: '👩‍⚕️',
+      photo: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/5a2441e2-e1bf-4b6b-bdcd-487e627e7572.JPG',
       location: 'Москва',
       education: 'Высшее',
       specialty: 'Клинический психолог',
@@ -435,7 +435,7 @@ const Specialists = () => {
     {
       id: 28,
       name: 'Алексеенко Светлана Вячеславовна',
-      photo: '👩‍⚕️',
+      photo: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/2618fc3d-1d5b-40c3-8a69-85776463cb3f.jpg',
       location: 'Москва',
       education: 'Российский государственный гуманитарный университет. Московский психолого-социальный университет',
       specialty: 'Психолог',
@@ -605,7 +605,7 @@ const Specialists = () => {
     {
       id: 38,
       name: 'Абрамов Сергей Владимирович',
-      photo: '👨‍⚕️',
+      photo: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/09bd7a11-3d98-4233-8443-579f70ab629b.jpg',
       location: 'Москва',
       education: 'Высшее медицинское, переподготовка по клинической психологии',
       specialty: 'Врач-психотерапевт',
@@ -979,7 +979,7 @@ const Specialists = () => {
     {
       id: 67,
       name: 'Айсина Оксана Алексеевна',
-      photo: '👩‍⚕️',
+      photo: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/e850c04b-c1d2-4fb0-bb1c-d5a7c8ef675d.jpeg',
       location: 'Москва',
       education: 'НОЧУ ВО «Московский институт психоанализа», магистратура',
       specialty: 'Психолог, психоаналитический терапевт',
