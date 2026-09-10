@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import EventsCalendar from '@/components/EventsCalendar';
-import MembershipForm from '@/components/MembershipForm';
 import Icon from '@/components/ui/icon';
 
 const Home = () => {
@@ -94,64 +92,34 @@ const Home = () => {
                 </Card>
               </div>
 
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-2">
-                  <Card className="border-2 bg-gradient-to-br from-primary/5 to-accent/10">
-                    <CardContent className="p-8">
-                      <div className="space-y-6">
-                        <div>
-                          <h2 className="text-3xl font-bold mb-4">О Московском отделении</h2>
-                          <p className="text-muted-foreground leading-relaxed text-lg">
-                            Московское отделение РПА объединяет ведущих психотерапевтов столицы и является крупнейшим 
-                            региональным подразделением ассоциации. Мы организуем профессиональные мероприятия, 
-                            образовательные программы и способствуем развитию психотерапевтической практики в Москве.
-                          </p>
-                        </div>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                          <Link to="/about" className="flex-1">
-                            <Button variant="outline" className="w-full">
-                              <Icon name="Info" size={16} className="mr-2" />
-                              Подробнее о МО РПА
-                            </Button>
-                          </Link>
-                          <Link to="#membership" className="flex-1">
-                            <Button className="w-full">
-                              <Icon name="UserPlus" size={16} className="mr-2" />
-                              Вступить в МО РПА
-                            </Button>
-                          </Link>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </div>
-
-                <div>
-                  <Card className="border-2 sticky top-8">
-                    <CardContent className="p-6">
-                      <h3 className="text-2xl font-bold mb-4 flex items-center">
-                        <Icon name="Calendar" size={24} className="mr-2 text-primary" />
-                        Мероприятия
-                      </h3>
-                      <EventsCalendar />
-                    </CardContent>
-                  </Card>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="membership" className="py-20 bg-gradient-to-br from-accent/10 to-primary/5">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Вступление в Московское отделение РПА</h2>
-                <p className="text-lg text-muted-foreground">
-                  Заполните анкету для вступления в наше профессиональное сообщество
-                </p>
-              </div>
-              <MembershipForm />
+              <Card className="border-2 bg-gradient-to-br from-primary/5 to-accent/10 max-w-4xl mx-auto">
+                <CardContent className="p-8">
+                  <div className="space-y-6">
+                    <div>
+                      <h2 className="text-3xl font-bold mb-4">О Московском отделении</h2>
+                      <p className="text-muted-foreground leading-relaxed text-lg">
+                        Московское отделение РПА объединяет ведущих психотерапевтов столицы и является крупнейшим 
+                        региональным подразделением ассоциации. Мы организуем профессиональные мероприятия, 
+                        образовательные программы и способствуем развитию психотерапевтической практики в Москве.
+                      </p>
+                    </div>
+                    <div className="flex flex-col sm:flex-row gap-4">
+                      <Link to="/about" className="flex-1">
+                        <Button variant="outline" className="w-full">
+                          <Icon name="Info" size={16} className="mr-2" />
+                          Подробнее о МО РПА
+                        </Button>
+                      </Link>
+                      <Link to="/about#membership" className="flex-1">
+                        <Button className="w-full">
+                          <Icon name="UserPlus" size={16} className="mr-2" />
+                          Вступить в МО РПА
+                        </Button>
+                      </Link>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
