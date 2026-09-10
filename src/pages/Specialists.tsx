@@ -61,7 +61,7 @@ const Specialists = () => {
     {
       id: 3,
       name: 'Блищенко Алёна Викторовна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/blischenko_alena_viktorovna.jpg',
       location: 'Москва',
       education: 'МПГУ им Ленина, Факультет педагогики и психологии, 1994 г. Аспирантура при МПГУ им. Ленина, 1998 г. Кафедра психологии развития РАО. Институт прикладной психологии в социальной сфере, 2024 г.',
       specialty: 'Психолог-консультант. Клинический психолог.',
@@ -78,7 +78,7 @@ const Specialists = () => {
     {
       id: 4,
       name: 'Мельник Екатерина Сергеевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/melnik_ekaterina_sergeevna.jpg',
       location: 'Москва',
       education: 'Высшее',
       specialty: 'Психолог, клинический психолог',
@@ -95,7 +95,7 @@ const Specialists = () => {
     {
       id: 5,
       name: 'Богодистова Анастасия Юрьевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/bogodistova_anastasiya_yurevna.jpg',
       location: 'Москва',
       education: 'Диплом о высшем образовании с присвоением квалификации практический психолог и дополнительной квалификации гештальт-консультант (1560 часов), 2022 г. Магистратура МИП (Прикладной психоанализ и психологическое консультирование), 2024. Программа ДО МИП Психоанализ, психоаналитическая психотерапия и психоаналитическое консультирование (2800 час.) - с октября 2024 (по 2027 г.).',
       specialty: 'Гештальт-консультант, психоаналитически ориентированный психолог',
@@ -112,7 +112,7 @@ const Specialists = () => {
     {
       id: 6,
       name: 'Митрофанов Сергей Сергеевич',
-      photo: '👨‍⚕️',
+      photo: '/specialists/mitrofanov_sergey_sergeevich.jpg',
       location: 'Москва',
       education: 'НИУ ВШЭ Психоанализ и психоаналитическая психотерапия, 2024. ДПО НИУ ВШЭ Клиническая психология, 2025',
       specialty: 'Клинический психолог, психоаналитический психотерапевт',
@@ -129,7 +129,7 @@ const Specialists = () => {
     {
       id: 7,
       name: 'Матюхина Елена Юрьевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/matyuhina_elena_yurevna.jpg',
       location: 'Москва',
       education: 'Высшее',
       specialty: 'Психолог',
@@ -146,7 +146,7 @@ const Specialists = () => {
     {
       id: 8,
       name: 'Карпуль Анна Михайловна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/karpul_anna_mihaylovna.jpg',
       location: 'Самара',
       education: 'НИУ Высшая Школа Экономики, высшее психологическое',
       specialty: 'Психология. Клинический психолог, Психоаналитический психолог, Кризисный психолог, Перинатальный психолог, Практический психолог.',
@@ -163,7 +163,7 @@ const Specialists = () => {
     {
       id: 9,
       name: 'Малыгин Владимир Леонидович',
-      photo: '👨‍⚕️',
+      photo: '/specialists/malygin_vladimir_leonidovich.jpg',
       location: 'Москва',
       education: 'Ярославский мединститут',
       specialty: 'Лечебное дело. Врач психиатр. Врач психотерапевт',
@@ -180,7 +180,7 @@ const Specialists = () => {
     {
       id: 10,
       name: 'Полторацкий Дмитрий Викторович',
-      photo: '👨‍⚕️',
+      photo: '/specialists/poltoratskiy_dmitriy_viktorovich.jpg',
       location: 'Москва',
       education: 'Высшее',
       specialty: 'Психология',
@@ -197,7 +197,7 @@ const Specialists = () => {
     {
       id: 11,
       name: 'Щанкина Наталия Александровна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/schankina_nataliya_aleksandrovna.jpg',
       location: 'Москва',
       education: 'Московский психолого-социальный институт',
       specialty: 'Психолог, клинический психолог',
@@ -214,7 +214,7 @@ const Specialists = () => {
     {
       id: 13,
       name: 'Захарова Екатерина Валерьевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/zaharova_ekaterina_valerevna.jpg',
       location: 'Москва',
       education: 'Московский Государственный Университет имени М.В.Ломоносова',
       specialty: 'Клиническая психология',
@@ -231,7 +231,7 @@ const Specialists = () => {
     {
       id: 15,
       name: 'Кузнецова-Фетисова Анастасия Александровна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/kuznetsova_fetisova_anastasiya_aleksandrovna.jpg',
       location: 'Москва',
       education: 'Московский государственный психолого-педагогический университет',
       specialty: 'Клинический психолог',
@@ -265,7 +265,7 @@ const Specialists = () => {
     {
       id: 17,
       name: 'Тимченко Андрей Александрович',
-      photo: '👨‍⚕️',
+      photo: '/specialists/timchenko_andrey_aleksandrovich.jpg',
       location: 'Москва',
       education: 'МГППУ Московский государственный Психолог-Педагогический Университет. Факультет «Психологическое консультирование». МГМСУ им. А.И. Евдокимова Факультет «Клиническая психология»',
       specialty: 'Психолог. Преподаватель психологии. Клинический психолог.',
@@ -299,7 +299,7 @@ const Specialists = () => {
     {
       id: 19,
       name: 'Хвощевская Софья Игоревна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/hvoschevskaya_sofya_igorevna.jpg',
       location: 'Москва',
       education: 'НИУ "Высшая школа экономики". Диплом магистра с отличием по направлению подготовки 37.04.01 Психология (1660 ак. час.), 2024 г. РГГУ. Диплом о профессиональной переподготовке удостоверяющий право на ведение профессиональной деятельности в сфере психологии личности (650 ак. час.), 2022 г.',
       specialty: 'Психолог',
@@ -316,7 +316,7 @@ const Specialists = () => {
     {
       id: 20,
       name: 'Фадеева Татьяна Константиновна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/fadeeva_tatyana_konstantinovna.jpg',
       location: 'Московская область, Серпухов',
       education: 'Московский городской педагогический университет',
       specialty: 'Психолог. Преподаватель психологии.',
@@ -333,7 +333,7 @@ const Specialists = () => {
     {
       id: 21,
       name: 'Чурилина Ольга Петровна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/churilina_olga_petrovna.jpg',
       location: 'Москва',
       education: 'МГУ им. Ломоносова. МГОПУ им. Шолохова. Бехтеревка',
       specialty: 'Психолог, преподаватель психологии. Клинический психолог',
@@ -350,7 +350,7 @@ const Specialists = () => {
     {
       id: 22,
       name: 'Чурилина Екатерина Владимировна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/churilina_ekaterina_vladimirovna.jpg',
       location: 'Москва',
       education: 'МГУ имени М. В. Ломоносова, факультет психологии, кафедра психофизиологии. НОУ ВПО Московский институт Психоанализа, Логотерапия и экзистенциальный анализ',
       specialty: 'Психология',
@@ -367,7 +367,7 @@ const Specialists = () => {
     {
       id: 24,
       name: 'Сирота Наталья Александровна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/sirota_natalya_aleksandrovna.jpg',
       location: 'Москва',
       education: 'Высшее',
       specialty: 'Врач-психиатр, психотерапевт, клинический психолог',
@@ -384,7 +384,7 @@ const Specialists = () => {
     {
       id: 25,
       name: 'Глушенко Наталья Геннадьевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/glushenko_natalya_gennadevna.jpg',
       location: 'Москва',
       education: 'МГУ им. М.В.Ломоносова, Психологическое консультирование и психодиагностика личности. Московский Институт Психоанализа, Магистратура. ОПП ГП Московский Гештальт-институт, программа подготовки гештальт-терапевтов 1, 2, 3 ступени: гештальт-терапевт, супервизор, ведущий терапевтических групп',
       specialty: 'Психолог, Гештальт-терапевт',
@@ -401,7 +401,7 @@ const Specialists = () => {
     {
       id: 26,
       name: 'Жукова Екатерина Алексеевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/zhukova_ekaterina_alekseevna.jpg',
       location: 'Москва',
       education: 'Дальневосточная государственная академия имени адм Г.И. Невельского, факультет психологии. Московский государственный психолого-педагогический университет, факультет консультативной и клинической психологии',
       specialty: 'Психолог. Преподаватель психологии. Клинический психолог. Аккредитация по специальности "медицинский психолог".',
@@ -418,7 +418,7 @@ const Specialists = () => {
     {
       id: 27,
       name: 'Воробьева Надежда Борисовна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/vorobeva_nadezhda_borisovna.jpg',
       location: 'Москва',
       education: 'Санкт-Петербургский государственный университет. Институт Гуманистической и Экзистенциальной психотерапии (HEPI Литва). Институт интегративной детской и подростковой психотерапии "Гинезис" (Австрия)',
       specialty: 'Клинический психолог. Экзистенциальный терапевт. Детский и подростковый психотерапевт',
@@ -452,7 +452,7 @@ const Specialists = () => {
     {
       id: 29,
       name: 'Асаилова Юлия Андреевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/asailova_yuliya_andreevna.jpg',
       location: 'Москва',
       education: 'Московский институт гештальта анализа и супервизии',
       specialty: 'Консультант в гештальт подходе',
@@ -469,7 +469,7 @@ const Specialists = () => {
     {
       id: 30,
       name: 'Гунар Татьяна Юрьевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/gunar_tatyana_yurevna.jpg',
       location: 'Валенсия, Испания',
       education: 'Высшее психологическое',
       specialty: 'Психоаналитический психотерапевт',
@@ -486,7 +486,7 @@ const Specialists = () => {
     {
       id: 31,
       name: 'Степанова Екатерина Сергеевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/stepanova_ekaterina_sergeevna.jpg',
       location: 'Москва',
       education: 'ДПО Психологическое-Консультирование (ВЕИП). ДПО Педагогическая деятельность в образовательной организации (МГПУ). Курс Психотерапия ПРЛ (ИПИП). Другие курсы повышения квалификации',
       specialty: 'Психолог, преподаватель',
@@ -503,7 +503,7 @@ const Specialists = () => {
     {
       id: 32,
       name: 'Лоскутова Анастасия Юрьевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/loskutova_anastasiya_yurevna.jpg',
       location: 'Москва',
       education: 'Московский Государственный Психолого-Педагогический Университет. Московский Гештальт Институт. Международный Институт Гештальт-анализа и Супервизии',
       specialty: 'Психолог',
@@ -520,7 +520,7 @@ const Specialists = () => {
     {
       id: 33,
       name: 'Порешина Анжелика Валерьевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/poreshina_anzhelika_valerevna.jpg',
       location: 'Москва',
       education: 'РГГУ (Российский государственный гуманитарный университет), институт психологии им. Л.С. Выготского. МИГАС (Международный институт гештальт-анализа и супервизии). МГУ (Московский государственный университет)',
       specialty: 'Клиническая психология. Психолог-консультант в гештальт-подходе. Спортивная психология',
@@ -537,7 +537,7 @@ const Specialists = () => {
     {
       id: 34,
       name: 'Иовова Ольга Игоревна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/iovova_olga_igorevna.jpg',
       location: 'Чехов, Московская область',
       education: 'Высшее, магистратура',
       specialty: 'Магистр психологии, клинический психолог, нейропсихолог',
@@ -554,7 +554,7 @@ const Specialists = () => {
     {
       id: 35,
       name: 'Москвин Вячеслав Вячеславович',
-      photo: '👨‍⚕️',
+      photo: '/specialists/moskvin_vyacheslav_vyacheslavovich.jpg',
       location: 'Москва',
       education: 'МГУ имени М.В. Ломоносова, факультет психологии, нейропсихология. Российский университет медицины Минздрава РФ, клиническая психология. СПБГУ, факультет психологии, психотерапия ОРКТ',
       specialty: 'Клинический психолог, нейропсихолог',
@@ -571,7 +571,7 @@ const Specialists = () => {
     {
       id: 36,
       name: 'Бегиджанова Юлия Александровна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/begidzhanova_yuliya_aleksandrovna.jpg',
       location: 'Москва',
       education: 'Московский Государственный Психолого-педагогический Университет',
       specialty: 'Психолог',
@@ -588,7 +588,7 @@ const Specialists = () => {
     {
       id: 37,
       name: 'Елизаров Евгений Валентинович',
-      photo: '👨‍⚕️',
+      photo: '/specialists/elizarov_evgeniy_valentinovich.jpg',
       location: 'Чехов',
       education: 'Высшее. Институт психотерапии и клинической психологии.',
       specialty: 'Клинический психолог',
@@ -622,7 +622,7 @@ const Specialists = () => {
     {
       id: 39,
       name: 'Ефимкина Яна Игоревна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/efimkina_yana_igorevna.jpg',
       location: 'Балашиха, Московская область',
       education: 'Восточно-Европейский Институт Психоанализа. Университет Практической Психологии. Евразийский Институт Практической и Прикладной Психологии',
       specialty: 'Психолог',
@@ -639,7 +639,7 @@ const Specialists = () => {
     {
       id: 40,
       name: 'Черникова Дарья Денисовна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/chernikova_darya_denisovna.jpg',
       location: 'Москва',
       education: 'МГУ им. М.В.Ломоносова. Московский Институт Психоанализа',
       specialty: 'Нейропсихолог, психотерапевт',
@@ -656,7 +656,7 @@ const Specialists = () => {
     {
       id: 42,
       name: 'Герасимова Анна Александровна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/gerasimova_anna_aleksandrovna.jpg',
       location: 'Москва',
       education: 'Московский государственный психолого-педагогический университет',
       specialty: 'Клинический психолог',
@@ -673,7 +673,7 @@ const Specialists = () => {
     {
       id: 44,
       name: 'Сорокопудова Владислава Валентиновна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/sorokopudova_vladislava_valentinovna.jpg',
       location: 'Москва',
       education: 'Высшее психологическое образование (факультет психологии Томского государственного университета). Российско-австрийская программа "Экзистенциальный анализ и логотерапия". Дополнительное обучение экзистенциальной терапии, травматерапии, теории привязанности, ведению супервизий.',
       specialty: 'Психолог',
@@ -690,7 +690,7 @@ const Specialists = () => {
     {
       id: 46,
       name: 'Попова Мария Борисовна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/popova_mariya_borisovna.jpg',
       location: 'Москва',
       education: 'Государственный университет управления. Международный институт гештальт-анализа и супервизии',
       specialty: 'Психолог',
@@ -707,7 +707,7 @@ const Specialists = () => {
     {
       id: 48,
       name: 'Ведмицкая Дарья Дмитриевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/vedmitskaya_darya_dmitrievna.jpg',
       location: 'Москва',
       education: 'Московский государственный психолого-педагогический университет',
       specialty: 'Клиническая психология',
@@ -724,7 +724,7 @@ const Specialists = () => {
     {
       id: 49,
       name: 'Гурьева Динара Хайдаровна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/gureva_dinara_haydarovna.jpg',
       location: 'Москва',
       education: 'Институт Практической Психологии и Психоанализа (психологическое консультирование). Московский Гештальт Институт (1,2,3 ступени гештальт-терапии, супервизор). Центр Системной Семейной Терапии (семейная системная терапия). Московский Институт Психоанализа (психолого-педагогическая магистратура)',
       specialty: 'Психотерапия, психологическое консультирование',
@@ -741,7 +741,7 @@ const Specialists = () => {
     {
       id: 50,
       name: 'Ершова Анастасия Павловна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/ershova_anastasiya_pavlovna.jpg',
       location: 'Москва',
       education: 'Высшее образование: Омский государственный университет Ф.М.Достоевского, специальность экономист (2010 г.). Международный институт гештальт анализа и супервизии дополнительное образование «основы гештальт терапии»(2022 г./ 132 ч.), переквалификация «психологическое консультирование» (2024 г./1100 ч.), повышение квалификации «методики арт терапии в гештальт подходе» (2023 г./53 ч). Международный институт гештальт анализа и супервизии, профессиональная переподготовка «психологическое консультирование в гештальт подходе» (2025г/500 ч.), специализация - «гештальт подход в клинической практике: от диагноза к контакту» (ноябрь 2024/200 ч)',
       specialty: 'Гештальт-консультант',
@@ -775,7 +775,7 @@ const Specialists = () => {
     {
       id: 52,
       name: 'Корнешов Алексей Александрович',
-      photo: '👨‍⚕️',
+      photo: '/specialists/korneshov_aleksey_aleksandrovich.jpg',
       location: 'Москва',
       education: 'Высшее',
       specialty: 'Доктор экономических наук, кандидат психологических наук, психоаналитический психолог, клинический психолог, психолог консультант',
@@ -792,7 +792,7 @@ const Specialists = () => {
     {
       id: 53,
       name: 'Рашевская Ольга Юрьевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/rashevskaya_olga_yurevna.jpg',
       location: 'Чехов',
       education: 'Высшее',
       specialty: 'Психолог. Преподаватель психологии. Клинический психолог',
@@ -809,7 +809,7 @@ const Specialists = () => {
     {
       id: 54,
       name: 'Сиснёва Мария Евгеньевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/sisneva_mariya_evgenevna.jpg',
       location: 'Москва',
       education: 'Московский государственный психолого-педагогический Университет - психолог, преподаватель психологии. ФГБУ ДПО «Центральная государственная медицинская академия» Управления делами Президента РФ - клинический психолог. Московский государственный психолого-педагогический Университет, "Когнитивная психотерапия эмоциональных и личностных расстройств". Психосоциальная реабилитация. Futura Cooperativa Sociale, Calabria, Italy.',
       specialty: 'Клинический психолог',
@@ -826,7 +826,7 @@ const Specialists = () => {
     {
       id: 55,
       name: 'Чуйкова Марина Низамиевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/chuykova_marina_nizamievna.jpg',
       location: 'Москва',
       education: 'НОЧУ ВО Московский институт психоанализа',
       specialty: 'Психологическое консультирование',
@@ -843,7 +843,7 @@ const Specialists = () => {
     {
       id: 56,
       name: 'Шатина Анастасия Михайловна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/shatina_anastasiya_mihaylovna.jpg',
       location: 'Москва',
       education: 'НОУ ВПО «УРАО», психолог. ОПП ГП «Авторская программа МГИ», аккредитованный гештальт-терапевт и супервизор. Программы повышения квалификации: гештальт-подход в работе с сексуальными нарушениями, гештальт-подход в работе с группой, гештальт-подход в клинической практике, терапия инцеста. Травмы, насилие и путь к исцелению',
       specialty: 'Гештальт-терапевт',
@@ -860,7 +860,7 @@ const Specialists = () => {
     {
       id: 57,
       name: 'Шевченко Дмитрий Михайлович',
-      photo: '👨‍⚕️',
+      photo: '/specialists/shevchenko_dmitriy_mihaylovich.jpg',
       location: 'Москва',
       education: 'Российский Государственный Социальный Университет. Московский Государственный Психолого-педагогический Университет',
       specialty: 'Клиническая психология',
@@ -894,7 +894,7 @@ const Specialists = () => {
     {
       id: 61,
       name: 'Быкова Полина Леонидовна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/bykova_polina_leonidovna.jpg',
       location: 'Москва',
       education: 'БГПУ им. Акмуллы, МИГИП, магистр психологии',
       specialty: 'Психолог',
@@ -911,7 +911,7 @@ const Specialists = () => {
     {
       id: 63,
       name: 'Гранкина Ирина Дмитриевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/grankina_irina_dmitrievna.jpg',
       location: 'Москва',
       education: 'МГУ им. М.В.Ломоносова (прикладная математика), НИУ ВШЭ (психоанализ и психоаналитическая психотерапия, магистратура), Московский институт психоанализа (нейрокоучинг)',
       specialty: 'Психоаналитическая психотерапия, классический гипноз, нейрокоучинг',
@@ -1013,7 +1013,7 @@ const Specialists = () => {
     {
       id: 69,
       name: 'Баганова Анастасия Юрьевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/baganova_anastasiya_yurevna.jpg',
       location: 'Москва',
       education: 'ФГБОУ ВО «Московский государственный психолого-педагогический университет»',
       specialty: 'Клинический психолог',
@@ -1030,7 +1030,7 @@ const Specialists = () => {
     {
       id: 70,
       name: 'Брейман Ольга Евгеньевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/breyman_olga_evgenevna.jpg',
       location: 'Москва',
       education: 'Высшее',
       specialty: 'Практический психолог',
@@ -1064,7 +1064,7 @@ const Specialists = () => {
     {
       id: 72,
       name: 'Волченкова Юлия Владимировна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/volchenkova_yuliya_vladimirovna.jpg',
       location: 'Москва',
       education: 'НОЧУ ВО «Московский институт психоанализа», бакалавр',
       specialty: 'Психолог',
@@ -1081,7 +1081,7 @@ const Specialists = () => {
     {
       id: 73,
       name: 'Гаврилина Елена Александровна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/gavrilina_elena_aleksandrovna.jpg',
       location: 'Москва',
       education: 'Высшее. Кандидат философских наук',
       specialty: 'Клинический психолог, психолог, социолог, инженер-разработчик',
@@ -1098,7 +1098,7 @@ const Specialists = () => {
     {
       id: 74,
       name: 'Глёх Валерия Викторовна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/gleh_valeriya_viktorovna.jpg',
       location: 'Москва',
       education: 'НИУ ВШЭ, магистр психологии; НМИЦ им. В.М. Бехтерева, клинический психолог',
       specialty: 'Психоаналитический психотерапевт, клинический психолог',
@@ -1115,7 +1115,7 @@ const Specialists = () => {
     {
       id: 75,
       name: 'Гуттаковская Анна Антоновна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/guttakovskaya_anna_antonovna.jpg',
       location: 'Москва',
       education: 'МГУ имени М.В. Ломоносова, факультет психологии, магистр/специалист',
       specialty: 'Организационная психология',
@@ -1149,7 +1149,7 @@ const Specialists = () => {
     {
       id: 77,
       name: 'Журок Елена Михайловна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/zhurok_elena_mihaylovna.jpg',
       location: 'Москва',
       education: 'Высшее, магистр психологии, клинический психолог',
       specialty: 'Психолог, клинический психолог, EMDR-терапевт',
@@ -1183,7 +1183,7 @@ const Specialists = () => {
     {
       id: 79,
       name: 'Зимелева Зоя Алексеевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/zimeleva_zoya_alekseevna.jpg',
       location: 'Москва',
       education: 'Московский городской психолого-педагогический университет; Московский гештальт-институт. Кандидат психологических наук',
       specialty: 'Клинический психолог',
@@ -1217,7 +1217,7 @@ const Specialists = () => {
     {
       id: 81,
       name: 'Ильюшина Екатерина Юрьевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/ilyushina_ekaterina_yurevna.jpg',
       location: 'Москва',
       education: 'Высшее психологическое, ЛГУ им. А.С. Пушкина',
       specialty: 'Психолог, преподаватель психологии',
@@ -1234,7 +1234,7 @@ const Specialists = () => {
     {
       id: 82,
       name: 'Камилина Алина Вячеславовна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/kamilina_alina_vyacheslavovna.jpg',
       location: 'Москва',
       education: 'ВЕИП, бакалавриат; МПСУ, магистратура',
       specialty: 'Психолог-психоаналитик',
@@ -1302,7 +1302,7 @@ const Specialists = () => {
     {
       id: 86,
       name: 'Красильников Семён Сергеевич',
-      photo: '👨‍⚕️',
+      photo: '/specialists/krasilnikov_semen_sergeevich.jpg',
       location: 'Минск',
       education: 'Высшее психологическое',
       specialty: 'Психоаналитический психолог, секс-терапевт',
@@ -1319,7 +1319,7 @@ const Specialists = () => {
     {
       id: 87,
       name: 'Мазурина Мария Владимировна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/mazurina_mariya_vladimirovna.jpg',
       location: 'Москва',
       education: 'Московский институт психоанализа',
       specialty: 'Психолог',
@@ -1353,7 +1353,7 @@ const Specialists = () => {
     {
       id: 89,
       name: 'Марченко Татьяна Владимировна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/marchenko_tatyana_vladimirovna.jpg',
       location: 'Москва',
       education: 'Высшее',
       specialty: 'Клинический психолог',
@@ -1472,7 +1472,7 @@ const Specialists = () => {
     {
       id: 96,
       name: 'Сидоренкова Светлана Владимировна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/sidorenkova_svetlana_vladimirovna.jpg',
       location: 'Королёв',
       education: 'Институт психотерапии и консультирования «Гармония»; ВЕИП',
       specialty: 'Психолог-консультант, ведущий групп',
@@ -1540,7 +1540,7 @@ const Specialists = () => {
     {
       id: 100,
       name: 'Флитман Екатерина Дмитриевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/flitman_ekaterina_dmitrievna.jpg',
       location: 'Москва',
       education: 'Высшее, специалитет «Клиническая психология», МГППУ, факультет консультативной и клинической психологии, 2014–2020 гг.',
       specialty: 'Клинический психолог',
@@ -1574,7 +1574,7 @@ const Specialists = () => {
     {
       id: 102,
       name: 'Чичикина Любовь Николаевна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/chichikina_lyubov_nikolaevna.jpg',
       location: 'Московская область',
       education: 'Московский институт психоанализа; Международный институт гештальт-анализа и супервизии',
       specialty: 'Клинический психолог',
