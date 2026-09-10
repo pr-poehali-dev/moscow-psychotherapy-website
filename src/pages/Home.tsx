@@ -110,12 +110,12 @@ const Home = () => {
                           Подробнее о МО РПА
                         </Button>
                       </Link>
-                      <Link to="/about#membership" className="flex-1">
+                      <a href="https://course.rosmededucation.ru/rpa" target="_blank" rel="noopener noreferrer" className="flex-1">
                         <Button className="w-full">
                           <Icon name="UserPlus" size={16} className="mr-2" />
                           Вступить в МО РПА
                         </Button>
-                      </Link>
+                      </a>
                     </div>
                   </div>
                 </CardContent>
