@@ -52,16 +52,16 @@ const About = () => {
       <Header />
       
       <main className="flex-1">
-        <section className="relative py-20 md:py-32 overflow-hidden">
+        <section className="relative py-10 md:py-16 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/15 -z-10" />
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight">
+              <h1 className="text-2xl md:text-3xl font-bold tracking-tight">
                 <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
                   О Московском отделении РПА
                 </span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto">
                 Профессиональное сообщество психотерапевтов для развития и популяризации психотерапии в Москве
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
