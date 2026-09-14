@@ -1757,7 +1757,7 @@ const Specialists = () => {
                         <div className={`flex flex-col space-y-4 ${specialist.isChairman ? 'md:col-span-2' : ''}`}>
                           <div className="flex items-start justify-between">
                             <div className="flex items-center space-x-4">
-                              <div className={`rounded-full overflow-hidden flex-shrink-0 ${specialist.isChairman ? 'w-28 h-28 ring-2 ring-primary' : 'w-24 h-24'}`}>
+                              <div className={`rounded-2xl overflow-hidden flex-shrink-0 ${specialist.isChairman ? 'w-24 h-32 ring-2 ring-primary' : 'w-20 h-28'}`}>
                                 <img src={specialist.photo} alt={specialist.name} className="w-full h-full object-cover object-top" />
                               </div>
                               <div>
