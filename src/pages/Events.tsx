@@ -46,6 +46,44 @@ const Events = () => {
         <section className="py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto space-y-6">
+              <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8 space-y-4">
+                  <div className="flex items-start gap-3 flex-wrap">
+                    <Badge className="bg-blue-500 text-white">Вебинары</Badge>
+                    <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                      <Icon name="Repeat" size={14} className="mr-1" />
+                      Ежемесячно
+                    </Badge>
+                    <h3 className="text-2xl font-bold flex-1 w-full sm:w-auto">«Профессиональная среда»</h3>
+                  </div>
+
+                  <p className="font-medium text-primary">Встречи, которые работают на практику</p>
+
+                  <p className="text-muted-foreground">
+                    Ежемесячная онлайн-встреча для психологов, психотерапевтов, психиатров и клинических психологов.
+                    Тема, спикер, разбор ситуаций и ваши вопросы. Встречи ведут эксперты Московского отделения
+                    Российской психотерапевтической ассоциации.
+                  </p>
+
+                  <div className="bg-accent/10 p-4 rounded-lg space-y-2">
+                    <p className="font-semibold text-sm">О формате</p>
+                    <p className="text-sm text-muted-foreground">
+                      Профессиональная встреча без перегруза и лишней теории. «Профессиональная среда» — это
+                      регулярные онлайн-встречи для специалистов, которым важно не просто слушать лекции, а
+                      разбирать реальные вопросы практики: что происходит с клиентом, как выбрать стратегию
+                      работы и где специалисту важно не оставаться в одиночестве.
+                    </p>
+                  </div>
+
+                  <Button asChild>
+                    <a href="https://course.rosmededucation.ru/professionalnaya-sreda" target="_blank" rel="noopener noreferrer">
+                      <Icon name="ExternalLink" size={16} className="mr-2" />
+                      Подробнее и регистрация
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+
               {allEvents.map((event) => (
                 <Card key={event.id} className="border-2 hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-8">
