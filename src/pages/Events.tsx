@@ -65,6 +65,15 @@ const Events = () => {
                     Российской психотерапевтической ассоциации.
                   </p>
 
+                  <div className="flex flex-wrap gap-2">
+                    {['14 октября', '28 октября', '11 ноября'].map((date) => (
+                      <Badge key={date} variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                        <Icon name="Calendar" size={14} className="mr-1" />
+                        {date}
+                      </Badge>
+                    ))}
+                  </div>
+
                   <div className="bg-accent/10 p-4 rounded-lg space-y-2">
                     <p className="font-semibold text-sm">О формате</p>
                     <p className="text-sm text-muted-foreground">

@@ -1661,12 +1661,6 @@ const Specialists = () => {
                 Квалифицированные психотерапевты различных направлений
               </p>
               <div className="flex flex-wrap justify-center gap-3 pt-2">
-                <a href="/specialists.xlsx" download>
-                  <Button variant="outline">
-                    <Icon name="FileSpreadsheet" size={18} className="mr-2" />
-                    Скачать базу в Excel
-                  </Button>
-                </a>
                 <FeedbackDialog
                   defaultSubject="Внесение информации в карточку специалиста"
                   trigger={

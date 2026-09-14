@@ -98,7 +98,25 @@ export const getUpcomingEvents = (): Event[] => {
     registrationRequired: true,
   }));
 
+  const professionalWednesdayDates = ['14 октября 2026', '28 октября 2026', '11 ноября 2026'];
+  const professionalWednesdayEvents: Event[] = professionalWednesdayDates.map((date, index) => ({
+    id: `professionalnaya-sreda-${index}`,
+    title: 'Вебинар «Профессиональная среда»',
+    date,
+    time: '19:00 - 20:30',
+    location: 'Онлайн',
+    type: 'Вебинар',
+    format: 'Онлайн',
+    description: 'Ежемесячная онлайн-встреча для психологов, психотерапевтов, психиатров и клинических психологов. Тема, спикер, разбор ситуаций и ваши вопросы.',
+    price: 'По регистрации',
+    isRecurring: true,
+    recurringNote: 'Ежемесячно',
+    registrationRequired: true,
+    registrationUrl: 'https://course.rosmededucation.ru/professionalnaya-sreda',
+  }));
+
   const upcomingEvents: Event[] = [
+    ...professionalWednesdayEvents,
     {
       id: 'ne-sluchay-a-chelovek-conf',
       title: 'Конференция «Не случай, а человек: клиент в пространстве психотерапевтических подходов»',
