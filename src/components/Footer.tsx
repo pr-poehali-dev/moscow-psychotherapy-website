@@ -34,6 +34,7 @@ const Footer = () => {
               <li><Link to="/faq" className="text-muted-foreground hover:text-foreground transition-colors">Вопросы и ответы</Link></li>
               <li><Link to="/contacts" className="text-muted-foreground hover:text-foreground transition-colors">Контакты</Link></li>
               <li><Link to="/profile" className="text-muted-foreground hover:text-foreground transition-colors">Личный кабинет</Link></li>
+              <li><Link to="/privacy-consent" className="text-muted-foreground hover:text-foreground transition-colors">Согласие на обработку персональных данных</Link></li>
             </ul>
           </div>
 
@@ -61,7 +62,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; 2024 Московское отделение РПА. Все права защищены.</p>
+          <p>&copy; 2026 Московское отделение РПА. Все права защищены.</p>
         </div>
       </div>
     </footer>
