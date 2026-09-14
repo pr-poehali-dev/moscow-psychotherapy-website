@@ -12,6 +12,7 @@ import {
 } from '@/components/ui/navigation-menu';
 import Icon from '@/components/ui/icon';
 import FeedbackDialog from '@/components/FeedbackDialog';
+import logo from '@/assets/logo.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,9 +31,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-accent">
-              <span className="text-xl font-bold text-white">МО</span>
-            </div>
+            <img src={logo} alt="РПА Москва" className="h-10 w-10 rounded-lg object-cover" />
             <span className="hidden font-bold sm:inline-block">РПА Москва</span>
           </Link>
 
