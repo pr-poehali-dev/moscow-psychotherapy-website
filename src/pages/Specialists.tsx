@@ -1452,7 +1452,7 @@ const Specialists = () => {
       mainIssues: [],
       ageGroups: 'Взрослые',
       approaches: ['Телесно-ориентированная терапия'],
-      status: 'Действительный член РПА',
+      status: 'Супервизор РПА',
     },
     {
       id: 95,
