@@ -25,12 +25,6 @@ const Header = () => {
     { title: 'Доп. материалы', href: '/materials', description: 'Статьи и ресурсы' },
   ];
 
-  const journalItems = [
-    { title: 'О журнале', href: '/journal/about', description: 'Информация для авторов' },
-    { title: 'Профессиональные публикации', href: '/journal/professional', description: 'Научные статьи' },
-    { title: 'Психология для жизни', href: '/journal/life', description: 'Популярные статьи' },
-  ];
-
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
@@ -82,29 +76,6 @@ const Header = () => {
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4">
                     {knowledgeItems.map((item) => (
-                      <li key={item.href}>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to={item.href}
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="text-sm font-medium leading-none">{item.title}</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              {item.description}
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-9">Журнал</NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px]">
-                    {journalItems.map((item) => (
                       <li key={item.href}>
                         <NavigationMenuLink asChild>
                           <Link
@@ -194,20 +165,6 @@ const Header = () => {
                 <div className="space-y-2">
                   <h3 className="font-semibold text-sm text-muted-foreground px-3">Копилка экспертов</h3>
                   {knowledgeItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      to={item.href}
-                      onClick={() => setIsOpen(false)}
-                      className="block px-3 py-2 rounded-md hover:bg-accent transition-colors"
-                    >
-                      {item.title}
-                    </Link>
-                  ))}
-                </div>
-
-                <div className="space-y-2">
-                  <h3 className="font-semibold text-sm text-muted-foreground px-3">Журнал</h3>
-                  {journalItems.map((item) => (
                     <Link
                       key={item.href}
                       to={item.href}
