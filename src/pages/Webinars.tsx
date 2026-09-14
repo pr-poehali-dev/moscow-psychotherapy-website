@@ -1,91 +1,13 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Icon from '@/components/ui/icon';
 
 const Webinars = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [selectedPriceFilter, setSelectedPriceFilter] = useState('all');
-
   const webinars = [
-    {
-      id: 1,
-      title: 'Терапия отношений родителей и подростков «А баба яга против»',
-      price: 1000,
-      speaker: 'Степанова Екатерина Сергеевна',
-      speakerTitle: 'Член Российской Психотерапевтической Ассоциации (РПА), преподаватель НОЦ Современных Медицинских Технологий',
-      speakerId: 31,
-      category: 'Семейная терапия',
-      description: 'Кто на самом деле становится клиентом психолога при работе с проблемами подростка, какие существуют ловушки в терапии и способы их обхода, как сделать из родителя не контрагента, а помощника — без вины виноватые.',
-      format: 'Видеоурок',
-      access: 'Доступ с момента оплаты на 30 дней',
-      bonuses: [
-        'Подробный конспект лекции для удобства работы с темой',
-        'Стартовый набор психолога: работа с подростками и родителями'
-      ],
-      buyUrl: 'https://rosmededucation.ru/samoobrazovanie',
-      isPaid: true,
-    },
-    {
-      id: 2,
-      title: 'Психолог и границы компетенции «Как работать, если чувствуешь, что клиенту нужна не только терапия»',
-      price: 1000,
-      speaker: 'Бородин Владимир Иванович',
-      speakerTitle: 'ДМН, профессор, врач-психиатр, психотерапевт, Руководитель отделения проблем реабилитации отдела пограничной психиатрии ГНЦССП им. В.П. Сербского',
-      speakerId: 58,
-      category: 'Профессиональная этика',
-      description: 'Лекция посвящена критической роли профессиональных границ в психологическом консультировании и психотерапии. В ней подробно разбирается, как границы, выполняя структурирующую, а не просто ограничивающую функцию, определяют эффективность этих видов помощи, и рассматриваются их конкретные виды, этические и технические аспекты.',
-      format: 'Видеоурок',
-      access: 'Доступ с момента оплаты на 30 дней',
-      bonuses: [
-        'Чек-лист «Красные флаги»: какие симптомы требуют срочного вмешательства',
-        'Подробный конспект лекции для удобства работы с темой'
-      ],
-      buyUrl: 'https://rosmededucation.ru/samoobrazovanie',
-      isPaid: true,
-    },
-    {
-      id: 3,
-      title: 'Системный взгляд психолога: «Как отличить личностные особенности от психопатологии»',
-      price: 1000,
-      speaker: 'Карпуль Анна Михайловна',
-      speakerTitle: 'Клинический, психоаналитический, кризисный и перинатальный психолог. Член Российской психотерапевтической ассоциации, Ассоциации Специалистов Психоаналитической Психосоматики (АСПП), Международной ассоциации психологов',
-      speakerId: 8,
-      category: 'Диагностика',
-      description: 'Четкая система вместо неопределенности: 4 критерия, чтобы точно отличить норму от патологии, и их применение на практике, как применять системный подход в диагностике и разбор реальных кейсов из практики.',
-      format: 'Видеоурок',
-      access: 'Доступ с момента оплаты на 90 дней',
-      bonuses: [
-        'Дифференциальный навигатор психолога',
-        'Подробный конспект лекции для удобства работы с темой'
-      ],
-      buyUrl: 'https://rosmededucation.ru/samoobrazovanie',
-      isPaid: true,
-    },
-    {
-      id: 4,
-      title: '«Мне больше не хочется жить». Что делать психологу?',
-      price: 1000,
-      speaker: 'Шмакова Евгения Владимировна',
-      speakerTitle: 'Клинический психолог, криминальный психолог, заместитель директора Союза охраны психического здоровья. Преподаватель Научно-образовательного центра современных медицинских технологий (НОЦ СМТ), член Российской психотерапевтической ассоциации (РПА)',
-      category: 'Кризисная психология',
-      description: 'Почему суицидальный риск обостряется именно в праздники, как распознавать и работать с прямыми и косвенными криками о помощи, какие конкретные фразы использовать для оценки угрозы и как составить рабочий «План безопасности» — между страхом и профессиональной ответственностью.',
-      format: 'Видеоурок',
-      access: 'Доступ с момента оплаты на 90 дней',
-      bonuses: [
-        'Работа с суицидальным риском: Якорь для специалиста',
-        'Подробный конспект лекции для удобства работы с темой'
-      ],
-      buyUrl: 'https://rosmededucation.ru/samoobrazovanie',
-      isPaid: true,
-    },
     {
       id: 5,
       title: 'На разборе: Психоаналитическая диагностика в кино Дьявол Носит Прада',
@@ -100,23 +22,6 @@ const Webinars = () => {
       isPaid: false,
     },
   ];
-
-  const filteredWebinars = webinars.filter((webinar) => {
-    const matchesSearch = 
-      webinar.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      webinar.speaker.toLowerCase().includes(searchQuery.toLowerCase());
-    
-    const matchesCategory = 
-      selectedCategory === 'all' || 
-      webinar.category === selectedCategory;
-
-    const matchesPrice = 
-      selectedPriceFilter === 'all' ||
-      (selectedPriceFilter === 'free' && !webinar.isPaid) ||
-      (selectedPriceFilter === 'paid' && webinar.isPaid);
-
-    return matchesSearch && matchesCategory && matchesPrice;
-  });
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -175,49 +80,45 @@ const Webinars = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2">
-                <CardContent className="p-6">
-                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                    <div className="relative">
-                      <Icon name="Search" size={20} className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground" />
-                      <Input
-                        placeholder="Поиск по названию или спикеру..."
-                        value={searchQuery}
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                        className="pl-10"
-                      />
-                    </div>
-                    
-                    <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Категория" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="all">Все категории</SelectItem>
-                        <SelectItem value="Психоанализ">Психоанализ</SelectItem>
-                        <SelectItem value="Семейная терапия">Семейная терапия</SelectItem>
-                        <SelectItem value="Профессиональная этика">Профессиональная этика</SelectItem>
-                        <SelectItem value="Диагностика">Диагностика</SelectItem>
-                        <SelectItem value="Кризисная психология">Кризисная психология</SelectItem>
-                      </SelectContent>
-                    </Select>
-
-                    <Select value={selectedPriceFilter} onValueChange={setSelectedPriceFilter}>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Платно / Бесплатно" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="all">Все вебинары</SelectItem>
-                        <SelectItem value="free">Бесплатно</SelectItem>
-                        <SelectItem value="paid">Платно</SelectItem>
-                      </SelectContent>
-                    </Select>
+              <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5">
+                <CardContent className="p-8 space-y-4">
+                  <div className="flex items-start gap-3 flex-wrap">
+                    <Badge className="bg-accent/20 text-accent-foreground">Платно</Badge>
+                    <h3 className="text-2xl font-bold flex-1 w-full sm:w-auto">Записи прошедших вебинаров «Профессиональная среда»</h3>
                   </div>
+
+                  <p className="text-muted-foreground">
+                    Записи прошедших вебинаров доступны к покупке — вы получаете полный доступ к материалам и
+                    можете изучать их в удобном темпе. Это возможность ознакомиться с содержанием встречи
+                    последовательно и спокойно, возвращаясь к ключевым моментам в течение всего периода доступа.
+                  </p>
+
+                  <div className="flex flex-wrap gap-4 text-sm">
+                    <div className="flex items-center gap-2">
+                      <Icon name="Video" size={18} className="text-primary" />
+                      <span>Запись + материалы</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Icon name="Clock" size={18} className="text-primary" />
+                      <span>Доступ с момента оплаты на 30 дней</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Icon name="FileText" size={18} className="text-primary" />
+                      <span>Подробный конспект лекции для удобства работы с темой</span>
+                    </div>
+                  </div>
+
+                  <Button asChild>
+                    <a href="https://course.rosmededucation.ru/web" target="_blank" rel="noopener noreferrer">
+                      <Icon name="ShoppingCart" size={16} className="mr-2" />
+                      Посмотреть записи
+                    </a>
+                  </Button>
                 </CardContent>
               </Card>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {filteredWebinars.map((webinar) => (
+                {webinars.map((webinar) => (
                   <Card key={webinar.id} className="border-2 hover:shadow-xl hover:border-primary/20 transition-all duration-300">
                     <CardContent className="p-6">
                       <div className="space-y-4">
@@ -331,13 +232,6 @@ const Webinars = () => {
                   </Card>
                 ))}
               </div>
-
-              {filteredWebinars.length === 0 && (
-                <div className="text-center py-12">
-                  <Icon name="SearchX" size={48} className="mx-auto text-muted-foreground mb-4" />
-                  <p className="text-lg text-muted-foreground">Вебинары не найдены</p>
-                </div>
-              )}
             </div>
           </div>
         </section>
