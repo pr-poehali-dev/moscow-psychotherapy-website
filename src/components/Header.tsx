@@ -11,6 +11,7 @@ import {
   NavigationMenuTrigger,
 } from '@/components/ui/navigation-menu';
 import Icon from '@/components/ui/icon';
+import FeedbackDialog from '@/components/FeedbackDialog';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -147,12 +148,16 @@ const Header = () => {
           </NavigationMenu>
 
           <div className="flex items-center gap-2">
-            <Link to="/login" className="hidden lg:block">
-              <Button variant="outline" size="sm">
-                <Icon name="User" className="mr-2 h-4 w-4" />
-                Войти
-              </Button>
-            </Link>
+            <div className="hidden lg:block">
+              <FeedbackDialog
+                trigger={
+                  <Button variant="outline" size="sm">
+                    <Icon name="Mail" className="mr-2 h-4 w-4" />
+                    Написать нам
+                  </Button>
+                }
+              />
+            </div>
 
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild className="lg:hidden">
@@ -230,14 +235,16 @@ const Header = () => {
                   Контакты
                 </Link>
 
-                <Link
-                  to="/login"
-                  onClick={() => setIsOpen(false)}
-                  className="block px-3 py-2 rounded-md hover:bg-accent transition-colors font-medium mt-4"
-                >
-                  <Icon name="User" className="inline-block mr-2 h-4 w-4" />
-                  Войти
-                </Link>
+                <div className="mt-4">
+                  <FeedbackDialog
+                    trigger={
+                      <Button variant="outline" className="w-full justify-start">
+                        <Icon name="Mail" className="mr-2 h-4 w-4" />
+                        Написать нам
+                      </Button>
+                    }
+                  />
+                </div>
               </nav>
             </SheetContent>
           </Sheet>

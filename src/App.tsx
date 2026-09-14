@@ -19,8 +19,6 @@ import JournalAbout from "./pages/JournalAbout";
 import JournalProfessional from "./pages/JournalProfessional";
 import JournalLife from "./pages/JournalLife";
 import Sections from "./pages/Sections";
-import Login from "./pages/Login";
-import Cabinet from "./pages/Cabinet";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -47,8 +45,6 @@ const App = () => (
           <Route path="/journal/about" element={<JournalAbout />} />
           <Route path="/journal/professional" element={<JournalProfessional />} />
           <Route path="/journal/life" element={<JournalLife />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/cabinet" element={<Cabinet />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -2,7 +2,9 @@ import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
+import FeedbackDialog from '@/components/FeedbackDialog';
 
 const Contacts = () => {
   return (
@@ -118,6 +120,14 @@ const Contacts = () => {
                       Напишите нам, и мы с радостью ответим на все ваши вопросы о членстве, программах и мероприятиях
                     </p>
                   </div>
+                  <FeedbackDialog
+                    trigger={
+                      <Button size="lg">
+                        <Icon name="Send" className="mr-2 h-4 w-4" />
+                        Написать нам
+                      </Button>
+                    }
+                  />
                 </CardContent>
               </Card>
             </div>

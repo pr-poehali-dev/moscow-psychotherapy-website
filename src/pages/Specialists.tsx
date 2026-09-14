@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Icon from '@/components/ui/icon';
+import FeedbackDialog from '@/components/FeedbackDialog';
 
 const Specialists = () => {
   const location = useLocation();
@@ -1659,13 +1660,22 @@ const Specialists = () => {
               <p className="text-lg text-muted-foreground">
                 Квалифицированные психотерапевты различных направлений
               </p>
-              <div className="flex justify-center pt-2">
+              <div className="flex flex-wrap justify-center gap-3 pt-2">
                 <a href="/specialists.xlsx" download>
                   <Button variant="outline">
                     <Icon name="FileSpreadsheet" size={18} className="mr-2" />
                     Скачать базу в Excel
                   </Button>
                 </a>
+                <FeedbackDialog
+                  defaultSubject="Внесение информации в карточку специалиста"
+                  trigger={
+                    <Button variant="outline">
+                      <Icon name="UserPen" size={18} className="mr-2" />
+                      Добавить или изменить карточку
+                    </Button>
+                  }
+                />
               </div>
             </div>
           </div>
