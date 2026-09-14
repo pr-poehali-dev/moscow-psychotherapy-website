@@ -8,8 +8,8 @@ from typing import Dict, Any
 
 def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     '''
-    Business: Принимает заявку с сайта (например, на внесение/изменение информации в карточке специалиста)
-               и отправляет её письмом на почту организации
+    Business: Принимает заявку с сайта (например, на внесение/изменение информации в карточке специалиста),
+               отправляет её письмом на почту организации и письмо-подтверждение заявителю на указанный email
     Args: event - dict с httpMethod, body (name, email, phone, message, subject)
           context - объект с атрибутами request_id, function_name
     Returns: HTTP response dict с результатом отправки
@@ -83,6 +83,21 @@ def handler(event: Dict[str, Any], context: Any) -> Dict[str, Any]:
     with smtplib.SMTP_SSL('smtp.yandex.ru', 465) as server:
         server.login(mail_login, mail_password)
         server.sendmail(mail_login, [mail_login], msg.as_string())
+
+        if email:
+            confirm_text = (
+                f'Здравствуйте, {name}!\n\n'
+                'Ваша заявка получена, мы её рассмотрим и свяжемся с вами в ближайшее время.\n\n'
+                'Текст вашего обращения:\n'
+                f'{message}\n\n'
+                '—\n'
+                'Московское отделение РПА'
+            )
+            confirm_msg = MIMEText(confirm_text, 'plain', 'utf-8')
+            confirm_msg['Subject'] = Header('Ваша заявка принята — МО РПА', 'utf-8')
+            confirm_msg['From'] = mail_login
+            confirm_msg['To'] = email
+            server.sendmail(mail_login, [email], confirm_msg.as_string())
 
     return {
         'statusCode': 200,
