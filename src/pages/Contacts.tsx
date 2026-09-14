@@ -46,7 +46,7 @@ const Contacts = () => {
                       <a href="tel:+74951096740" className="text-lg font-medium hover:text-primary transition-colors">
                         +7 (495) 109-67-40
                       </a>
-                      <p className="text-sm text-muted-foreground mt-1">Пн-Пт: 10:00 - 18:00</p>
+                      <p className="text-sm text-muted-foreground mt-1">Пн-Чт: 9:00 - 16:00</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -100,8 +100,8 @@ const Contacts = () => {
                       </div>
                     </div>
                     <div className="pl-15 space-y-1 text-sm">
-                      <p><span className="font-medium">Пн-Пт:</span> 10:00 - 18:00</p>
-                      <p><span className="font-medium">Сб-Вс:</span> Выходной</p>
+                      <p><span className="font-medium">Пн-Чт:</span> 9:00 - 16:00</p>
+                      <p><span className="font-medium">Пт-Вс:</span> Выходной</p>
                     </div>
                   </CardContent>
                 </Card>
