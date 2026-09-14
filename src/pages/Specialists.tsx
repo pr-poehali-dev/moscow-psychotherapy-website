@@ -1406,7 +1406,7 @@ const Specialists = () => {
     {
       id: 92,
       name: 'Никишина Вера Борисовна',
-      photo: '👩‍⚕️',
+      photo: '/specialists/nikishina_vera_borisovna.jpg',
       location: 'Москва',
       education: 'Высшее. Доктор психологических наук',
       specialty: 'Клинический психолог',
