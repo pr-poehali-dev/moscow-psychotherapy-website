@@ -32,10 +32,7 @@ const Header = () => {
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
             <img src={logo} alt="Российская психотерапевтическая ассоциация" className="h-10 w-10 rounded-lg object-cover" />
-            <span className="hidden flex-col sm:flex">
-              <span className="font-bold leading-tight">Российская психотерапевтическая ассоциация</span>
-              <span className="text-xs text-muted-foreground leading-tight">Московское отделение</span>
-            </span>
+            <span className="hidden sm:inline-block text-xs text-muted-foreground leading-tight">Московское отделение</span>
           </Link>
 
           <NavigationMenu className="hidden lg:flex">
