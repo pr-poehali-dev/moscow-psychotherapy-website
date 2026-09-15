@@ -12,7 +12,7 @@ import {
 } from '@/components/ui/navigation-menu';
 import Icon from '@/components/ui/icon';
 import FeedbackDialog from '@/components/FeedbackDialog';
-import logo from '@/assets/logo.png';
+import logo from '@/assets/logo-full.png';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,7 +31,7 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <img src={logo} alt="Российская психотерапевтическая ассоциация" className="h-10 w-10 rounded-lg object-cover" />
+            <img src={logo} alt="Российская психотерапевтическая ассоциация" className="h-14 w-auto object-contain" />
             <span className="hidden sm:inline-block text-xs text-muted-foreground leading-tight">Московское отделение</span>
           </Link>
 
