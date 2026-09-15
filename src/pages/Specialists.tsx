@@ -762,7 +762,7 @@ const Specialists = () => {
     {
       id: 51,
       name: 'Зикхер Инна Альфредовна (Маслакова)',
-      photo: '👩‍⚕️',
+      photo: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/b5baf453-4ad4-435e-a497-4089ce9595dd.jpg',
       location: 'Москва',
       education: 'ФГАОУ ВПО «Казанский (Приволжский) федеральный университет»',
       specialty: 'Психолог. Преподаватель психологии',
@@ -1205,7 +1205,7 @@ const Specialists = () => {
     {
       id: 80,
       name: 'Золотова Анна Юрьевна',
-      photo: '👩‍⚕️',
+      photo: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/f0b5e8e3-fdf4-4525-8547-cfdbe3960be9.png',
       location: 'Москва',
       education: 'АНО ВПО МосГУ',
       specialty: 'Клинический психолог',
@@ -1273,7 +1273,7 @@ const Specialists = () => {
     {
       id: 84,
       name: 'Кикина Каролина Вячеславовна',
-      photo: '👩‍⚕️',
+      photo: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/7486b42e-324a-47d5-8341-30ff11b9a2d4.png',
       location: 'Москва',
       education: '',
       specialty: '',
@@ -1596,7 +1596,7 @@ const Specialists = () => {
     {
       id: 103,
       name: 'Торгашёва Анна Павловна',
-      photo: '👩‍⚕️',
+      photo: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/68677188-f9e0-4309-a372-10b411dedaa0.jpg',
       location: '',
       education: '',
       specialty: '',
