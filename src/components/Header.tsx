@@ -29,10 +29,10 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <img src={logo} alt="Российская психотерапевтическая ассоциация" className="h-14 w-auto object-contain" />
-            <span className="hidden sm:inline-block text-xs text-muted-foreground leading-tight">Московское отделение</span>
+        <div className="flex h-24 items-center justify-between">
+          <Link to="/" className="flex flex-col items-start justify-center">
+            <img src={logo} alt="Российская психотерапевтическая ассоциация" className="h-10 w-auto object-contain" />
+            <span className="hidden sm:block text-xs text-muted-foreground leading-tight mt-1">Московское отделение</span>
           </Link>
 
           <NavigationMenu className="hidden lg:flex">
