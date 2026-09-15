@@ -29,10 +29,10 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
-        <div className="flex h-24 items-center justify-between">
+        <div className="flex h-28 items-center justify-between">
           <Link to="/" className="flex flex-col items-start justify-center">
-            <img src={logo} alt="Российская психотерапевтическая ассоциация" className="h-10 w-auto object-contain" />
-            <span className="hidden sm:block text-xs text-muted-foreground leading-tight mt-1">Московское отделение</span>
+            <img src={logo} alt="Российская психотерапевтическая ассоциация" className="h-16 w-auto object-contain" />
+            <span className="hidden sm:block text-sm text-muted-foreground leading-tight mt-1">Московское отделение</span>
           </Link>
 
           <NavigationMenu className="hidden lg:flex">
@@ -41,7 +41,7 @@ const Header = () => {
                 <NavigationMenuLink asChild>
                   <Link
                     to="/about"
-                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   >
                     О нас
                   </Link>
@@ -52,7 +52,7 @@ const Header = () => {
                 <NavigationMenuLink asChild>
                   <Link
                     to="/specialists"
-                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   >
                     Специалисты
                   </Link>
@@ -60,7 +60,7 @@ const Header = () => {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="h-9">Копилка экспертов</NavigationMenuTrigger>
+                <NavigationMenuTrigger className="h-9 text-base">Копилка экспертов</NavigationMenuTrigger>
                 <NavigationMenuContent>
                   <ul className="grid w-[400px] gap-3 p-4">
                     {knowledgeItems.map((item) => (
@@ -86,7 +86,7 @@ const Header = () => {
                 <NavigationMenuLink asChild>
                   <Link
                     to="/faq"
-                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   >
                     Вопрос-ответ
                   </Link>
@@ -97,7 +97,7 @@ const Header = () => {
                 <NavigationMenuLink asChild>
                   <Link
                     to="/contacts"
-                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
+                    className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-base font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50"
                   >
                     Контакты
                   </Link>
