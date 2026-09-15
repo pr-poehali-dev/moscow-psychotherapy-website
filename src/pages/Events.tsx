@@ -93,6 +93,117 @@ const Events = () => {
                 </CardContent>
               </Card>
 
+              <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8 space-y-4">
+                  <div className="flex items-start gap-3 flex-wrap">
+                    <Badge className="bg-primary/80 text-primary-foreground">Книжный клуб</Badge>
+                    <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                      <Icon name="Repeat" size={14} className="mr-1" />
+                      Ежемесячно
+                    </Badge>
+                    <h3 className="text-2xl font-bold flex-1 w-full sm:w-auto">Книжный клуб «Между строк»</h3>
+                  </div>
+
+                  <p className="text-sm">
+                    Автор проекта:{' '}
+                    <Link to="/specialists#specialist-19" className="text-primary hover:underline font-medium">
+                      Хвощевская Софья Игоревна
+                    </Link>
+                  </p>
+
+                  <p className="text-muted-foreground">
+                    Цикл чтений психологической литературы для психологов, психотерапевтов разных модальностей
+                    и всех тех, кто интересуется тем, что сокрыто между строк. Встречи проходят в книжном
+                    магазине «Во весь голос».
+                  </p>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                    <div className="flex items-center space-x-2">
+                      <Icon name="MapPin" size={16} className="text-primary" />
+                      <span>г. Москва, ул. Трубная, 21</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Icon name="Ticket" size={16} className="text-primary" />
+                      <span>Бесплатно</span>
+                    </div>
+                  </div>
+
+                  <div className="bg-accent/10 p-4 rounded-lg space-y-3">
+                    <div>
+                      <p className="font-semibold text-sm mb-1">Октябрь</p>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        Обсуждение книги «Маски лжи. Парадокс невозможной коммуникации»
+                      </p>
+                      <Button size="sm" variant="outline" asChild>
+                        <a href="https://gorodets.ru/product/maski-lzhi#s_flip_book/" target="_blank" rel="noopener noreferrer">
+                          <Icon name="ExternalLink" size={16} className="mr-2" />
+                          О книге
+                        </a>
+                      </Button>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-sm mb-1">Ноябрь</p>
+                      <p className="text-sm text-muted-foreground mb-2">
+                        Обсуждение книги «На краю синей бездны, или Как вернуть контроль над алкоголем»
+                      </p>
+                      <Button size="sm" variant="outline" asChild>
+                        <a href="https://gorodets.ru/product/na-krayu-siney-bezdny-ili-kak-vernut-kontrol-nad-alkogolem#s_flip_book/" target="_blank" rel="noopener noreferrer">
+                          <Icon name="ExternalLink" size={16} className="mr-2" />
+                          О книге
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8 space-y-4">
+                  <div className="flex items-start gap-3 flex-wrap">
+                    <Badge className="bg-primary/80 text-primary-foreground">Киноклуб</Badge>
+                    <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                      <Icon name="Repeat" size={14} className="mr-1" />
+                      Ежемесячно
+                    </Badge>
+                    <h3 className="text-2xl font-bold flex-1 w-full sm:w-auto">Киноклуб «Субъектив»</h3>
+                  </div>
+
+                  <p className="text-sm">
+                    Авторы проекта:{' '}
+                    <Link to="/specialists#specialist-31" className="text-primary hover:underline font-medium">
+                      Степанова Екатерина Сергеевна
+                    </Link>
+                    {', '}
+                    <Link to="/specialists#specialist-6" className="text-primary hover:underline font-medium">
+                      Митрофанов Сергей Сергеевич
+                    </Link>
+                  </p>
+
+                  <p className="text-muted-foreground">
+                    Смотрим кино вместе и обсуждаем.
+                  </p>
+
+                  <div className="bg-accent/10 p-4 rounded-lg space-y-2">
+                    <p className="font-semibold text-sm">Октябрь</p>
+                    <p className="text-sm text-muted-foreground">«Боб Тревино поставил лайк»</p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                    <div className="flex items-center space-x-2">
+                      <Icon name="Ticket" size={16} className="text-primary" />
+                      <span>Для членов РПА бесплатно</span>
+                    </div>
+                  </div>
+
+                  <Button asChild>
+                    <a href="https://t.me/subjectivecinema" target="_blank" rel="noopener noreferrer">
+                      <Icon name="Send" size={16} className="mr-2" />
+                      Наш канал
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+
               {allEvents.map((event) => (
                 <Card key={event.id} className="border-2 hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-8">

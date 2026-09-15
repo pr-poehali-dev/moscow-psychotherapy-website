@@ -126,6 +126,7 @@ const Specialists = () => {
       ageGroups: 'Взрослые',
       approaches: ['Психоаналитическая терапия'],
       status: 'Действительный член РПА',
+      projectBadge: 'Автор проекта «Субъектив»',
     },
     {
       id: 7,
@@ -313,6 +314,7 @@ const Specialists = () => {
       ageGroups: 'Взрослые',
       approaches: ['Психоаналитическая терапия'],
       status: 'Действительный член РПА',
+      projectBadge: 'Автор проекта «Между строк»',
     },
     {
       id: 20,
@@ -500,6 +502,7 @@ const Specialists = () => {
       ageGroups: 'Взрослые',
       approaches: ['Психоаналитическая терапия'],
       status: 'Супервизор РПА',
+      projectBadge: 'Автор проекта «Субъектив»',
     },
     {
       id: 32,
@@ -1761,6 +1764,12 @@ const Specialists = () => {
                                     <Badge className="bg-primary text-primary-foreground">
                                       <Icon name="Star" size={12} className="mr-1" />
                                       Председатель отделения
+                                    </Badge>
+                                  )}
+                                  {specialist.projectBadge && (
+                                    <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                                      <Icon name="Sparkles" size={12} className="mr-1" />
+                                      {specialist.projectBadge}
                                     </Badge>
                                   )}
                                   <Badge className={specialist.status === 'Действительный член' 
