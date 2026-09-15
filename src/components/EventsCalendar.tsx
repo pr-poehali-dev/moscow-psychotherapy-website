@@ -16,6 +16,7 @@ const EventsCalendar = () => {
       'Вебинар': 'Video',
       'Круглый стол': 'MessageCircle',
       'Семинар': 'GraduationCap',
+      'Книжный клуб': 'BookMarked',
     };
     return icons[type] || 'Calendar';
   };
@@ -28,6 +29,7 @@ const EventsCalendar = () => {
       'Интервизия': 'bg-green-500',
       'Круглый стол': 'bg-accent/70',
       'Семинар': 'bg-primary/80',
+      'Книжный клуб': 'bg-primary/80',
     };
     return colors[type] || 'bg-muted';
   };

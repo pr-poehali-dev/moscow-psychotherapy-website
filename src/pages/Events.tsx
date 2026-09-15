@@ -19,6 +19,7 @@ const Events = () => {
       'Интервизия': 'bg-green-500 text-white',
       'Семинар': 'bg-primary/80 text-primary-foreground',
       'Круглый стол': 'bg-accent/70 text-accent-foreground',
+      'Книжный клуб': 'bg-primary/80 text-primary-foreground',
     };
     return colors[type] || 'bg-muted text-muted-foreground';
   };
@@ -130,9 +131,15 @@ const Events = () => {
 
                   <div className="bg-accent/10 p-4 rounded-lg space-y-3">
                     <div>
-                      <p className="font-semibold text-sm mb-1">Октябрь</p>
+                      <p className="font-semibold text-sm mb-1">20 сентября, 17:30–19:30</p>
+                      <p className="text-sm text-muted-foreground">
+                        Обсуждение книги «Stop love. Разлюбить за 100 дней или когда нужно расстаться»
+                      </p>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-sm mb-1">24 октября, 17:30–19:30</p>
                       <p className="text-sm text-muted-foreground mb-2">
-                        Обсуждение книги «Маски лжи. Парадокс невозможной коммуникации»
+                        Обсуждение книги «Маски лжи: парадокс невозможной коммуникации»
                       </p>
                       <Button size="sm" variant="outline" asChild>
                         <a href="https://gorodets.ru/product/maski-lzhi#s_flip_book/" target="_blank" rel="noopener noreferrer">
@@ -142,7 +149,7 @@ const Events = () => {
                       </Button>
                     </div>
                     <div>
-                      <p className="font-semibold text-sm mb-1">Ноябрь</p>
+                      <p className="font-semibold text-sm mb-1">28 ноября, 17:30–19:30</p>
                       <p className="text-sm text-muted-foreground mb-2">
                         Обсуждение книги «На краю синей бездны, или Как вернуть контроль над алкоголем»
                       </p>

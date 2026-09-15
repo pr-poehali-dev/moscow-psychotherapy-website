@@ -115,8 +115,30 @@ export const getUpcomingEvents = (): Event[] => {
     registrationUrl: 'https://course.rosmededucation.ru/professionalnaya-sreda',
   }));
 
+  const bookClubBooks: { date: string; title: string; url?: string }[] = [
+    { date: '20 сентября 2026', title: 'Stop love. Разлюбить за 100 дней или когда нужно расстаться' },
+    { date: '24 октября 2026', title: 'Маски лжи: парадокс невозможной коммуникации', url: 'https://gorodets.ru/product/maski-lzhi#s_flip_book/' },
+    { date: '28 ноября 2026', title: 'На краю синей бездны, или Как вернуть контроль над алкоголем', url: 'https://gorodets.ru/product/na-krayu-siney-bezdny-ili-kak-vernut-kontrol-nad-alkogolem#s_flip_book/' },
+  ];
+
+  const bookClubEvents: Event[] = bookClubBooks.map((book, index) => ({
+    id: `book-club-${index}`,
+    title: `Книжный клуб «Между строк»: «${book.title}»`,
+    date: book.date,
+    time: '17:30 - 19:30',
+    location: 'г. Москва, ул. Трубная, 21, книжный магазин «Во весь голос»',
+    type: 'Книжный клуб',
+    format: 'Очный',
+    description: 'Цикл чтений психологической литературы для психологов, психотерапевтов разных модальностей и всех тех, кто интересуется тем, что сокрыто между строк.',
+    price: 'Бесплатно',
+    isRecurring: true,
+    recurringNote: 'Ежемесячно',
+    registrationUrl: book.url,
+  }));
+
   const upcomingEvents: Event[] = [
     ...professionalWednesdayEvents,
+    ...bookClubEvents,
     {
       id: 'ne-sluchay-a-chelovek-conf',
       title: 'Конференция «Не случай, а человек: клиент в пространстве психотерапевтических подходов»',
