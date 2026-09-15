@@ -21,11 +21,8 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/10 to-secondary/15 -z-10" />
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center space-y-6 animate-fade-in">
-              <h1 className="text-2xl md:text-3xl font-bold tracking-tight">
-                Московское отделение{' '}
-                <span className="bg-gradient-to-r from-primary via-accent to-secondary bg-clip-text text-transparent">
-                  Российской психотерапевтической ассоциации
-                </span>
+              <h1 className="text-2xl md:text-3xl font-bold tracking-tight text-primary">
+                Московское отделение Российской психотерапевтической ассоциации
               </h1>
               <p className="text-sm md:text-base text-muted-foreground max-w-3xl mx-auto">
                 Профессиональное сообщество психотерапевтов Москвы для развития и популяризации психотерапии
