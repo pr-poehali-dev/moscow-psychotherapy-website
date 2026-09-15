@@ -24,7 +24,6 @@ const Footer = () => {
               <li><Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">Об ассоциации</Link></li>
               <li><Link to="/specialists" className="text-muted-foreground hover:text-foreground transition-colors">Специалисты</Link></li>
               <li><Link to="/events" className="text-muted-foreground hover:text-foreground transition-colors">События</Link></li>
-              <li><Link to="/journal" className="text-muted-foreground hover:text-foreground transition-colors">Журнал</Link></li>
             </ul>
           </div>
 
@@ -33,7 +32,6 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><Link to="/faq" className="text-muted-foreground hover:text-foreground transition-colors">Вопросы и ответы</Link></li>
               <li><Link to="/contacts" className="text-muted-foreground hover:text-foreground transition-colors">Контакты</Link></li>
-              <li><Link to="/profile" className="text-muted-foreground hover:text-foreground transition-colors">Личный кабинет</Link></li>
               <li><Link to="/privacy-consent" className="text-muted-foreground hover:text-foreground transition-colors">Согласие на обработку персональных данных</Link></li>
             </ul>
           </div>
