@@ -4,6 +4,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -173,6 +174,29 @@ const Podcasts = () => {
         <section className="py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto space-y-8">
+              <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 hover:shadow-xl transition-all duration-300">
+                <CardContent className="p-8 space-y-4">
+                  <div className="flex items-start gap-3 flex-wrap">
+                    <Badge className="bg-primary/80 text-primary-foreground">Записи психотерапевтов</Badge>
+                    <h3 className="text-2xl font-bold flex-1 w-full sm:w-auto">
+                      Как менялась психотерапия в мире за последние 30 лет
+                    </h3>
+                  </div>
+
+                  <p className="text-muted-foreground">
+                    Плейлист с записями выступлений психотерапевтов о развитии и трансформации
+                    психотерапевтических подходов за последние три десятилетия.
+                  </p>
+
+                  <Button asChild>
+                    <a href="https://rutube.ru/plst/1374367/" target="_blank" rel="noopener noreferrer">
+                      <Icon name="ExternalLink" size={16} className="mr-2" />
+                      Смотреть на RUTUBE
+                    </a>
+                  </Button>
+                </CardContent>
+              </Card>
+
               <Card className="border-2">
                 <CardContent className="p-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
