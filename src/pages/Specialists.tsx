@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -127,6 +127,7 @@ const Specialists = () => {
       approaches: ['Психоаналитическая терапия'],
       status: 'Действительный член РПА',
       projectBadge: 'Автор проекта «Субъектив»',
+      projectBadgeUrl: '/events#kinoklub-subektiv',
     },
     {
       id: 7,
@@ -315,6 +316,7 @@ const Specialists = () => {
       approaches: ['Психоаналитическая терапия'],
       status: 'Действительный член РПА',
       projectBadge: 'Автор проекта «Между строк»',
+      projectBadgeUrl: '/events#mezhdu-strok',
     },
     {
       id: 20,
@@ -503,6 +505,7 @@ const Specialists = () => {
       approaches: ['Психоаналитическая терапия'],
       status: 'Супервизор РПА',
       projectBadge: 'Автор проекта «Субъектив»',
+      projectBadgeUrl: '/events#kinoklub-subektiv',
     },
     {
       id: 32,
@@ -1767,10 +1770,19 @@ const Specialists = () => {
                                     </Badge>
                                   )}
                                   {specialist.projectBadge && (
-                                    <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
-                                      <Icon name="Sparkles" size={12} className="mr-1" />
-                                      {specialist.projectBadge}
-                                    </Badge>
+                                    specialist.projectBadgeUrl ? (
+                                      <Link to={specialist.projectBadgeUrl}>
+                                        <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100 cursor-pointer">
+                                          <Icon name="Sparkles" size={12} className="mr-1" />
+                                          {specialist.projectBadge}
+                                        </Badge>
+                                      </Link>
+                                    ) : (
+                                      <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                                        <Icon name="Sparkles" size={12} className="mr-1" />
+                                        {specialist.projectBadge}
+                                      </Badge>
+                                    )
                                   )}
                                   <Badge className={specialist.status === 'Действительный член' 
                                     ? 'bg-primary text-primary-foreground' 

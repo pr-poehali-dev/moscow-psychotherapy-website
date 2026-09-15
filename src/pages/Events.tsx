@@ -1,15 +1,29 @@
+import { useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
-import { getUpcomingEvents } from '@/utils/eventsData';
+import { getUpcomingEvents, bookClubBooks } from '@/utils/eventsData';
 
 const Events = () => {
   const allEvents = getUpcomingEvents();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    }
+  }, [location]);
 
   const getTypeColor = (type: string) => {
     const colors: Record<string, string> = {
@@ -94,7 +108,7 @@ const Events = () => {
                 </CardContent>
               </Card>
 
-              <Card className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 hover:shadow-xl transition-all duration-300">
+              <Card id="kinoklub-subektiv" className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 hover:shadow-xl transition-all duration-300 scroll-mt-20">
                 <CardContent className="p-8 space-y-4">
                   <div className="flex items-start gap-3 flex-wrap">
                     <Badge className="bg-primary/80 text-primary-foreground">Киноклуб</Badge>
@@ -138,6 +152,63 @@ const Events = () => {
                       Наш канал
                     </a>
                   </Button>
+                </CardContent>
+              </Card>
+
+              <Card id="mezhdu-strok" className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 hover:shadow-xl transition-all duration-300 scroll-mt-20">
+                <CardContent className="p-8 space-y-4">
+                  <div className="flex items-start gap-3 flex-wrap">
+                    <Badge className="bg-primary/80 text-primary-foreground">Книжный клуб</Badge>
+                    <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                      <Icon name="Repeat" size={14} className="mr-1" />
+                      Ежемесячно
+                    </Badge>
+                    <h3 className="text-2xl font-bold flex-1 w-full sm:w-auto">Книжный клуб «Между строк»</h3>
+                  </div>
+
+                  <p className="text-sm">
+                    Автор проекта:{' '}
+                    <Link to="/specialists#specialist-19" className="text-primary hover:underline font-medium">
+                      Хвощевская Софья Игоревна
+                    </Link>
+                  </p>
+
+                  <p className="text-muted-foreground">
+                    Цикл чтений психологической литературы для психологов, психотерапевтов разных модальностей и всех тех, кто интересуется тем, что сокрыто между строк.
+                  </p>
+
+                  <div className="bg-accent/10 p-4 rounded-lg space-y-3">
+                    {bookClubBooks.map((book, idx) => (
+                      <div key={idx} className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 sm:gap-3">
+                        <div className="flex items-start gap-2">
+                          <Icon name="Calendar" size={14} className="text-primary mt-0.5 flex-shrink-0" />
+                          <span className="text-sm font-medium">{book.date}</span>
+                          <span className="text-sm text-muted-foreground">— «{book.title}»</span>
+                        </div>
+                        {book.url && (
+                          <a href={book.url} target="_blank" rel="noopener noreferrer" className="text-sm text-primary hover:underline flex items-center gap-1 flex-shrink-0">
+                            <Icon name="ExternalLink" size={14} />
+                            О книге
+                          </a>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                    <div className="flex items-center space-x-2">
+                      <Icon name="Clock" size={16} className="text-primary" />
+                      <span>17:30 - 19:30</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Icon name="MapPin" size={16} className="text-primary" />
+                      <span>ул. Трубная, 21, «Во весь голос»</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Icon name="Ticket" size={16} className="text-primary" />
+                      <span>Бесплатно</span>
+                    </div>
+                  </div>
                 </CardContent>
               </Card>
 
