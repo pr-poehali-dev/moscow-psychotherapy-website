@@ -1611,7 +1611,7 @@ const Specialists = () => {
       mainIssues: [],
       ageGroups: '',
       approaches: [],
-      status: '',
+      status: 'Действительный член РПА',
     },
   ];
 
