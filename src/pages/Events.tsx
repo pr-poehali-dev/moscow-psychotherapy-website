@@ -155,6 +155,82 @@ const Events = () => {
                 </CardContent>
               </Card>
 
+              <Card id="mare-internum" className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 hover:shadow-xl transition-all duration-300 scroll-mt-20">
+                <CardContent className="p-8 space-y-4">
+                  <div className="flex items-start gap-3 flex-wrap">
+                    <Badge className="bg-green-500 text-white">Интервизия</Badge>
+                    <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                      <Icon name="Repeat" size={14} className="mr-1" />
+                      Еженедельно
+                    </Badge>
+                    <h3 className="text-2xl font-bold flex-1 w-full sm:w-auto">Mare Internum — интервизионная группа в подходе теории поля</h3>
+                  </div>
+
+                  <p className="text-muted-foreground">
+                    Российская психотерапевтическая ассоциация представляет профессиональную инициативу Mare Internum — регулярную интервизионную группу в подходе теории поля.
+                  </p>
+
+                  <p className="text-muted-foreground">
+                    В центре работы группы — обсуждение клинического материала в рамках теории аналитического поля. Участники по очереди представляют обезличенный транскрипт одной или двух последовательных терапевтических сессий. В процессе обсуждения исследуются эмоциональные отклики участников, свободные ассоциации, образы, ревери и динамика аналитического поля.
+                  </p>
+
+                  <p className="text-muted-foreground">
+                    Каждая встреча начинается с упражнения Антонино Ферро по работе с клиническим материалом.
+                  </p>
+
+                  <div className="bg-accent/10 p-4 rounded-lg space-y-2">
+                    <p className="font-semibold text-sm">Формат и сроки</p>
+                    <p className="text-sm text-muted-foreground">Закрытая группа до 10 участников</p>
+                    <p className="text-sm text-muted-foreground">Период работы: сентябрь 2026 — май 2027</p>
+                    <p className="text-sm text-muted-foreground">Начало: 18 сентября 2026 года</p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+                    <div className="flex items-center space-x-2">
+                      <Icon name="Calendar" size={16} className="text-primary" />
+                      <span>Еженедельно по пятницам</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Icon name="Clock" size={16} className="text-primary" />
+                      <span>15:00 - 16:00 МСК</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Icon name="MapPin" size={16} className="text-primary" />
+                      <span>Zoom</span>
+                    </div>
+                  </div>
+
+                  <p className="text-sm">
+                    Организаторы:{' '}
+                    <span className="font-medium">Оксана Айсина</span> (член РПА) и{' '}
+                    <span className="font-medium">Полина Васильева</span>
+                  </p>
+
+                  <div className="flex items-start gap-2 text-sm bg-blue-50 p-3 rounded-lg">
+                    <Icon name="Info" size={16} className="text-blue-600 mt-0.5 flex-shrink-0" />
+                    <span className="text-blue-900">Группа не является образовательной программой Российской психотерапевтической ассоциации. По итогам участия возможно получение сертификата участника с указанием фактического количества часов работы в интервизионной группе.</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    <p className="font-semibold text-sm">Информацию об условиях участия и записи можно получить у организаторов:</p>
+                    <div className="flex flex-wrap gap-2">
+                      <Button size="sm" asChild className="bg-[#0088CC] hover:bg-[#0077BB]">
+                        <a href="https://t.me/p_vasilieva" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Send" size={16} className="mr-2" />
+                          Полина Васильева
+                        </a>
+                      </Button>
+                      <Button size="sm" asChild className="bg-[#0088CC] hover:bg-[#0077BB]">
+                        <a href="https://t.me/OksanaAGpsy" target="_blank" rel="noopener noreferrer">
+                          <Icon name="Send" size={16} className="mr-2" />
+                          Оксана Айсина
+                        </a>
+                      </Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
               <Card id="mezhdu-strok" className="border-2 border-primary/30 bg-gradient-to-br from-primary/5 to-accent/5 hover:shadow-xl transition-all duration-300 scroll-mt-20">
                 <CardContent className="p-8 space-y-4">
                   <div className="flex items-start gap-3 flex-wrap">
