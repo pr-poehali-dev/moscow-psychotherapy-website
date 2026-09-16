@@ -1582,7 +1582,7 @@ const Specialists = () => {
     {
       id: 104,
       name: 'Ваулина Алла Леонидовна',
-      photo: 'https://ui-avatars.com/api/?name=Алла+Ваулина&size=256&background=E5E7EB&color=374151',
+      photo: 'https://cdn.poehali.dev/projects/bc3131c3-820e-44dd-91d7-c241696bb6f9/bucket/df6d892f-63aa-490f-99ac-fafdbac3f20f.jpg',
       location: 'Москва',
       education: 'Высшее',
       specialty: 'Клиническая психология',
