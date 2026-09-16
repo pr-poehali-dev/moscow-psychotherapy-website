@@ -81,7 +81,7 @@ const Specialists = () => {
       name: 'Мельник Екатерина Сергеевна',
       photo: '/specialists/melnik_ekaterina_sergeevna.jpg',
       location: 'Москва',
-      education: 'Высшее',
+      education: 'Высшее, МГППУ, МИП',
       specialty: 'Психолог, клинический психолог',
       approach: 'Психоанализ, психоаналитическая психотерапия, семейная терапия, психотравматерапия (emdr, se)',
       workplace: 'Частная практика',
