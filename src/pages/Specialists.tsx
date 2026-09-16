@@ -1676,7 +1676,7 @@ const Specialists = () => {
                     </Button>
                   }
                 />
-                <Button asChild className="bg-gray-900 hover:bg-gray-800 text-white">
+                <Button asChild>
                   <a href="https://course.rosmededucation.ru/membership" target="_blank" rel="noopener noreferrer">
                     <Icon name="CreditCard" size={18} className="mr-2" />
                     Оплатить ежегодный взнос
