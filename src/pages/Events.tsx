@@ -289,7 +289,7 @@ const Events = () => {
               </Card>
 
               {allEvents.map((event) => (
-                <Card key={event.id} className="border-2 hover:shadow-xl transition-all duration-300">
+                <Card key={event.id} id={event.id} className="border-2 hover:shadow-xl transition-all duration-300 scroll-mt-20">
                   <CardContent className="p-8">
                     <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
                       <div className="flex-1 space-y-4">

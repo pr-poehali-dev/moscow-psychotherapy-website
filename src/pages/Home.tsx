@@ -11,21 +11,13 @@ const news = [
     date: '16 сентября 2026',
     title: 'Запущена интервизионная группа Mare Internum',
     text: 'Регулярная интервизионная группа в подходе теории поля. Начало работы — 18 сентября, встречи еженедельно по пятницам в Zoom.',
+    link: '/events#mare-internum',
   },
   {
     date: '15 сентября 2026',
     title: 'Открыта регистрация на осеннюю конференцию МО РПА',
     text: 'Приглашаем специалистов принять участие в ежегодной конференции, посвящённой актуальным вопросам психотерапии.',
-  },
-  {
-    date: '2 сентября 2026',
-    title: 'Новый цикл супервизий для членов ассоциации',
-    text: 'Стартует серия групповых супервизий с ведущими практиками московского отделения.',
-  },
-  {
-    date: '20 августа 2026',
-    title: 'Итоги летней школы психотерапевтов',
-    text: 'Подвели итоги образовательной программы, в которой приняли участие более 100 специалистов.',
+    link: '/events#ne-sluchay-a-chelovek-conf',
   },
 ];
 
@@ -152,11 +144,15 @@ const Home = () => {
                     </div>
                     <div className="space-y-4">
                       {news.map((item, index) => (
-                        <div key={index} className="pb-4 border-b last:border-b-0 last:pb-0">
+                        <Link
+                          key={index}
+                          to={item.link}
+                          className="block pb-4 border-b last:border-b-0 last:pb-0 -m-2 p-2 rounded-lg hover:bg-accent/10 transition-colors"
+                        >
                           <p className="text-xs text-muted-foreground mb-1">{item.date}</p>
                           <h3 className="font-medium leading-snug mb-1">{item.title}</h3>
                           <p className="text-sm text-muted-foreground leading-snug">{item.text}</p>
-                        </div>
+                        </Link>
                       ))}
                     </div>
                   </CardContent>
