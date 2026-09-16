@@ -1147,7 +1147,7 @@ const Specialists = () => {
       approach: 'Позитивная психотерапия, психоанализ, эриксоновский гипноз',
       workplace: 'Центр позитивной психотерапии WellB',
       phone: '+7 926 108-22-15',
-      website: 'https://t.me/juliadremina',
+      website: 'https://www.juliadremina.ru',
       email: '',
       mainIssues: [],
       ageGroups: 'Взрослые',
