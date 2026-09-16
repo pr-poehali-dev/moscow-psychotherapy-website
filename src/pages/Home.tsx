@@ -62,50 +62,32 @@ const Home = () => {
         <section className="py-20 bg-gradient-to-br from-primary/5 to-accent/10">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                <Card className="border-2 hover:border-primary/50 transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
-                  <CardContent className="p-6 space-y-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                      <Icon name="Users" size={24} className="text-white" />
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <Card className="border-2">
+                  <CardContent className="p-6 space-y-5">
+                    <div className="flex items-center justify-between">
+                      <h2 className="text-xl font-semibold flex items-center gap-2">
+                        <Icon name="Newspaper" size={20} className="text-primary" />
+                        Новости
+                      </h2>
                     </div>
-                    <h3 className="text-xl font-semibold">Профессиональное сообщество</h3>
-                    <p className="text-muted-foreground">Объединяем психотерапевтов для обмена опытом</p>
+                    <div className="space-y-4">
+                      {news.map((item, index) => (
+                        <Link
+                          key={index}
+                          to={item.link}
+                          className="block pb-4 border-b last:border-b-0 last:pb-0 -m-2 p-2 rounded-lg hover:bg-accent/10 transition-colors"
+                        >
+                          <p className="text-xs text-muted-foreground mb-1">{item.date}</p>
+                          <h3 className="font-medium leading-snug mb-1">{item.title}</h3>
+                          <p className="text-sm text-muted-foreground leading-snug">{item.text}</p>
+                        </Link>
+                      ))}
+                    </div>
                   </CardContent>
                 </Card>
 
-                <Card className="border-2 hover:border-primary/50 transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
-                  <CardContent className="p-6 space-y-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                      <Icon name="BookOpen" size={24} className="text-white" />
-                    </div>
-                    <h3 className="text-xl font-semibold">Образование</h3>
-                    <p className="text-muted-foreground">Регулярные семинары и супервизии</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-2 hover:border-primary/50 transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
-                  <CardContent className="p-6 space-y-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                      <Icon name="Award" size={24} className="text-white" />
-                    </div>
-                    <h3 className="text-xl font-semibold">Сертификация</h3>
-                    <p className="text-muted-foreground">Подтверждение квалификации</p>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-2 hover:border-primary/50 transition-all hover:shadow-lg hover:-translate-y-1 duration-300">
-                  <CardContent className="p-6 space-y-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-primary to-accent">
-                      <Icon name="Calendar" size={24} className="text-white" />
-                    </div>
-                    <h3 className="text-xl font-semibold">Мероприятия</h3>
-                    <p className="text-muted-foreground">Конференции и встречи</p>
-                  </CardContent>
-                </Card>
-              </div>
-
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <Card className="border-2 bg-gradient-to-br from-primary/5 to-accent/10 lg:col-span-2">
+                <Card className="border-2 bg-gradient-to-br from-primary/5 to-accent/10">
                   <CardContent className="p-8">
                     <div className="space-y-6">
                       <div>
@@ -130,30 +112,6 @@ const Home = () => {
                           </Button>
                         </a>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="border-2">
-                  <CardContent className="p-6 space-y-5">
-                    <div className="flex items-center justify-between">
-                      <h2 className="text-xl font-semibold flex items-center gap-2">
-                        <Icon name="Newspaper" size={20} className="text-primary" />
-                        Новости
-                      </h2>
-                    </div>
-                    <div className="space-y-4">
-                      {news.map((item, index) => (
-                        <Link
-                          key={index}
-                          to={item.link}
-                          className="block pb-4 border-b last:border-b-0 last:pb-0 -m-2 p-2 rounded-lg hover:bg-accent/10 transition-colors"
-                        >
-                          <p className="text-xs text-muted-foreground mb-1">{item.date}</p>
-                          <h3 className="font-medium leading-snug mb-1">{item.title}</h3>
-                          <p className="text-sm text-muted-foreground leading-snug">{item.text}</p>
-                        </Link>
-                      ))}
                     </div>
                   </CardContent>
                 </Card>
