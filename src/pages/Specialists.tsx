@@ -653,7 +653,7 @@ const Specialists = () => {
       approach: 'Когнитивно-поведенческая психотерапия, терапия принятия и ответственности, терапия самосострадания',
       workplace: 'ФГБУ Национальный медицинский исследовательский центр кардиологии имени академика Е.И.Чазова Минздрава России',
       phone: '',
-      website: 'https://psychologyasascience.ru',
+      website: 'https://psychologyasascience.com',
       email: 'anna.al.gerasimova@gmail.com',
       mainIssues: [],
       ageGroups: 'Взрослые',
