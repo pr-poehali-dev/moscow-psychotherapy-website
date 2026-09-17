@@ -107,6 +107,17 @@ const Contacts = () => {
                 </Card>
               </div>
 
+              <Card className="border-2 overflow-hidden">
+                <iframe
+                  src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=74951537131"
+                  width="100%"
+                  height="400"
+                  frameBorder="0"
+                  title="Карта расположения офиса"
+                  className="w-full"
+                />
+              </Card>
+
               <Card className="border-2 bg-gradient-to-br from-primary/5 to-accent/5">
                 <CardContent className="p-12 text-center space-y-6">
                   <div className="flex justify-center">
