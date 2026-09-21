@@ -38,11 +38,22 @@ const NewsConference180926 = () => {
                 Все мероприятия
               </Link>
 
-              <img
-                src="/news/ne-sluchay-a-chelovek-conf.jpg"
-                alt="Конференция «Не случай, а человек»"
-                className="w-full rounded-xl border-2 object-cover"
-              />
+              <a
+                href="https://disk.yandex.ru/d/Ui6QEf7LvsrMfg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block group relative"
+              >
+                <img
+                  src="/news/ne-sluchay-a-chelovek-conf.jpg"
+                  alt="Конференция «Не случай, а человек»"
+                  className="w-full rounded-xl border-2 object-cover transition-opacity group-hover:opacity-90"
+                />
+                <span className="absolute bottom-3 right-3 bg-background/90 text-xs px-3 py-1.5 rounded-full border flex items-center gap-1.5 shadow-sm">
+                  <Icon name="ExternalLink" size={14} />
+                  Все фото на Яндекс.Диске
+                </span>
+              </a>
 
               <div className="prose prose-lg max-w-none space-y-6 text-foreground/90">
                 <p>
