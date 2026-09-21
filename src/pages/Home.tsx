@@ -8,6 +8,13 @@ import Icon from '@/components/ui/icon';
 
 const news = [
   {
+    date: '18 сентября 2026',
+    title: '«Не случай, а человек»: как прошла конференция РПА',
+    text: 'Отчёт о конференции МО РПА: доклады, групповая работа с клиентским случаем и итоговая дискуссия специалистов разных направлений.',
+    link: '/news/ne-sluchay-a-chelovek-conf',
+    photo: '/news/ne-sluchay-a-chelovek-conf.jpg',
+  },
+  {
     date: '16 сентября 2026',
     title: 'Запущена интервизионная группа Mare Internum',
     text: 'Регулярная интервизионная группа в подходе теории поля. Начало работы — 18 сентября, встречи еженедельно по пятницам в Zoom.',
@@ -76,11 +83,20 @@ const Home = () => {
                         <Link
                           key={index}
                           to={item.link}
-                          className="block pb-4 border-b last:border-b-0 last:pb-0 -m-2 p-2 rounded-lg hover:bg-accent/10 transition-colors"
+                          className="flex gap-3 pb-4 border-b last:border-b-0 last:pb-0 -m-2 p-2 rounded-lg hover:bg-accent/10 transition-colors"
                         >
-                          <p className="text-xs text-muted-foreground mb-1">{item.date}</p>
-                          <h3 className="font-medium leading-snug mb-1">{item.title}</h3>
-                          <p className="text-sm text-muted-foreground leading-snug">{item.text}</p>
+                          {item.photo && (
+                            <img
+                              src={item.photo}
+                              alt={item.title}
+                              className="w-20 h-20 rounded-lg object-cover flex-shrink-0"
+                            />
+                          )}
+                          <div className="min-w-0">
+                            <p className="text-xs text-muted-foreground mb-1">{item.date}</p>
+                            <h3 className="font-medium leading-snug mb-1">{item.title}</h3>
+                            <p className="text-sm text-muted-foreground leading-snug">{item.text}</p>
+                          </div>
                         </Link>
                       ))}
                     </div>

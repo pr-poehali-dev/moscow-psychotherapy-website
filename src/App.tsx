@@ -12,6 +12,7 @@ import FAQ from "./pages/FAQ";
 import Documents from "./pages/Documents";
 import Contacts from "./pages/Contacts";
 import Events from "./pages/Events";
+import NewsConference180926 from "./pages/NewsConference180926";
 import Webinars from "./pages/Webinars";
 import Podcasts from "./pages/Podcasts";
 import Materials from "./pages/Materials";
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/contacts" element={<Contacts />} />
           <Route path="/sections" element={<Sections />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/news/ne-sluchay-a-chelovek-conf" element={<NewsConference180926 />} />
           <Route path="/webinars" element={<Webinars />} />
           <Route path="/podcasts" element={<Podcasts />} />
           <Route path="/materials" element={<Materials />} />
