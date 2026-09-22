@@ -1631,9 +1631,12 @@ const Specialists = () => {
       const matchesSearch = 
         specialist.name.toLowerCase().includes(searchQuery.toLowerCase());
       
+      const approachLower = specialist.approach.toLowerCase();
       const matchesApproach = 
         selectedApproach === 'all' || 
-        specialist.approach.toLowerCase().includes(selectedApproach.toLowerCase());
+        (selectedApproach === 'дпдг' 
+          ? approachLower.includes('дпдг') || approachLower.includes('emdr')
+          : approachLower.includes(selectedApproach.toLowerCase()));
       
       const matchesAgeGroup = 
         selectedAgeGroup === 'all' || 
@@ -1714,12 +1717,20 @@ const Specialists = () => {
                         <SelectItem value="all">Все подходы</SelectItem>
                         <SelectItem value="когнитивно">КПТ</SelectItem>
                         <SelectItem value="психоанализ">Психоанализ</SelectItem>
+                        <SelectItem value="психодинам">Психодинамический подход</SelectItem>
                         <SelectItem value="гештальт">Гештальт</SelectItem>
                         <SelectItem value="семейная">Семейная</SelectItem>
                         <SelectItem value="арт">Арт-терапия</SelectItem>
-                        <SelectItem value="экзистенциальная">Экзистенциальная</SelectItem>
+                        <SelectItem value="экзистенциальн">Экзистенциальная</SelectItem>
                         <SelectItem value="схема">Схема-терапия</SelectItem>
                         <SelectItem value="логотерапия">Логотерапия</SelectItem>
+                        <SelectItem value="дпдг">ДПДГ (EMDR)</SelectItem>
+                        <SelectItem value="телесно">Телесно-ориентированная</SelectItem>
+                        <SelectItem value="юнгиан">Юнгианский анализ</SelectItem>
+                        <SelectItem value="позитивн">Позитивная психотерапия</SelectItem>
+                        <SelectItem value="психодрам">Психодрама</SelectItem>
+                        <SelectItem value="интегратив">Интегративный подход</SelectItem>
+                        <SelectItem value="перинатальн">Перинатальная психология</SelectItem>
                       </SelectContent>
                     </Select>
 
