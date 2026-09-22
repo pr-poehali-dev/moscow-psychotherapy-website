@@ -1163,7 +1163,7 @@ const Specialists = () => {
       photo: '/specialists/zhurok_elena_mihaylovna.jpg',
       location: 'Москва',
       education: 'Высшее, магистр психологии, клинический психолог',
-      specialty: 'Психолог, клинический психолог, EMDR-терапевт',
+      specialty: 'Супервизор ДПДГ, клинический психолог, EMDR-терапевт, Логотерапевт, ImTT',
       approach: 'EMDR (ДПДГ), логотерапия, ImTT, клиническая психология',
       workplace: 'Научный центр персонализированной медицины PersonaPsy; частная практика',
       phone: '',
