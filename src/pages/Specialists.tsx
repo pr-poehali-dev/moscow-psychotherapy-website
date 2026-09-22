@@ -10,9 +10,11 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import Icon from '@/components/ui/icon';
 import FeedbackDialog from '@/components/FeedbackDialog';
+import { useToast } from '@/hooks/use-toast';
 
 const Specialists = () => {
   const location = useLocation();
+  const { toast } = useToast();
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedApproach, setSelectedApproach] = useState('all');
   const [selectedAgeGroup, setSelectedAgeGroup] = useState('all');
@@ -39,6 +41,24 @@ const Specialists = () => {
     setExpandedCards(prev => 
       prev.includes(id) ? prev.filter(cardId => cardId !== id) : [...prev, id]
     );
+  };
+
+  const shareSpecialist = async (id: number, name: string) => {
+    const url = `${window.location.origin}${window.location.pathname}#specialist-${id}`;
+    if (navigator.share) {
+      try {
+        await navigator.share({ title: name, text: `Карточка специалиста: ${name}`, url });
+        return;
+      } catch {
+        return;
+      }
+    }
+    try {
+      await navigator.clipboard.writeText(url);
+      toast({ title: 'Ссылка скопирована', description: 'Отправьте её, чтобы поделиться карточкой специалиста.' });
+    } catch {
+      toast({ title: 'Не удалось скопировать ссылку', variant: 'destructive' });
+    }
   };
 
   const specialists = [
@@ -1781,6 +1801,13 @@ const Specialists = () => {
                                 </div>
                               </div>
                             </div>
+                            <button
+                              onClick={() => shareSpecialist(specialist.id, specialist.name)}
+                              title="Поделиться карточкой"
+                              className="flex-shrink-0 p-2 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+                            >
+                              <Icon name="Share2" size={18} />
+                            </button>
                           </div>
 
                           <div className="space-y-3 text-sm">
