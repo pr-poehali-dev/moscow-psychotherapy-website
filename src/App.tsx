@@ -21,7 +21,7 @@ import JournalProfessional from "./pages/JournalProfessional";
 import JournalLife from "./pages/JournalLife";
 import Sections from "./pages/Sections";
 import PrivacyConsent from "./pages/PrivacyConsent";
-import NotFound from "./pages/NotFound";
+import PageNotFound from "./pages/PageNotFound";
 
 const queryClient = new QueryClient();
 
@@ -50,7 +50,7 @@ const App = () => (
           <Route path="/journal/life" element={<JournalLife />} />
           <Route path="/privacy-consent" element={<PrivacyConsent />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
