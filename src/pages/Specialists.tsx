@@ -1627,6 +1627,13 @@ const Specialists = () => {
       workplace: 'Очно — Москва, м. Пушкинская, также онлайн',
       phone: '+7 916 358-67-74',
       website: 'https://www.b17.ru/kryazhevskih/',
+      socials: [
+        { label: 'Telegram (@Ekaterina_Kr_psy)', url: 'https://t.me/Ekaterina_Kr_psy' },
+        { label: 'Telegram-канал', url: 'https://t.me/freedomtolive18' },
+        { label: 'МАХ', url: 'https://max.ru/u/f9LHodD0cOKPVgkw84aA_ExyeGwC491sVx3cOgqZdWAEHdR_ElEVoW3kcAw' },
+        { label: 'МАХ-канал', url: 'https://max.ru/channel_dialogues_with_life' },
+        { label: 'VK', url: 'https://vk.ru/freedomtolive18' },
+      ],
       email: 'vlas3007ka@gmail.com',
       mainIssues: ['Тревога, страхи, депрессия', 'Психологические травмы', 'Неуверенность в себе и низкая самооценка', 'Скука, потеря смысла жизни', 'Сложности в построении отношений с другими людьми', 'Кризисные ситуации, в том числе семейные конфликты, ссоры, потеря близости в отношениях, измены, разводы'],
       ageGroups: 'Взрослые (с 18 лет), не работаю с детьми',
@@ -1926,6 +1933,20 @@ const Specialists = () => {
                                     <div>
                                       <p className="font-medium">Сайт:</p>
                                       <a href={specialist.website} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">{specialist.website}</a>
+                                    </div>
+                                  </div>
+                                )}
+
+                                {'socials' in specialist && Array.isArray(specialist.socials) && specialist.socials.length > 0 && (
+                                  <div className="flex items-start space-x-2">
+                                    <Icon name="Share2" size={16} className="mt-0.5 text-primary flex-shrink-0" />
+                                    <div>
+                                      <p className="font-medium">Социальные сети:</p>
+                                      <div className="flex flex-col">
+                                        {specialist.socials.map((s: { label: string; url: string }) => (
+                                          <a key={s.url} href={s.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline break-all">{s.label}</a>
+                                        ))}
+                                      </div>
                                     </div>
                                   </div>
                                 )}
